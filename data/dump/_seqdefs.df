@@ -1,0 +1,210 @@
+ADD SEQUENCE "next-zen-apidetailtableid"
+  INITIAL 189
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-auditconfigtableid"
+  INITIAL 45
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-auditdetailtableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-auditfieldtableid"
+  INITIAL 10420
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-auditlinetableid"
+  INITIAL 167
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-blobtableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-classcodetableid"
+  INITIAL 576
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-colourstableid"
+  INITIAL 121
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-contexttableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-controltableid"
+  INITIAL 458
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-countrytableid"
+  INITIAL 223
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-currencytableid"
+  INITIAL 5
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-dfkeytableid"
+  INITIAL 232
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-dmenutableid"
+  INITIAL 101799
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-dpgmtableid"
+  INITIAL 100801
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-dusertableid"
+  INITIAL 312
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-dwidgettableid"
+  INITIAL 108
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-f-hotkeytableid"
+  INITIAL 106842
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-Zen-FieldDefaulttableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-fldlooktableid"
+  INITIAL 100388
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-iconstableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-languagetableid"
+  INITIAL 4
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-lan_fieldtableid"
+  INITIAL 946
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-logtableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-lookupfldtableid"
+  INITIAL 907
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-mesfiltableid"
+  INITIAL 150
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-ocxtableid"
+  INITIAL 121
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-Printertableid"
+  INITIAL 6
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-PrinterCodetableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-PrinterCodeDetaitableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-PrinterFormtableid"
+  INITIAL 3
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-PrinterFormDetaitableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-propertytableid"
+  INITIAL 4
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-ruletableid"
+  INITIAL 2
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-soundtableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-Zen-Spooltableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-tasktableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-taskhisttableid"
+  INITIAL 74
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-tservertableid"
+  INITIAL 105
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-widgetpropertytableid"
+  INITIAL 104
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-widlooktableid"
+  INITIAL 100599
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+.
+PSC
+cpstream=ISO8859-1
+.
+0000005689

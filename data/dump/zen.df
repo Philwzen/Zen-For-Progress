@@ -1,0 +1,5360 @@
+ADD SEQUENCE "next-zen-apidetailtableid"
+  INITIAL 189
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-auditconfigtableid"
+  INITIAL 45
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-auditdetailtableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-auditfieldtableid"
+  INITIAL 10420
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-auditlinetableid"
+  INITIAL 167
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-blobtableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-classcodetableid"
+  INITIAL 576
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-colourstableid"
+  INITIAL 121
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-contexttableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-controltableid"
+  INITIAL 458
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-countrytableid"
+  INITIAL 223
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-currencytableid"
+  INITIAL 5
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-dfkeytableid"
+  INITIAL 232
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-dmenutableid"
+  INITIAL 101799
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-dpgmtableid"
+  INITIAL 100801
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-dusertableid"
+  INITIAL 312
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-dwidgettableid"
+  INITIAL 108
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-f-hotkeytableid"
+  INITIAL 106842
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-Zen-FieldDefaulttableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-fldlooktableid"
+  INITIAL 100388
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-iconstableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-languagetableid"
+  INITIAL 4
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-lan_fieldtableid"
+  INITIAL 946
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-logtableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-lookupfldtableid"
+  INITIAL 907
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-mesfiltableid"
+  INITIAL 150
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-ocxtableid"
+  INITIAL 121
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-Printertableid"
+  INITIAL 6
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-PrinterCodetableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-PrinterCodeDetaitableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-PrinterFormtableid"
+  INITIAL 3
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-PrinterFormDetaitableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-propertytableid"
+  INITIAL 4
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-ruletableid"
+  INITIAL 2
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-soundtableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-Zen-Spooltableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-tasktableid"
+  INITIAL 1
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-taskhisttableid"
+  INITIAL 74
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-tservertableid"
+  INITIAL 105
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-widgetpropertytableid"
+  INITIAL 104
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD SEQUENCE "next-zen-widlooktableid"
+  INITIAL 100599
+  INCREMENT 1
+  CYCLE-ON-LIMIT no
+
+ADD TABLE "zen-apidetail"
+  AREA "Schema Area"
+  DESCRIPTION "#API Call Details"
+  DUMP-NAME "api-det"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-apidetailcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-apidetailde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-apidetailwr.p" CRC "?" 
+
+ADD FIELD "ApiName" OF "zen-apidetail" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "API Name"
+  POSITION 2
+  MAX-WIDTH 100
+  ORDER 10
+
+ADD FIELD "ProgramName" OF "zen-apidetail" AS character 
+  DESCRIPTION "Persistent Libary Containing Procedure."
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Program Name"
+  POSITION 3
+  MAX-WIDTH 50
+  ORDER 20
+
+ADD FIELD "ProcedureName" OF "zen-apidetail" AS character 
+  DESCRIPTION "Internal Procedure name"
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Procedure Name"
+  POSITION 4
+  MAX-WIDTH 60
+  ORDER 30
+
+ADD FIELD "ProgramPath" OF "zen-apidetail" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Path"
+  POSITION 5
+  MAX-WIDTH 100
+  ORDER 40
+
+ADD FIELD "tstamp" OF "zen-apidetail" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 6
+  MAX-WIDTH 4
+  ORDER 50
+
+ADD FIELD "country" OF "zen-apidetail" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Country"
+  POSITION 8
+  MAX-WIDTH 16
+  COLUMN-LABEL "Country"
+  ORDER 60
+
+ADD FIELD "sysrecord" OF "zen-apidetail" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 9
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 70
+
+ADD FIELD "noper" OF "zen-apidetail" AS logical 
+  FORMAT "yes/no"
+  INITIAL "n"
+  LABEL "Not Persistent"
+  POSITION 10
+  MAX-WIDTH 1
+  ORDER 80
+
+ADD FIELD "async" OF "zen-apidetail" AS logical 
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Async"
+  POSITION 11
+  MAX-WIDTH 1
+  ORDER 90
+
+ADD FIELD "defaultapserver" OF "zen-apidetail" AS character 
+  FORMAT "X(20)"
+  INITIAL "System"
+  LABEL "Appserver Name"
+  POSITION 12
+  MAX-WIDTH 40
+  ORDER 100
+
+ADD FIELD "TableName" OF "zen-apidetail" AS character 
+  FORMAT "X(20)"
+  INITIAL ""
+  LABEL "Main Table"
+  POSITION 13
+  MAX-WIDTH 40
+  ORDER 110
+
+ADD FIELD "zen-apidetailtableid" OF "zen-apidetail" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD INDEX "order" ON "zen-apidetail" 
+  AREA "Schema Area"
+  PRIMARY
+  INDEX-FIELD "ApiName" ASCENDING 
+
+ADD INDEX "country" ON "zen-apidetail" 
+  AREA "Schema Area"
+  INDEX-FIELD "country" ASCENDING 
+
+ADD INDEX "libraryname" ON "zen-apidetail" 
+  AREA "Schema Area"
+  INDEX-FIELD "ProgramName" ASCENDING 
+
+ADD INDEX "procname" ON "zen-apidetail" 
+  AREA "Schema Area"
+  INDEX-FIELD "ProcedureName" ASCENDING 
+
+ADD INDEX "sysrecord" ON "zen-apidetail" 
+  AREA "Schema Area"
+  INDEX-FIELD "sysrecord" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-apidetail" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-apidetailtableid" ASCENDING 
+
+ADD INDEX "tablename" ON "zen-apidetail" 
+  AREA "Schema Area"
+  INDEX-FIELD "TableName" ASCENDING 
+
+ADD TABLE "zen-auditconfig"
+  AREA "Schema Area"
+  DESCRIPTION "Setup - audit files"
+  DUMP-NAME "audconfi"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-auditconfigcr.p" CRC "?" 
+
+ADD FIELD "tablename" OF "zen-auditconfig" AS character 
+  DESCRIPTION "Table Name"
+  FORMAT "X(35)"
+  INITIAL ""
+  LABEL "Table Name"
+  POSITION 2
+  MAX-WIDTH 70
+  COLUMN-LABEL "Table Name"
+  HELP "Table Name"
+  ORDER 10
+
+ADD FIELD "recorddeletes" OF "zen-auditconfig" AS logical 
+  DESCRIPTION "Whether deletes need to be recorded"
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Record Deletes"
+  POSITION 5
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  COLUMN-LABEL ""
+  HELP "Whether deletes need to be recorded"
+  ORDER 40
+
+ADD FIELD "recordcreates" OF "zen-auditconfig" AS logical 
+  DESCRIPTION "Whether additions need to be recorded"
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Record Creates"
+  POSITION 7
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  COLUMN-LABEL ""
+  HELP "Whether additions need to be recorded"
+  ORDER 60
+
+ADD FIELD "keyfield" OF "zen-auditconfig" AS character 
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Key Name"
+  POSITION 8
+  MAX-WIDTH 50
+  ORDER 70
+
+ADD FIELD "tstamp" OF "zen-auditconfig" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 9
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "Active" OF "zen-auditconfig" AS logical 
+  DESCRIPTION "is this audit record active"
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Active"
+  POSITION 10
+  MAX-WIDTH 1
+  HELP "Turn on Auditing for this Table?"
+  ORDER 110
+
+ADD FIELD "SearchFieldName" OF "zen-auditconfig" AS character 
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Search Key"
+  POSITION 12
+  MAX-WIDTH 50
+  ORDER 90
+
+ADD FIELD "zen-auditconfigtableid" OF "zen-auditconfig" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD FIELD "sysrecord" OF "zen-auditconfig" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 1000
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 100
+
+ADD INDEX "tablename" ON "zen-auditconfig" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "tablename" ASCENDING 
+
+ADD INDEX "Active" ON "zen-auditconfig" 
+  AREA "Schema Area"
+  INDEX-FIELD "Active" ASCENDING 
+
+ADD INDEX "searchfield" ON "zen-auditconfig" 
+  AREA "Schema Area"
+  INDEX-FIELD "SearchFieldName" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-auditconfig" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-auditconfigtableid" ASCENDING 
+
+ADD TABLE "zen-auditdetail"
+  AREA "Schema Area"
+  DESCRIPTION "Audit records - file level"
+  DUMP-NAME "audd"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-auditdetailcr.p" CRC "?" 
+
+ADD FIELD "byname" OF "zen-auditdetail" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "User Name"
+  POSITION 3
+  MAX-WIDTH 16
+  ORDER 120
+
+ADD FIELD "auditdate" OF "zen-auditdetail" AS date 
+  DESCRIPTION "Date that the audit detail record was written"
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "Date"
+  POSITION 4
+  MAX-WIDTH 4
+  COLUMN-LABEL "Date"
+  ORDER 30
+
+ADD FIELD "audittime" OF "zen-auditdetail" AS integer 
+  DESCRIPTION "Time that the audit record was written"
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "Time"
+  POSITION 5
+  MAX-WIDTH 4
+  COLUMN-LABEL "Time"
+  HELP "Audit time"
+  ORDER 40
+
+ADD FIELD "sourcekey" OF "zen-auditdetail" AS character 
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Source Key"
+  POSITION 6
+  MAX-WIDTH 50
+  ORDER 130
+
+ADD FIELD "tablename" OF "zen-auditdetail" AS character 
+  DESCRIPTION "Name of table "
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Table Name"
+  POSITION 8
+  MAX-WIDTH 60
+  COLUMN-LABEL "Table Name"
+  HELP "Name of table"
+  ORDER 110
+
+ADD FIELD "tstamp" OF "zen-auditdetail" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 9
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "SearchFieldData" OF "zen-auditdetail" AS character 
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Search Field"
+  POSITION 11
+  MAX-WIDTH 50
+  ORDER 140
+
+ADD FIELD "zen-auditdetailtableid" OF "zen-auditdetail" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD FIELD "AuditAction" OF "zen-auditdetail" AS character 
+  DESCRIPTION "what type of action caused the audit event"
+  FORMAT "x(15)"
+  INITIAL ""
+  LABEL "Action"
+  POSITION 1000
+  MAX-WIDTH 30
+  ORDER 150
+
+ADD INDEX "tableid" ON "zen-auditdetail" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-auditdetailtableid" ASCENDING 
+
+ADD INDEX "audorder" ON "zen-auditdetail" 
+  AREA "Schema Area"
+  INDEX-FIELD "tablename" ASCENDING 
+  INDEX-FIELD "sourcekey" ASCENDING 
+  INDEX-FIELD "auditdate" DESCENDING 
+  INDEX-FIELD "audittime" DESCENDING 
+
+ADD INDEX "byname" ON "zen-auditdetail" 
+  AREA "Schema Area"
+  INDEX-FIELD "byname" ASCENDING 
+
+ADD INDEX "dateidx" ON "zen-auditdetail" 
+  AREA "Schema Area"
+  INDEX-FIELD "auditdate" DESCENDING 
+
+ADD INDEX "searchfield" ON "zen-auditdetail" 
+  AREA "Schema Area"
+  INDEX-FIELD "SearchFieldData" ASCENDING 
+
+ADD INDEX "sourcekey" ON "zen-auditdetail" 
+  AREA "Schema Area"
+  INDEX-FIELD "sourcekey" ASCENDING 
+
+ADD INDEX "timeidx" ON "zen-auditdetail" 
+  AREA "Schema Area"
+  INDEX-FIELD "audittime" ASCENDING 
+
+ADD TABLE "zen-auditfield"
+  AREA "Schema Area"
+  DESCRIPTION "Setup - audit fields"
+  DUMP-NAME "zen-audi"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-auditfieldcr.p" CRC "?" 
+
+ADD FIELD "tstamp" OF "zen-auditfield" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 3
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "fieldname" OF "zen-auditfield" AS character 
+  DESCRIPTION "Field Name"
+  FORMAT "X(35)"
+  INITIAL ""
+  LABEL "Field Name"
+  POSITION 4
+  MAX-WIDTH 70
+  COLUMN-LABEL "Field Name"
+  HELP "Field Name"
+  ORDER 20
+
+ADD FIELD "relatedfunction" OF "zen-auditfield" AS character 
+  DESCRIPTION "Progress syntax to find description of related table from foreign key"
+  FORMAT "X(70)"
+  INITIAL ""
+  LABEL "Related Function"
+  POSITION 6
+  MAX-WIDTH 140
+  COLUMN-LABEL ""
+  HELP "Progress syntax to find description of related table"
+  ORDER 50
+
+ADD FIELD "datatype" OF "zen-auditfield" AS character 
+  FORMAT "x(3)"
+  INITIAL ""
+  LABEL "Field Type"
+  POSITION 7
+  MAX-WIDTH 6
+  COLUMN-LABEL "Field Type"
+  HELP "Type of field within the data dictionary"
+  ORDER 80
+
+ADD FIELD "zen-auditfieldtableid" OF "zen-auditfield" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 8
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 90
+
+ADD FIELD "description" OF "zen-auditfield" AS character 
+  FORMAT "x(30)"
+  INITIAL ""
+  LABEL "Description"
+  POSITION 9
+  MAX-WIDTH 60
+  ORDER 100
+
+ADD FIELD "sysrecord" OF "zen-auditfield" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 10
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 110
+
+ADD FIELD "Active" OF "zen-auditfield" AS logical 
+  DESCRIPTION "Is this audit record active"
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Active"
+  POSITION 11
+  MAX-WIDTH 1
+  HELP "Turn on Auditing for this Field?"
+  ORDER 120
+
+ADD FIELD "tablename" OF "zen-auditfield" AS character 
+  DESCRIPTION "Table Name"
+  FORMAT "X(35)"
+  INITIAL ""
+  LABEL "Table Name"
+  POSITION 12
+  MAX-WIDTH 70
+  COLUMN-LABEL "Table Name"
+  HELP "Table Name"
+  ORDER 130
+
+ADD FIELD "zen-auditconfigtableid" OF "zen-auditfield" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 13
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 140
+
+ADD INDEX "tableid" ON "zen-auditfield" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-auditfieldtableid" ASCENDING 
+
+ADD INDEX "order" ON "zen-auditfield" 
+  AREA "Schema Area"
+  INDEX-FIELD "tablename" ASCENDING 
+  INDEX-FIELD "fieldname" ASCENDING 
+  INDEX-FIELD "Active" ASCENDING 
+
+ADD TABLE "zen-auditline"
+  AREA "Schema Area"
+  DESCRIPTION "Audit records - field level"
+  DUMP-NAME "audl"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-auditlinecr.p" CRC "?" 
+
+ADD FIELD "fieldname" OF "zen-auditline" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Field Name"
+  POSITION 3
+  MAX-WIDTH 16
+  ORDER 20
+
+ADD FIELD "datachar" OF "zen-auditline" AS character 
+  FORMAT "X(8)"
+  INITIAL ?
+  POSITION 4
+  MAX-WIDTH 16
+  ORDER 30
+
+ADD FIELD "datadate" OF "zen-auditline" AS date 
+  FORMAT "99/99/9999"
+  INITIAL ?
+  POSITION 5
+  MAX-WIDTH 4
+  ORDER 40
+
+ADD FIELD "datadec" OF "zen-auditline" AS decimal 
+  FORMAT "->>,>>9.99"
+  INITIAL ?
+  POSITION 6
+  MAX-WIDTH 17
+  DECIMALS 2
+  ORDER 50
+
+ADD FIELD "dataint" OF "zen-auditline" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL ?
+  POSITION 7
+  MAX-WIDTH 4
+  ORDER 60
+
+ADD FIELD "datalog" OF "zen-auditline" AS logical 
+  FORMAT "yes/no"
+  INITIAL ?
+  POSITION 8
+  MAX-WIDTH 1
+  ORDER 70
+
+ADD FIELD "tstamp" OF "zen-auditline" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 9
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "zen-auditdetailtableid" OF "zen-auditline" AS decimal 
+  FORMAT ">>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 11
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 80
+
+ADD FIELD "zen-auditlinetableid" OF "zen-auditline" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD FIELD "Datadatetime" OF "zen-auditline" AS datetime 
+  FORMAT "99/99/9999 HH:MM:SS.SSS"
+  INITIAL ?
+  POSITION 1000
+  MAX-WIDTH 8
+  ORDER 90
+
+ADD INDEX "auditdetail" ON "zen-auditline" 
+  AREA "Schema Area"
+  PRIMARY
+  INDEX-FIELD "zen-auditdetailtableid" ASCENDING 
+
+ADD INDEX "charidx" ON "zen-auditline" 
+  AREA "Schema Area"
+  INDEX-FIELD "datachar" ASCENDING 
+
+ADD INDEX "dateidx" ON "zen-auditline" 
+  AREA "Schema Area"
+  INDEX-FIELD "datadate" ASCENDING 
+
+ADD INDEX "decidx" ON "zen-auditline" 
+  AREA "Schema Area"
+  INDEX-FIELD "datadec" ASCENDING 
+
+ADD INDEX "fieldidx" ON "zen-auditline" 
+  AREA "Schema Area"
+  INDEX-FIELD "fieldname" ASCENDING 
+
+ADD INDEX "intidx" ON "zen-auditline" 
+  AREA "Schema Area"
+  INDEX-FIELD "dataint" ASCENDING 
+
+ADD INDEX "logidx" ON "zen-auditline" 
+  AREA "Schema Area"
+  INDEX-FIELD "datalog" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-auditline" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-auditlinetableid" ASCENDING 
+
+ADD TABLE "zen-blob"
+  AREA "Schema Area"
+  DESCRIPTION "#store blobs from other tables"
+  DUMP-NAME "zen-blob"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-blobcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-blobde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-blobwr.p" CRC "?" 
+
+ADD FIELD "zen-blobtableid" OF "zen-blob" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 2
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 10
+
+ADD FIELD "description" OF "zen-blob" AS character 
+  FORMAT "X(200)"
+  INITIAL ""
+  LABEL "Description"
+  POSITION 3
+  MAX-WIDTH 400
+  COLUMN-LABEL "Description"
+  ORDER 20
+
+ADD FIELD "tstamp" OF "zen-blob" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 4
+  MAX-WIDTH 4
+  ORDER 30
+
+ADD FIELD "Blob-Filename" OF "zen-blob" AS character 
+  DESCRIPTION "filename to output blob to."
+  FORMAT "x(255)"
+  INITIAL ""
+  LABEL "Filename"
+  POSITION 5
+  MAX-WIDTH 510
+  HELP "filename to output blob to."
+  ORDER 40
+
+ADD FIELD "blob-data" OF "zen-blob" AS blob 
+  DESCRIPTION "blob data"
+  FORMAT "x(8)"
+  INITIAL ?
+  POSITION 6
+  LOB-AREA "Schema Area"
+  LOB-BYTES 104857600
+  LOB-SIZE 100M
+  ORDER 50
+
+ADD FIELD "ParentTableName" OF "zen-blob" AS character 
+  DESCRIPTION "Parent table this belongs to"
+  FORMAT "x(255)"
+  INITIAL ""
+  LABEL "Parent"
+  POSITION 7
+  MAX-WIDTH 510
+  HELP "Parent Table"
+  ORDER 60
+
+ADD FIELD "ParentTableId" OF "zen-blob" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "ParentTableId"
+  POSITION 8
+  MAX-WIDTH 15
+  COLUMN-LABEL "ParentTableId"
+  DECIMALS 0
+  ORDER 70
+
+ADD INDEX "tableid" ON "zen-blob" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-blobtableid" ASCENDING 
+
+ADD INDEX "ParentId" ON "zen-blob" 
+  AREA "Schema Area"
+  INDEX-FIELD "ParentTableId" ASCENDING 
+
+ADD INDEX "ParentName" ON "zen-blob" 
+  AREA "Schema Area"
+  INDEX-FIELD "ParentTableName" ASCENDING 
+
+ADD TABLE "zen-classcode"
+  AREA "Schema Area"
+  LABEL "Class"
+  DESCRIPTION "#Holds valid class codes to be hard coded for when using the class-code"
+  DUMP-NAME "classes"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-classcodecr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-classcodede.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-classcodewr.p" CRC "?" 
+
+ADD FIELD "class" OF "zen-classcode" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Class"
+  POSITION 2
+  MAX-WIDTH 16
+  COLUMN-LABEL "Class"
+  ORDER 10
+
+ADD FIELD "code" OF "zen-classcode" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Code"
+  POSITION 3
+  MAX-WIDTH 16
+  COLUMN-LABEL "Code"
+  ORDER 20
+
+ADD FIELD "description" OF "zen-classcode" AS character 
+  FORMAT "X(200)"
+  INITIAL ""
+  LABEL "Description"
+  POSITION 4
+  MAX-WIDTH 60
+  COLUMN-LABEL "Description"
+  ORDER 30
+
+ADD FIELD "tstamp" OF "zen-classcode" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 5
+  MAX-WIDTH 4
+  ORDER 40
+
+ADD FIELD "sysrecord" OF "zen-classcode" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 7
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 60
+
+ADD FIELD "allflag" OF "zen-classcode" AS logical 
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "All"
+  POSITION 8
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 70
+
+ADD FIELD "noneflag" OF "zen-classcode" AS logical 
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "None"
+  POSITION 9
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 80
+
+ADD FIELD "zen-classcodetableid" OF "zen-classcode" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD INDEX "class-code" ON "zen-classcode" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "class" ASCENDING 
+  INDEX-FIELD "code" ASCENDING 
+
+ADD INDEX "sysrecord" ON "zen-classcode" 
+  AREA "Schema Area"
+  INDEX-FIELD "sysrecord" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-classcode" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-classcodetableid" ASCENDING 
+
+ADD TABLE "zen-colours"
+  AREA "Schema Area"
+  DESCRIPTION "Setup - colors"
+  DUMP-NAME "colours"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-colourscr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-coloursde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-colourswr.p" CRC "?" 
+
+ADD FIELD "colour_name" OF "zen-colours" AS character 
+  DESCRIPTION "Name of colour e.g. light blue"
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Name"
+  POSITION 2
+  MAX-WIDTH 40
+  ORDER 10
+
+ADD FIELD "tstamp" OF "zen-colours" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 6
+  MAX-WIDTH 4
+  ORDER 60
+
+ADD FIELD "colour_value" OF "zen-colours" AS integer 
+  FORMAT ">,>>9"
+  INITIAL "0"
+  LABEL "Colour Value"
+  POSITION 7
+  MAX-WIDTH 4
+  COLUMN-LABEL "Colour Value"
+  ORDER 20
+
+ADD FIELD "red_value" OF "zen-colours" AS integer 
+  FORMAT ">,>>9"
+  INITIAL "0"
+  LABEL "Red Colour Value"
+  POSITION 8
+  MAX-WIDTH 4
+  COLUMN-LABEL "Red Value"
+  ORDER 30
+
+ADD FIELD "green_value" OF "zen-colours" AS integer 
+  FORMAT ">,>>9"
+  INITIAL "0"
+  LABEL "Green Colour Value"
+  POSITION 9
+  MAX-WIDTH 4
+  COLUMN-LABEL "Green Value"
+  ORDER 40
+
+ADD FIELD "blue_value" OF "zen-colours" AS integer 
+  FORMAT ">,>>9"
+  INITIAL "0"
+  LABEL "Blue Colour Value"
+  POSITION 10
+  MAX-WIDTH 4
+  COLUMN-LABEL "Blue Value"
+  ORDER 50
+
+ADD FIELD "zen-colourstableid" OF "zen-colours" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD FIELD "RGB-Value" OF "zen-colours" AS character 
+  FORMAT "xxxxxxxxxxxx"
+  INITIAL ""
+  LABEL "RGB Value"
+  POSITION 1000
+  MAX-WIDTH 24
+  ORDER 70
+
+ADD FIELD "sysrecord" OF "zen-colours" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 1001
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 80
+
+ADD INDEX "colour_name" ON "zen-colours" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "colour_name" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-colours" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-colourstableid" ASCENDING 
+
+ADD TABLE "zen-context"
+  AREA "Schema Area"
+  DESCRIPTION "#session context for appserver sessions"
+  DUMP-NAME "context"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-contextcr.p" CRC "?" 
+
+ADD FIELD "server-connection-id" OF "zen-context" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "ID"
+  POSITION 2
+  MAX-WIDTH 16
+  ORDER 10
+
+ADD FIELD "type" OF "zen-context" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Type"
+  POSITION 3
+  MAX-WIDTH 16
+  ORDER 20
+
+ADD FIELD "contextvalue" OF "zen-context" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Value"
+  POSITION 4
+  MAX-WIDTH 16
+  ORDER 30
+
+ADD FIELD "zen-contexttableid" OF "zen-context" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 5
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 40
+
+ADD FIELD "tstamp" OF "zen-context" AS integer 
+  DESCRIPTION "Timestamp"
+  FORMAT ">>>>>>9"
+  INITIAL "0"
+  POSITION 6
+  MAX-WIDTH 4
+  ORDER 2
+
+ADD INDEX "order1" ON "zen-context" 
+  AREA "Schema Area"
+  PRIMARY
+  INDEX-FIELD "server-connection-id" ASCENDING 
+  INDEX-FIELD "type" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-context" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-contexttableid" ASCENDING 
+
+ADD TABLE "zen-control"
+  AREA "Schema Area"
+  DESCRIPTION "#"
+  DUMP-NAME "zen-cont"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-controlcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-controlde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-controlwr.p" CRC "?" 
+
+ADD FIELD "ctrl-idx" OF "zen-control" AS character 
+  FORMAT "X(20)"
+  INITIAL ""
+  LABEL "Index"
+  POSITION 2
+  MAX-WIDTH 40
+  LENGTH 0
+  ORDER 10
+
+ADD FIELD "ctrl-data" OF "zen-control" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Data"
+  POSITION 3
+  MAX-WIDTH 100
+  LENGTH 0
+  ORDER 20
+
+ADD FIELD "tstamp" OF "zen-control" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 5
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "sysrecord" OF "zen-control" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 6
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 30
+
+ADD FIELD "reread" OF "zen-control" AS logical 
+  DESCRIPTION "Always Read From db not local copy"
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Re Read"
+  POSITION 7
+  MAX-WIDTH 1
+  ORDER 40
+
+ADD FIELD "Description" OF "zen-control" AS character 
+  FORMAT "x(255)"
+  INITIAL ""
+  LABEL "Description"
+  POSITION 8
+  MAX-WIDTH 510
+  ORDER 50
+
+ADD FIELD "ctrl-blob" OF "zen-control" AS blob 
+  DESCRIPTION "blob data"
+  FORMAT "x(8)"
+  INITIAL ?
+  POSITION 9
+  LOB-AREA "Schema Area"
+  LOB-BYTES 104857600
+  LOB-SIZE 100M
+  ORDER 60
+
+ADD FIELD "Blob-Filename" OF "zen-control" AS character 
+  DESCRIPTION "filename to output blob to."
+  FORMAT "x(255)"
+  INITIAL ""
+  LABEL "Filename"
+  POSITION 10
+  MAX-WIDTH 510
+  HELP "filename to output blob to."
+  ORDER 70
+
+ADD FIELD "zen-controltableid" OF "zen-control" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD INDEX "ctrl-idx" ON "zen-control" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "ctrl-idx" ASCENDING 
+
+ADD INDEX "ctrl-data" ON "zen-control" 
+  AREA "Schema Area"
+  INDEX-FIELD "ctrl-data" ASCENDING 
+
+ADD INDEX "sysrec" ON "zen-control" 
+  AREA "Schema Area"
+  INDEX-FIELD "sysrecord" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-control" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-controltableid" ASCENDING 
+
+ADD TABLE "zen-country"
+  AREA "Schema Area"
+  DESCRIPTION "#"
+  DUMP-NAME "zen-coun"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-countrycr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-countryde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-countrywr.p" CRC "?" 
+
+ADD FIELD "tstamp" OF "zen-country" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 2
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "description" OF "zen-country" AS character 
+  FORMAT "x(35)"
+  INITIAL ""
+  LABEL "Description"
+  POSITION 3
+  MAX-WIDTH 70
+  ORDER 15
+
+ADD FIELD "country" OF "zen-country" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "Country"
+  POSITION 4
+  MAX-WIDTH 4
+  ORDER 25
+
+ADD FIELD "logo" OF "zen-country" AS character 
+  FORMAT "x(30)"
+  INITIAL ""
+  LABEL "Logo"
+  POSITION 5
+  MAX-WIDTH 24
+  HELP "Leave off the BMP extenstion"
+  ORDER 35
+
+ADD FIELD "welcome-message" OF "zen-country" AS character 
+  DESCRIPTION "Welcome Message"
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Welcome Message"
+  POSITION 6
+  MAX-WIDTH 100
+  HELP "Welcome Message"
+  ORDER 45
+
+ADD FIELD "default-currency" OF "zen-country" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Default Currency"
+  POSITION 8
+  MAX-WIDTH 16
+  COLUMN-LABEL "Default Currency"
+  ORDER 55
+
+ADD FIELD "sysrecord" OF "zen-country" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 9
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 65
+
+ADD FIELD "zen-countrytableid" OF "zen-country" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD INDEX "order" ON "zen-country" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "country" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-country" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-countrytableid" ASCENDING 
+
+ADD TABLE "zen-currency"
+  AREA "Schema Area"
+  LABEL "Currency"
+  DESCRIPTION "#Currency Table"
+  DUMP-NAME "currency"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-currencycr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-currencyde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-currencywr.p" CRC "?" 
+
+ADD FIELD "tstamp" OF "zen-currency" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 2
+  MAX-WIDTH 4
+  ORDER 10
+
+ADD FIELD "code" OF "zen-currency" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Currency"
+  POSITION 3
+  MAX-WIDTH 16
+  COLUMN-LABEL "Currency"
+  ORDER 20
+
+ADD FIELD "symbol" OF "zen-currency" AS character 
+  FORMAT "XX"
+  INITIAL ""
+  LABEL "Symbol"
+  POSITION 4
+  MAX-WIDTH 4
+  COLUMN-LABEL "Symbol"
+  ORDER 30
+
+ADD FIELD "division" OF "zen-currency" AS integer 
+  FORMAT "999999999"
+  INITIAL "0"
+  LABEL "Division"
+  POSITION 5
+  MAX-WIDTH 4
+  COLUMN-LABEL "Division"
+  ORDER 40
+
+ADD FIELD "sysrecord" OF "zen-currency" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 7
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 50
+
+ADD FIELD "zen-currencytableid" OF "zen-currency" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD INDEX "i-code" ON "zen-currency" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "code" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-currency" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-currencytableid" ASCENDING 
+
+ADD TABLE "zen-dfkey"
+  AREA "Schema Area"
+  DESCRIPTION "Setup - Hotkeys/Function keys"
+  DUMP-NAME "dfkey"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-dfkeycr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-dfkeyde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-dfkeywr.p" CRC "?" 
+
+ADD FIELD "action" OF "zen-dfkey" AS character 
+  DESCRIPTION "Action to perform ,program to run"
+  FORMAT "X(12)"
+  INITIAL ""
+  LABEL "Action"
+  POSITION 2
+  MAX-WIDTH 24
+  HELP "Program to Run"
+  LENGTH 0
+  ORDER 10
+
+ADD FIELD "fkey" OF "zen-dfkey" AS character 
+  DESCRIPTION "Function key"
+  FORMAT "x(20)"
+  INITIAL ""
+  LABEL "Fkey"
+  POSITION 3
+  MAX-WIDTH 40
+  HELP "Function key"
+  LENGTH 0
+  ORDER 20
+
+ADD FIELD "sysrecord" OF "zen-dfkey" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 7
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 80
+
+ADD FIELD "tstamp" OF "zen-dfkey" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 8
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "in-prog" OF "zen-dfkey" AS character 
+  FORMAT "X(25)"
+  INITIAL "*"
+  LABEL "In"
+  POSITION 9
+  MAX-WIDTH 50
+  ORDER 70
+
+ADD FIELD "zen-dfkeytableid" OF "zen-dfkey" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD FIELD "ForUsers" OF "zen-dfkey" AS character 
+  FORMAT "X(255)"
+  INITIAL "*"
+  LABEL "For Users"
+  POSITION 1000
+  MAX-WIDTH 510
+  HELP "Defined for Users"
+  ORDER 90
+
+ADD INDEX "tableid" ON "zen-dfkey" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-dfkeytableid" ASCENDING 
+
+ADD INDEX "action" ON "zen-dfkey" 
+  AREA "Schema Area"
+  INDEX-FIELD "action" ASCENDING 
+
+ADD INDEX "fkey" ON "zen-dfkey" 
+  AREA "Schema Area"
+  INDEX-FIELD "fkey" ASCENDING 
+
+ADD INDEX "forusers" ON "zen-dfkey" 
+  AREA "Schema Area"
+  INDEX-FIELD "ForUsers" ASCENDING 
+
+ADD INDEX "inprog" ON "zen-dfkey" 
+  AREA "Schema Area"
+  INDEX-FIELD "in-prog" ASCENDING 
+
+ADD TABLE "zen-dmenu"
+  AREA "Schema Area"
+  DESCRIPTION "#Data Driven Menu"
+  DUMP-NAME "dmenu"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-dmenucr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-dmenude.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-dmenuwr.p" CRC "?" 
+
+ADD FIELD "menu-name" OF "zen-dmenu" AS character 
+  DESCRIPTION "The Menu Item  (i know item and name are reversed is a pain and one day i will get around to changing it !!)"
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Item"
+  POSITION 2
+  MAX-WIDTH 60
+  HELP "Menu Item"
+  LENGTH 0
+  ORDER 10
+
+ADD FIELD "menu-parent" OF "zen-dmenu" AS character 
+  DESCRIPTION "The Menu Name (i know item and name are reversed is a pain and one day i will get around to changing it !!)"
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Name"
+  POSITION 3
+  MAX-WIDTH 60
+  HELP "Menu Name"
+  LENGTH 0
+  ORDER 20
+
+ADD FIELD "menu-action" OF "zen-dmenu" AS character 
+  DESCRIPTION "The Action to perform either a nother menu name (menu-item!!) or a procedure to run"
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Action"
+  POSITION 4
+  MAX-WIDTH 60
+  HELP "Action to perform (Menu name or procedure name)"
+  LENGTH 0
+  ORDER 30
+
+ADD FIELD "menu-id" OF "zen-dmenu" AS integer 
+  DESCRIPTION "unique identifier"
+  FORMAT "999999999"
+  INITIAL "0"
+  LABEL "Id"
+  POSITION 5
+  MAX-WIDTH 4
+  HELP "Menu id"
+  ORDER 50
+
+ADD FIELD "menu-pers" OF "zen-dmenu" AS logical 
+  DESCRIPTION "run action persistently"
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Pers"
+  POSITION 6
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  HELP "Run action persistently ?"
+  ORDER 60
+
+ADD FIELD "menu-inputs" OF "zen-dmenu" AS character 
+  DESCRIPTION "any input params eg 'a',001"
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Input"
+  POSITION 7
+  MAX-WIDTH 60
+  HELP "Input paramaters if required"
+  LENGTH 0
+  ORDER 80
+
+ADD FIELD "menu-outputs" OF "zen-dmenu" AS character 
+  DESCRIPTION "output params"
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Output"
+  POSITION 8
+  MAX-WIDTH 60
+  HELP "Output parameters if required"
+  LENGTH 0
+  ORDER 90
+
+ADD FIELD "menu-ios" OF "zen-dmenu" AS character 
+  DESCRIPTION "io params "
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "I/Os"
+  POSITION 9
+  MAX-WIDTH 60
+  HELP "Input-output parameters if required"
+  LENGTH 0
+  ORDER 100
+
+ADD FIELD "run-users" OF "zen-dmenu" AS character 
+  FORMAT "X(50)"
+  INITIAL "*"
+  LABEL "Can Run"
+  POSITION 10
+  MAX-WIDTH 100
+  HELP "Users who can run it or * for all"
+  LENGTH 0
+  ORDER 110
+
+ADD FIELD "not-users" OF "zen-dmenu" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Not Run"
+  POSITION 11
+  MAX-WIDTH 100
+  HELP "Users who Cannot Run it"
+  LENGTH 0
+  ORDER 120
+
+ADD FIELD "run-groups" OF "zen-dmenu" AS character 
+  FORMAT "X(50)"
+  INITIAL "*"
+  LABEL "Run Groups"
+  POSITION 12
+  MAX-WIDTH 100
+  HELP "Users Groups Allowed"
+  LENGTH 0
+  ORDER 130
+
+ADD FIELD "not-groups" OF "zen-dmenu" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Not Groups"
+  POSITION 13
+  MAX-WIDTH 100
+  HELP "User Groups NOT Allowed"
+  LENGTH 0
+  ORDER 140
+
+ADD FIELD "menu-grp" OF "zen-dmenu" AS character 
+  DESCRIPTION "Groups to which menu belongs eg main,help"
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Groups"
+  POSITION 14
+  MAX-WIDTH 60
+  HELP "Groups to which menu belongs(Comma Separated)"
+  LENGTH 0
+  ORDER 150
+
+ADD FIELD "tstamp" OF "zen-dmenu" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 17
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "display-order" OF "zen-dmenu" AS integer 
+  FORMAT ">>9"
+  INITIAL "0"
+  LABEL "Order"
+  POSITION 19
+  MAX-WIDTH 4
+  ORDER 160
+
+ADD FIELD "hide-in-countries" OF "zen-dmenu" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Hide In Countries"
+  POSITION 20
+  MAX-WIDTH 16
+  COLUMN-LABEL "Hide In Countries"
+  ORDER 170
+
+ADD FIELD "zen-dmenutableid" OF "zen-dmenu" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD FIELD "sysrecord" OF "zen-dmenu" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 1000
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 180
+
+ADD INDEX "id" ON "zen-dmenu" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "menu-id" ASCENDING 
+
+ADD INDEX "grp" ON "zen-dmenu" 
+  AREA "Schema Area"
+  WORD
+  INDEX-FIELD "menu-grp" ASCENDING 
+
+ADD INDEX "item" ON "zen-dmenu" 
+  AREA "Schema Area"
+  INDEX-FIELD "menu-parent" ASCENDING 
+
+ADD INDEX "name" ON "zen-dmenu" 
+  AREA "Schema Area"
+  INDEX-FIELD "menu-name" ASCENDING 
+
+ADD INDEX "order" ON "zen-dmenu" 
+  AREA "Schema Area"
+  INDEX-FIELD "display-order" ASCENDING 
+
+ADD INDEX "sysrecord" ON "zen-dmenu" 
+  AREA "Schema Area"
+  INDEX-FIELD "sysrecord" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-dmenu" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-dmenutableid" ASCENDING 
+
+ADD TABLE "zen-dpgm"
+  AREA "Schema Area"
+  DESCRIPTION "#Standing program detail"
+  DUMP-NAME "dpgm"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-dpgmcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-dpgmde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-dpgmwr.p" CRC "?" 
+
+ADD FIELD "name" OF "zen-dpgm" AS character 
+  DESCRIPTION "PROGRAM NAME"
+  FORMAT "x(35)"
+  INITIAL ""
+  LABEL "Name"
+  POSITION 2
+  MAX-WIDTH 70
+  HELP "Program description"
+  LENGTH 0
+  ORDER 20
+
+ADD FIELD "pgm" OF "zen-dpgm" AS character 
+  DESCRIPTION "PROGRAM ID"
+  FORMAT "x(30)"
+  INITIAL ?
+  LABEL "PROGRAM ID"
+  POSITION 3
+  MAX-WIDTH 60
+  HELP "Physical Program name"
+  LENGTH 0
+  ORDER 10
+
+ADD FIELD "hot" OF "zen-dpgm" AS logical 
+  DESCRIPTION "can it be hotkeyed to (ie no input params)"
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Hot"
+  POSITION 4
+  MAX-WIDTH 1
+  HELP "Can be Hotkeyed to"
+  ORDER 180
+
+ADD FIELD "def-que" OF "zen-dpgm" AS character 
+  DESCRIPTION "default batch que"
+  FORMAT "x(1)"
+  INITIAL "A"
+  LABEL "Que"
+  POSITION 5
+  MAX-WIDTH 2
+  HELP "Batch Que"
+  LENGTH 0
+  ORDER 160
+
+ADD FIELD "run-users" OF "zen-dpgm" AS character 
+  FORMAT "X(50)"
+  INITIAL "*"
+  LABEL "Can Run"
+  POSITION 6
+  MAX-WIDTH 100
+  HELP "Users who can run it or * for all"
+  LENGTH 0
+  ORDER 190
+
+ADD FIELD "not-users" OF "zen-dpgm" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Not Run"
+  POSITION 7
+  MAX-WIDTH 100
+  HELP "Users who Cannot Run it"
+  LENGTH 0
+  ORDER 200
+
+ADD FIELD "run-groups" OF "zen-dpgm" AS character 
+  FORMAT "X(50)"
+  INITIAL "*"
+  LABEL "Run Groups"
+  POSITION 8
+  MAX-WIDTH 100
+  HELP "User Group Allowed"
+  LENGTH 0
+  ORDER 210
+
+ADD FIELD "pgmbtch" OF "zen-dpgm" AS character 
+  DESCRIPTION "Batchjob indicator"
+  FORMAT "X"
+  INITIAL "O"
+  LABEL "Batch Indicator"
+  POSITION 9
+  MAX-WIDTH 2
+  VALEXP "LOOKUP(PGMBTCH,'O,B,J') NE 0"
+  VALMSG "Value must be 'O'nline,batch'J'ob or 'B'oth (O,B,J)."
+  HELP "Enter O for online,J for batchjob,B for both."
+  LENGTH 0
+  ORDER 110
+
+ADD FIELD "ButtonList" OF "zen-dpgm" AS character 
+  DESCRIPTION "List of Screen Buttons"
+  FORMAT "x(255)"
+  INITIAL "*"
+  LABEL "Button List"
+  POSITION 10
+  MAX-WIDTH 132
+  COLUMN-LABEL ""
+  HELP "List of Screen Buttons"
+  LENGTH 0
+  ORDER 120
+
+ADD FIELD "not-groups" OF "zen-dpgm" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Not Groups"
+  POSITION 11
+  MAX-WIDTH 100
+  HELP "User Groups NOT Allowed"
+  LENGTH 0
+  ORDER 220
+
+ADD FIELD "type" OF "zen-dpgm" AS character 
+  DESCRIPTION "C lient or S erver or B oth"
+  FORMAT "x"
+  INITIAL "B"
+  LABEL "Type"
+  POSITION 12
+  MAX-WIDTH 2
+  HELP "C lient or S erver or B oth"
+  LENGTH 0
+  ORDER 420
+
+ADD FIELD "extractfilename" OF "zen-dpgm" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Output File"
+  POSITION 25
+  MAX-WIDTH 40
+  HELP "Output File Name"
+  LENGTH 0
+  ORDER 360
+
+ADD FIELD "author" OF "zen-dpgm" AS character 
+  FORMAT "X(20)"
+  INITIAL ""
+  LABEL "Author"
+  POSITION 31
+  MAX-WIDTH 40
+  HELP "Program Author"
+  LENGTH 0
+  ORDER 430
+
+ADD FIELD "comments" OF "zen-dpgm" AS character 
+  FORMAT "X(100)"
+  INITIAL ""
+  LABEL "Comments"
+  POSITION 32
+  MAX-WIDTH 200
+  VIEW-AS "VIEW-AS EDITOR size 25 by 4"
+  HELP "Description to appear in about box"
+  LENGTH 0
+  ORDER 440
+
+ADD FIELD "created" OF "zen-dpgm" AS date 
+  FORMAT "99/99/9999"
+  INITIAL "today"
+  LABEL "Created"
+  POSITION 33
+  MAX-WIDTH 4
+  HELP "Creation Date"
+  ORDER 450
+
+ADD FIELD "CrystalPath" OF "zen-dpgm" AS character 
+  DESCRIPTION "Directory where Crystal Report file is."
+  FORMAT "X(255)"
+  INITIAL ""
+  LABEL "Crystal Path"
+  POSITION 34
+  MAX-WIDTH 60
+  HELP "Path to Crystal Report file."
+  LENGTH 0
+  ORDER 460
+
+ADD FIELD "def-prn" OF "zen-dpgm" AS logical 
+  DESCRIPTION "Always use default printer"
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Always Def Prn"
+  POSITION 35
+  MAX-WIDTH 1
+  HELP "Always use Default Printer"
+  ORDER 470
+
+ADD FIELD "page-width" OF "zen-dpgm" AS integer 
+  DESCRIPTION "Page Width for reports only will warn if selected printer is less then page width"
+  FORMAT "zz9"
+  INITIAL "80"
+  LABEL "Width"
+  POSITION 36
+  MAX-WIDTH 4
+  HELP "Report Form Minimum Page Width if required"
+  ORDER 480
+
+ADD FIELD "menu-grp" OF "zen-dpgm" AS character 
+  DESCRIPTION "Menu for Program"
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Menu"
+  POSITION 37
+  MAX-WIDTH 16
+  HELP "Menu to Display"
+  LENGTH 0
+  ORDER 490
+
+ADD FIELD "RepTitle" OF "zen-dpgm" AS character 
+  FORMAT "X(35)"
+  INITIAL ""
+  LABEL "Report Title"
+  POSITION 38
+  MAX-WIDTH 70
+  ORDER 670
+
+ADD FIELD "min-on-run" OF "zen-dpgm" AS logical 
+  DESCRIPTION "Minimise on run of another program"
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Minimise on run"
+  POSITION 39
+  MAX-WIDTH 1
+  HELP "Minimise on Run"
+  ORDER 510
+
+ADD FIELD "cryfilename" OF "zen-dpgm" AS character 
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Crystal File Name"
+  POSITION 40
+  MAX-WIDTH 50
+  ORDER 690
+
+ADD FIELD "multiinstance" OF "zen-dpgm" AS logical 
+  DESCRIPTION "Allow multiple copies of program to run a t one time"
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Allow Multi Instance"
+  POSITION 41
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  HELP "Allow multiple copies of program to run at one time"
+  ORDER 700
+
+ADD FIELD "icon" OF "zen-dpgm" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Icon"
+  POSITION 42
+  MAX-WIDTH 60
+  HELP "Icon for window"
+  LENGTH 0
+  ORDER 540
+
+ADD FIELD "RepPath" OF "zen-dpgm" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Report Path"
+  POSITION 43
+  MAX-WIDTH 100
+  ORDER 740
+
+ADD FIELD "dataguess" OF "zen-dpgm" AS integer 
+  FORMAT ">>>>>>>>>>9"
+  INITIAL "100"
+  LABEL "Max Data Guess"
+  POSITION 44
+  MAX-WIDTH 4
+  ORDER 560
+
+ADD FIELD "tstamp" OF "zen-dpgm" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 45
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "UseDefaults" OF "zen-dpgm" AS logical 
+  DESCRIPTION "use default fro fieddefaults to populate new records"
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Use Defaults"
+  POSITION 46
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 770
+
+ADD FIELD "ExtractFilePath" OF "zen-dpgm" AS character 
+  DESCRIPTION "Directory where extract file is."
+  FORMAT "X(255)"
+  INITIAL ""
+  LABEL "Extract Path"
+  POSITION 47
+  MAX-WIDTH 510
+  HELP "Path to extract file."
+  ORDER 780
+
+ADD FIELD "Params" OF "zen-dpgm" AS character 
+  DESCRIPTION "list of report parameters"
+  FORMAT "x(255)"
+  INITIAL ""
+  LABEL "Report Parameters"
+  POSITION 48
+  MAX-WIDTH 510
+  HELP "list of report parameters"
+  ORDER 790
+
+ADD FIELD "shortcut" OF "zen-dpgm" AS character 
+  DESCRIPTION "Shortcut"
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Shortcut"
+  POSITION 49
+  MAX-WIDTH 16
+  ORDER 580
+
+ADD FIELD "AsyncReport" OF "zen-dpgm" AS logical 
+  DESCRIPTION "run report asynchronously if possible"
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Async Report"
+  POSITION 50
+  MAX-WIDTH 1
+  ORDER 810
+
+ADD FIELD "win-x" OF "zen-dpgm" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "-1"
+  LABEL "X Pos"
+  POSITION 51
+  MAX-WIDTH 4
+  HELP "X Axis Window Offset (-1 for centered)"
+  ORDER 590
+
+ADD FIELD "win-y" OF "zen-dpgm" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "-1"
+  LABEL "Y Pos"
+  POSITION 52
+  MAX-WIDTH 4
+  HELP "X Axis Window Offset (-1 for centered)"
+  ORDER 600
+
+ADD FIELD "help-file" OF "zen-dpgm" AS character 
+  DESCRIPTION "Help text file leave off extension
+place files in help dir use hlp pextension for gui and txt for tty"
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Help File"
+  POSITION 53
+  MAX-WIDTH 60
+  HELP "Help text file minus extension eg cust not cust.hlp or cust.txt"
+  LENGTH 0
+  ORDER 610
+
+ADD FIELD "help-ref" OF "zen-dpgm" AS integer 
+  FORMAT ">>>>>>>>9"
+  INITIAL "0"
+  LABEL "Help Ref Num"
+  POSITION 54
+  MAX-WIDTH 4
+  ORDER 620
+
+ADD FIELD "noteditgroups" OF "zen-dpgm" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Not Edit Groups"
+  POSITION 55
+  MAX-WIDTH 100
+  HELP "User Groups NOT Allowed"
+  ORDER 630
+
+ADD FIELD "noteditusers" OF "zen-dpgm" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Not Edit"
+  POSITION 56
+  MAX-WIDTH 100
+  HELP "Users who Cannot Run it"
+  ORDER 640
+
+ADD FIELD "editusers" OF "zen-dpgm" AS character 
+  FORMAT "X(50)"
+  INITIAL "*"
+  LABEL "Can Edit"
+  POSITION 57
+  MAX-WIDTH 100
+  HELP "Users who can run it or * for all"
+  ORDER 650
+
+ADD FIELD "editgroups" OF "zen-dpgm" AS character 
+  FORMAT "X(50)"
+  INITIAL "*"
+  LABEL "Edit Groups"
+  POSITION 58
+  MAX-WIDTH 100
+  HELP "User Group Allowed"
+  ORDER 660
+
+ADD FIELD "zen-dpgmtableid" OF "zen-dpgm" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD FIELD "RepProg" OF "zen-dpgm" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Report Program"
+  POSITION 1000
+  MAX-WIDTH 50
+  ORDER 680
+
+ADD FIELD "sysrecord" OF "zen-dpgm" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 1001
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 710
+
+ADD FIELD "Description" OF "zen-dpgm" AS character 
+  FORMAT "x(600)"
+  INITIAL ""
+  LABEL "Description"
+  POSITION 1003
+  MAX-WIDTH 1200
+  ORDER 730
+
+ADD FIELD "RepProc" OF "zen-dpgm" AS character 
+  DESCRIPTION "Internal Procedure name"
+  FORMAT "X(50)"
+  INITIAL "print-table"
+  LABEL "Report Procedure"
+  POSITION 1004
+  MAX-WIDTH 60
+  ORDER 750
+
+ADD FIELD "UseCystal" OF "zen-dpgm" AS logical 
+  DESCRIPTION "is report a crystal reoprt"
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Using Crystal"
+  POSITION 1005
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 760
+
+ADD FIELD "ReportRunType" OF "zen-dpgm" AS character 
+  DESCRIPTION "Crystal using xml or crystal using temptable or 4gl report etc."
+  FORMAT "x(50)"
+  INITIAL ""
+  LABEL "Report Run Type"
+  POSITION 1006
+  MAX-WIDTH 100
+  ORDER 800
+
+ADD INDEX "tableid" ON "zen-dpgm" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-dpgmtableid" ASCENDING 
+
+ADD INDEX "pgm" ON "zen-dpgm" 
+  AREA "Schema Area"
+  INDEX-FIELD "pgm" ASCENDING 
+
+ADD INDEX "shortcut" ON "zen-dpgm" 
+  AREA "Schema Area"
+  DESCRIPTION "Shortcut"
+  INDEX-FIELD "shortcut" ASCENDING 
+
+ADD INDEX "sysrecord" ON "zen-dpgm" 
+  AREA "Schema Area"
+  INDEX-FIELD "sysrecord" ASCENDING 
+
+ADD INDEX "type" ON "zen-dpgm" 
+  AREA "Schema Area"
+  INDEX-FIELD "type" ASCENDING 
+
+ADD TABLE "zen-duser"
+  AREA "Schema Area"
+  DESCRIPTION "#Extra User Details"
+  DUMP-NAME "duser"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-dusercr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-duserde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-duserwr.p" CRC "?" 
+
+ADD FIELD "duser" OF "zen-duser" AS character 
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "User Id"
+  POSITION 2
+  MAX-WIDTH 16
+  HELP "User Id"
+  LENGTH 0
+  ORDER 10
+
+ADD FIELD "u-group" OF "zen-duser" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Group"
+  POSITION 3
+  MAX-WIDTH 16
+  HELP "User Security Group"
+  LENGTH 0
+  ORDER 30
+
+ADD FIELD "expiry" OF "zen-duser" AS date 
+  DESCRIPTION "Password Expiry Date"
+  FORMAT "99/99/9999"
+  INITIAL "12/31/2099"
+  LABEL "Expires"
+  POSITION 4
+  MAX-WIDTH 4
+  VALEXP "expiry >= today"
+  VALMSG "Expiry Date must be Today or in the Future"
+  HELP "Password Expiry Date"
+  ORDER 40
+
+ADD FIELD "user-name" OF "zen-duser" AS character 
+  FORMAT "x(40)"
+  INITIAL ""
+  LABEL "User Name"
+  POSITION 5
+  MAX-WIDTH 80
+  HELP "Full User Name"
+  LENGTH 0
+  ORDER 80
+
+ADD FIELD "sys-man" OF "zen-duser" AS logical 
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "System Manager"
+  POSITION 6
+  MAX-WIDTH 1
+  HELP "Can user Access System Programs"
+  ORDER 90
+
+ADD FIELD "lan_lanid" OF "zen-duser" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Language ID"
+  POSITION 9
+  MAX-WIDTH 4
+  COLUMN-LABEL "Language ID"
+  ORDER 120
+
+ADD FIELD "dpassword" OF "zen-duser" AS character 
+  FORMAT "X(12)"
+  INITIAL ""
+  LABEL "Password"
+  POSITION 10
+  MAX-WIDTH 24
+  ORDER 130
+
+ADD FIELD "tstamp" OF "zen-duser" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 11
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "Email" OF "zen-duser" AS character 
+  FORMAT "x(45)"
+  INITIAL ""
+  LABEL "Email"
+  POSITION 13
+  MAX-WIDTH 90
+  ORDER 250
+
+ADD FIELD "country" OF "zen-duser" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "Country"
+  POSITION 21
+  MAX-WIDTH 4
+  ORDER 240
+
+ADD FIELD "zen-dusertableid" OF "zen-duser" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD INDEX "usr" ON "zen-duser" 
+  AREA "Schema Area"
+  PRIMARY
+  INDEX-FIELD "duser" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-duser" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-dusertableid" ASCENDING 
+
+ADD TABLE "zen-dwidget"
+  AREA "Schema Area"
+  DESCRIPTION "#widget security"
+  DUMP-NAME "dwidget"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-dwidgetcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-dwidgetde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-dwidgetwr.p" CRC "?" 
+
+ADD FIELD "wid-name" OF "zen-dwidget" AS character 
+  DESCRIPTION "Widget Name"
+  FORMAT "x(50)"
+  INITIAL ""
+  LABEL "Widget"
+  POSITION 3
+  MAX-WIDTH 100
+  COLUMN-LABEL "Widget"
+  HELP "Widget Name"
+  LENGTH 0
+  ORDER 20
+
+ADD FIELD "not-users" OF "zen-dwidget" AS character 
+  DESCRIPTION "Users who cannot use this widget"
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Not Users"
+  POSITION 4
+  MAX-WIDTH 16
+  HELP "Users who cannot use this widget"
+  LENGTH 0
+  ORDER 30
+
+ADD FIELD "not-groups" OF "zen-dwidget" AS character 
+  DESCRIPTION "User Groups who CANNOT use this widget"
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Not Groups"
+  POSITION 5
+  MAX-WIDTH 16
+  HELP "User Groups who CANNOT use this widget"
+  LENGTH 0
+  ORDER 40
+
+ADD FIELD "tstamp" OF "zen-dwidget" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 9
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "widframe" OF "zen-dwidget" AS character 
+  FORMAT "X(15)"
+  INITIAL "*"
+  LABEL "Frame"
+  POSITION 10
+  MAX-WIDTH 30
+  ORDER 80
+
+ADD FIELD "x-pos" OF "zen-dwidget" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "X"
+  POSITION 11
+  MAX-WIDTH 4
+  ORDER 90
+
+ADD FIELD "y-pos" OF "zen-dwidget" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "Y"
+  POSITION 12
+  MAX-WIDTH 4
+  ORDER 100
+
+ADD FIELD "help-file" OF "zen-dwidget" AS character 
+  DESCRIPTION "Help text file leave off extension
+place files in help dir use hlp pextension for gui and txt for tty"
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Help File"
+  POSITION 13
+  MAX-WIDTH 60
+  HELP "Help text file minus extension eg cust not cust.hlp or cust.txt"
+  LENGTH 0
+  ORDER 170
+
+ADD FIELD "help-ref" OF "zen-dwidget" AS integer 
+  FORMAT ">>>>>>>>9"
+  INITIAL "0"
+  LABEL "Help Ref Num"
+  POSITION 14
+  MAX-WIDTH 4
+  ORDER 180
+
+ADD FIELD "pgm" OF "zen-dwidget" AS character 
+  DESCRIPTION "PROGRAM ID"
+  FORMAT "x(30)"
+  INITIAL ?
+  LABEL "PROGRAM ID"
+  POSITION 15
+  MAX-WIDTH 60
+  HELP "Physical Program name"
+  LENGTH 0
+  ORDER 190
+
+ADD FIELD "wid-label" OF "zen-dwidget" AS character 
+  FORMAT "X(15)"
+  INITIAL ""
+  LABEL "Label"
+  POSITION 16
+  MAX-WIDTH 30
+  COLUMN-LABEL "Label"
+  ORDER 140
+
+ADD FIELD "zen-dwidgettableid" OF "zen-dwidget" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD FIELD "sysrecord" OF "zen-dwidget" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 1001
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 160
+
+ADD FIELD "zen-dpgmtableid" OF "zen-dwidget" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 1002
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 200
+
+ADD INDEX "tableid" ON "zen-dwidget" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-dwidgettableid" ASCENDING 
+
+ADD INDEX "dpgm" ON "zen-dwidget" 
+  AREA "Schema Area"
+  INDEX-FIELD "pgm" ASCENDING 
+
+ADD INDEX "wid" ON "zen-dwidget" 
+  AREA "Schema Area"
+  INDEX-FIELD "wid-name" ASCENDING 
+
+ADD INDEX "widframe" ON "zen-dwidget" 
+  AREA "Schema Area"
+  INDEX-FIELD "widframe" ASCENDING 
+
+ADD TABLE "zen-f-hotkey"
+  AREA "Schema Area"
+  DESCRIPTION "Setup - buttons on main screen"
+  DUMP-NAME "f-hotkey"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-f-hotkeycr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-f-hotkeyde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-f-hotkeywr.p" CRC "?" 
+
+ADD FIELD "f-program" OF "zen-f-hotkey" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Program To Run"
+  POSITION 2
+  MAX-WIDTH 60
+  HELP "Program to be run"
+  LENGTH 0
+  ORDER 10
+
+ADD FIELD "f-desc" OF "zen-f-hotkey" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Action"
+  POSITION 3
+  MAX-WIDTH 60
+  HELP "Explanation of Action EG 'Customer Maintenance'"
+  LENGTH 0
+  ORDER 20
+
+ADD FIELD "tstamp" OF "zen-f-hotkey" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 6
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "shortcut" OF "zen-f-hotkey" AS character 
+  DESCRIPTION "Short cut number to link with program"
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Short Cut"
+  POSITION 7
+  MAX-WIDTH 16
+  ORDER 50
+
+ADD FIELD "sysrecord" OF "zen-f-hotkey" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 9
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 80
+
+ADD FIELD "zen-f-hotkeytableid" OF "zen-f-hotkey" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD FIELD "duser" OF "zen-f-hotkey" AS character 
+  FORMAT "X(25)"
+  INITIAL "*"
+  LABEL "User Id"
+  POSITION 1000
+  MAX-WIDTH 50
+  HELP "User Id"
+  LENGTH 0
+  ORDER 70
+
+ADD INDEX "tableid" ON "zen-f-hotkey" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-f-hotkeytableid" ASCENDING 
+
+ADD INDEX "duser" ON "zen-f-hotkey" 
+  AREA "Schema Area"
+  INDEX-FIELD "duser" ASCENDING 
+
+ADD INDEX "scut" ON "zen-f-hotkey" 
+  AREA "Schema Area"
+  INDEX-FIELD "shortcut" ASCENDING 
+
+ADD INDEX "usrscut" ON "zen-f-hotkey" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "duser" ASCENDING 
+  INDEX-FIELD "shortcut" ASCENDING 
+
+ADD TABLE "Zen-FieldDefault"
+  AREA "Schema Area"
+  DESCRIPTION "#DB Field Default Values for Each user"
+  DUMP-NAME "zen-fiel"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-fielddefaultcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-fielddefaultde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-fielddefaultwr.p" CRC "?" 
+
+ADD FIELD "zen-fielddefaulttableid" OF "Zen-FieldDefault" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 2
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 10
+
+ADD FIELD "WidgetName" OF "Zen-FieldDefault" AS character 
+  DESCRIPTION "Field Name"
+  FORMAT "X(35)"
+  INITIAL ""
+  LABEL "Widget Name"
+  POSITION 4
+  MAX-WIDTH 70
+  COLUMN-LABEL "Widget Name"
+  HELP "Field Name"
+  ORDER 40
+
+ADD FIELD "DefaultValue" OF "Zen-FieldDefault" AS character 
+  DESCRIPTION "default value for field"
+  FORMAT "x(25)"
+  INITIAL ""
+  LABEL "Value"
+  POSITION 5
+  MAX-WIDTH 50
+  ORDER 50
+
+ADD FIELD "tablename" OF "Zen-FieldDefault" AS character 
+  DESCRIPTION "Name of table "
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Table Name"
+  POSITION 6
+  MAX-WIDTH 60
+  COLUMN-LABEL "Table Name"
+  HELP "Name of table"
+  ORDER 60
+
+ADD FIELD "FrameName" OF "Zen-FieldDefault" AS character 
+  FORMAT "X(15)"
+  INITIAL "*"
+  LABEL "Frame"
+  POSITION 7
+  MAX-WIDTH 30
+  ORDER 70
+
+ADD FIELD "ProgramName" OF "Zen-FieldDefault" AS character 
+  DESCRIPTION "Persistent Libary Containing Procedure."
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Program Name"
+  POSITION 8
+  MAX-WIDTH 50
+  ORDER 80
+
+ADD FIELD "WidExtent" OF "Zen-FieldDefault" AS integer 
+  FORMAT ">9"
+  INITIAL "0"
+  LABEL "Extent"
+  POSITION 9
+  MAX-WIDTH 4
+  ORDER 90
+
+ADD FIELD "PopulationRoutine" OF "Zen-FieldDefault" AS character 
+  DESCRIPTION "Routine used to poulate initial value"
+  FORMAT "x(50)"
+  INITIAL ""
+  LABEL "Population Routine"
+  POSITION 10
+  MAX-WIDTH 100
+  HELP "Routine used to poulate initial value"
+  ORDER 100
+
+ADD FIELD "duser" OF "Zen-FieldDefault" AS character 
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "User Id"
+  POSITION 11
+  MAX-WIDTH 50
+  HELP "User Id"
+  LENGTH 0
+  ORDER 110
+
+ADD INDEX "tableid" ON "Zen-FieldDefault" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-fielddefaulttableid" ASCENDING 
+
+ADD INDEX "duser" ON "Zen-FieldDefault" 
+  AREA "Schema Area"
+  INDEX-FIELD "duser" ASCENDING 
+
+ADD INDEX "framename" ON "Zen-FieldDefault" 
+  AREA "Schema Area"
+  INDEX-FIELD "FrameName" ASCENDING 
+
+ADD INDEX "programname" ON "Zen-FieldDefault" 
+  AREA "Schema Area"
+  INDEX-FIELD "ProgramName" ASCENDING 
+
+ADD INDEX "tablename" ON "Zen-FieldDefault" 
+  AREA "Schema Area"
+  INDEX-FIELD "tablename" ASCENDING 
+
+ADD INDEX "widextent" ON "Zen-FieldDefault" 
+  AREA "Schema Area"
+  INDEX-FIELD "WidExtent" ASCENDING 
+
+ADD INDEX "widgetname" ON "Zen-FieldDefault" 
+  AREA "Schema Area"
+  INDEX-FIELD "WidgetName" ASCENDING 
+
+ADD TABLE "zen-fldlook"
+  AREA "Schema Area"
+  DESCRIPTION "#widget to lookup record cross reference"
+  DUMP-NAME "fldlook"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-fldlookcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-fldlookde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-fldlookwr.p" CRC "?" 
+
+ADD FIELD "tstamp" OF "zen-fldlook" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 2
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "look-pgm" OF "zen-fldlook" AS character 
+  FORMAT "x(30)"
+  INITIAL "lookup.w"
+  LABEL "Program"
+  POSITION 4
+  MAX-WIDTH 60
+  COLUMN-LABEL "Program"
+  HELP "Lookup Program"
+  LENGTH 0
+  ORDER 20
+
+ADD FIELD "in-library" OF "zen-fldlook" AS character 
+  DESCRIPTION "Variable name of library handle"
+  FORMAT "X(20)"
+  INITIAL ""
+  LABEL "Library Handle"
+  POSITION 5
+  MAX-WIDTH 40
+  HELP "Variable name of library handle"
+  LENGTH 0
+  ORDER 30
+
+ADD FIELD "help-file" OF "zen-fldlook" AS character 
+  DESCRIPTION "Help text file leave off extension
+place files in help dir use hlp pextension for gui and txt for tty"
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Help File"
+  POSITION 6
+  MAX-WIDTH 60
+  HELP "Help text file minus extension eg cust not cust.hlp or cust.txt"
+  LENGTH 0
+  ORDER 80
+
+ADD FIELD "help-ref" OF "zen-fldlook" AS integer 
+  FORMAT ">>>>>>>>9"
+  INITIAL "0"
+  LABEL "Help Ref Num"
+  POSITION 7
+  MAX-WIDTH 4
+  ORDER 100
+
+ADD FIELD "tablename" OF "zen-fldlook" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Lookup Table"
+  POSITION 8
+  MAX-WIDTH 100
+  COLUMN-LABEL "Lookup Table"
+  ORDER 120
+
+ADD FIELD "keyfield" OF "zen-fldlook" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Key Field"
+  POSITION 9
+  MAX-WIDTH 100
+  COLUMN-LABEL "Key Field"
+  HELP "Returned Key Field Name"
+  ORDER 130
+
+ADD FIELD "descfield" OF "zen-fldlook" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Description Field"
+  POSITION 10
+  MAX-WIDTH 100
+  COLUMN-LABEL "Description Field"
+  HELP "Returned descripion field name"
+  ORDER 140
+
+ADD FIELD "extra-details" OF "zen-fldlook" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Extra Details"
+  POSITION 11
+  MAX-WIDTH 60
+  COLUMN-LABEL "Extra Details"
+  HELP "any extra fields you need"
+  ORDER 150
+
+ADD FIELD "prog-path" OF "zen-fldlook" AS character 
+  FORMAT "X(50)"
+  INITIAL "codezen/"
+  LABEL "Lookup Program Path"
+  POSITION 12
+  MAX-WIDTH 100
+  COLUMN-LABEL "Lookup Program Path"
+  ORDER 160
+
+ADD FIELD "returnorder" OF "zen-fldlook" AS logical 
+  FORMAT "Desc/Code"
+  INITIAL "Desc"
+  LABEL "Return Order"
+  POSITION 13
+  MAX-WIDTH 1
+  COLUMN-LABEL "Return Order"
+  HELP "Return Description Or Code"
+  ORDER 170
+
+ADD FIELD "whereclause" OF "zen-fldlook" AS character 
+  FORMAT "X(132)"
+  INITIAL ""
+  LABEL "Where Clause"
+  POSITION 16
+  MAX-WIDTH 264
+  COLUMN-LABEL "Where Clause"
+  ORDER 200
+
+ADD FIELD "byclause" OF "zen-fldlook" AS character 
+  FORMAT "X(132)"
+  INITIAL ""
+  LABEL "By Clause"
+  POSITION 17
+  MAX-WIDTH 264
+  COLUMN-LABEL "By Clause"
+  ORDER 210
+
+ADD FIELD "window-title" OF "zen-fldlook" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Window Title"
+  POSITION 18
+  MAX-WIDTH 100
+  ORDER 220
+
+ADD FIELD "validationfunction" OF "zen-fldlook" AS character 
+  DESCRIPTION "FunctionName to validate filed"
+  FORMAT "X(35)"
+  INITIAL ""
+  LABEL "Validation Function"
+  POSITION 20
+  MAX-WIDTH 70
+  ORDER 240
+
+ADD FIELD "lookupname" OF "zen-fldlook" AS character 
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Lookup Name"
+  POSITION 21
+  MAX-WIDTH 50
+  ORDER 250
+
+ADD FIELD "wherefield" OF "zen-fldlook" AS character 
+  FORMAT "x(25)"
+  INITIAL ""
+  LABEL "Where Field"
+  POSITION 22
+  MAX-WIDTH 50
+  ORDER 260
+
+ADD FIELD "immediatequery" OF "zen-fldlook" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Immediate Query"
+  POSITION 23
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 270
+
+ADD FIELD "query-statement" OF "zen-fldlook" AS character 
+  FORMAT "X(240)"
+  INITIAL ""
+  LABEL "Query"
+  POSITION 24
+  MAX-WIDTH 480
+  COLUMN-LABEL "Query"
+  ORDER 280
+
+ADD FIELD "srv-prog" OF "zen-fldlook" AS character 
+  FORMAT "x(30)"
+  INITIAL "dyn-lookup.p"
+  LABEL "Server Program"
+  POSITION 25
+  MAX-WIDTH 60
+  COLUMN-LABEL "Program"
+  HELP "server Program"
+  ORDER 320
+
+ADD FIELD "srv-proc" OF "zen-fldlook" AS character 
+  FORMAT "x(30)"
+  INITIAL "open-query"
+  LABEL "Server Procedure"
+  POSITION 26
+  MAX-WIDTH 60
+  COLUMN-LABEL "Procedure"
+  HELP "Server Procedure"
+  ORDER 330
+
+ADD FIELD "srv-path" OF "zen-fldlook" AS character 
+  FORMAT "X(50)"
+  INITIAL "codezen/srv/"
+  LABEL "Server Program Path"
+  POSITION 27
+  MAX-WIDTH 100
+  COLUMN-LABEL " Program Path"
+  ORDER 340
+
+ADD FIELD "infopgm" OF "zen-fldlook" AS character 
+  FORMAT "x(30)"
+  INITIAL "widinfo.w"
+  LABEL "Info Program"
+  POSITION 28
+  MAX-WIDTH 60
+  COLUMN-LABEL "Info Program"
+  HELP "Info Program"
+  ORDER 350
+
+ADD FIELD "infopath" OF "zen-fldlook" AS character 
+  FORMAT "X(50)"
+  INITIAL "codezen/"
+  LABEL "Info Program Path"
+  POSITION 29
+  MAX-WIDTH 100
+  COLUMN-LABEL "Info Program Path"
+  ORDER 360
+
+ADD FIELD "AltLookupName" OF "zen-fldlook" AS character 
+  DESCRIPTION "Alternative lookup name to use for this lookup"
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Alt Lookup Name"
+  POSITION 30
+  MAX-WIDTH 50
+  ORDER 370
+
+ADD FIELD "AltLookupLabel" OF "zen-fldlook" AS character 
+  DESCRIPTION "Alternative Lookup Label"
+  FORMAT "x(25)"
+  INITIAL ""
+  LABEL "Alt Lookup Label"
+  POSITION 31
+  MAX-WIDTH 50
+  ORDER 380
+
+ADD FIELD "sysrecord" OF "zen-fldlook" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 32
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 390
+
+ADD FIELD "zen-fldlooktableid" OF "zen-fldlook" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD FIELD "tables" OF "zen-fldlook" AS character 
+  DESCRIPTION "search table list , delim"
+  FORMAT "x(8)"
+  INITIAL ""
+  POSITION 1000
+  MAX-WIDTH 16
+  ORDER 290
+
+ADD FIELD "displayfields" OF "zen-fldlook" AS character 
+  FORMAT "x(8)"
+  INITIAL ""
+  POSITION 1001
+  MAX-WIDTH 16
+  ORDER 300
+
+ADD FIELD "searchfield" OF "zen-fldlook" AS character 
+  FORMAT "x(8)"
+  INITIAL ""
+  POSITION 1002
+  MAX-WIDTH 16
+  ORDER 310
+
+ADD INDEX "order" ON "zen-fldlook" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "lookupname" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-fldlook" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-fldlooktableid" ASCENDING 
+
+ADD TABLE "zen-icons"
+  AREA "Schema Area"
+  DESCRIPTION "#"
+  DUMP-NAME "zen-icon"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-iconscr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-iconsde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-iconswr.p" CRC "?" 
+
+ADD FIELD "icon" OF "zen-icons" AS character 
+  FORMAT "x(25)"
+  INITIAL ""
+  LABEL "Icon"
+  POSITION 2
+  MAX-WIDTH 50
+  ORDER 10
+
+ADD FIELD "tstamp" OF "zen-icons" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 3
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "sysrecord" OF "zen-icons" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 5
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 20
+
+ADD FIELD "zen-iconstableid" OF "zen-icons" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD INDEX "tableid" ON "zen-icons" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-iconstableid" ASCENDING 
+
+ADD TABLE "zen-language"
+  AREA "Schema Area"
+  DESCRIPTION "#"
+  DUMP-NAME "language"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-languagecr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-languagede.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-languagewr.p" CRC "?" 
+
+ADD FIELD "lan_lanid" OF "zen-language" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Language ID"
+  POSITION 2
+  MAX-WIDTH 4
+  COLUMN-LABEL "Language ID"
+  ORDER 150
+
+ADD FIELD "lan_description" OF "zen-language" AS character 
+  FORMAT "x(30)"
+  INITIAL ""
+  LABEL "Description"
+  POSITION 3
+  MAX-WIDTH 60
+  COLUMN-LABEL "Description"
+  ORDER 160
+
+ADD FIELD "logo" OF "zen-language" AS character 
+  FORMAT "x(12)"
+  INITIAL ""
+  LABEL "Logo"
+  POSITION 4
+  MAX-WIDTH 24
+  HELP "Leave off the BMP extenstion"
+  ORDER 62
+
+ADD FIELD "date-separator" OF "zen-language" AS character 
+  DESCRIPTION "Date Separator"
+  FORMAT "X(1)"
+  INITIAL "/"
+  LABEL "Date Separator"
+  POSITION 5
+  MAX-WIDTH 2
+  HELP "Date Separator e.g. / or ."
+  ORDER 170
+
+ADD FIELD "th-separator" OF "zen-language" AS character 
+  DESCRIPTION "Thousand Separator"
+  FORMAT "X(1)"
+  INITIAL ","
+  LABEL "Thousand Separator"
+  POSITION 6
+  MAX-WIDTH 2
+  HELP "Thousand Separator e.g. , or ."
+  ORDER 180
+
+ADD FIELD "dec-separator" OF "zen-language" AS character 
+  DESCRIPTION "Decimal Separator"
+  FORMAT "X(1)"
+  INITIAL "."
+  LABEL "Decimal Separator"
+  POSITION 7
+  MAX-WIDTH 2
+  HELP "Decimal Separator e.g. . or ,"
+  ORDER 190
+
+ADD FIELD "welcome-message" OF "zen-language" AS character 
+  DESCRIPTION "Welcome Message"
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Welcome Message"
+  POSITION 8
+  MAX-WIDTH 100
+  HELP "Welcome Message"
+  ORDER 200
+
+ADD FIELD "tstamp" OF "zen-language" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 9
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "sysrecord" OF "zen-language" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 11
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 210
+
+ADD FIELD "zen-languagetableid" OF "zen-language" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD INDEX "key" ON "zen-language" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "lan_lanid" ASCENDING 
+
+ADD INDEX "lan_description" ON "zen-language" 
+  AREA "Schema Area"
+  WORD
+  INDEX-FIELD "lan_description" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-language" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-languagetableid" ASCENDING 
+
+ADD TABLE "zen-lan_field"
+  AREA "Schema Area"
+  LABEL "Language alternate labels"
+  DESCRIPTION "#"
+  DUMP-NAME "lan_fiel"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-lan_fieldcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-lan_fieldde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-lan_fieldwr.p" CRC "?" 
+
+ADD FIELD "_field-name" OF "zen-lan_field" AS character 
+  FORMAT "x(32)"
+  INITIAL "?"
+  LABEL "Field-Name"
+  POSITION 2
+  MAX-WIDTH 64
+  ORDER 12
+  MANDATORY
+
+ADD FIELD "lan_altlabel" OF "zen-lan_field" AS character 
+  FORMAT "x(30)"
+  INITIAL ""
+  LABEL "Alternate Label"
+  POSITION 3
+  MAX-WIDTH 60
+  COLUMN-LABEL "Alternate Label"
+  ORDER 22
+
+ADD FIELD "lan_lanid" OF "zen-lan_field" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Language ID"
+  POSITION 4
+  MAX-WIDTH 4
+  COLUMN-LABEL "Language ID"
+  ORDER 42
+
+ADD FIELD "lan_init-value" OF "zen-lan_field" AS character 
+  FORMAT "X(255)"
+  INITIAL ""
+  LABEL "Initial Value"
+  POSITION 5
+  MAX-WIDTH 510
+  HELP "Initial Value if a combo box or se list ( comma sep list )"
+  ORDER 52
+
+ADD FIELD "tstamp" OF "zen-lan_field" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 6
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "sysrecord" OF "zen-lan_field" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 8
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 62
+
+ADD FIELD "zen-lan_fieldtableid" OF "zen-lan_field" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD INDEX "order" ON "zen-lan_field" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "lan_lanid" ASCENDING 
+  INDEX-FIELD "_field-name" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-lan_field" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-lan_fieldtableid" ASCENDING 
+
+ADD TABLE "zen-log"
+  AREA "Schema Area"
+  DUMP-NAME "zen-log"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-logcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-logde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-logwr.p" CRC "?" 
+
+ADD FIELD "zen-logtableid" OF "zen-log" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL "0"
+  POSITION 2
+  MAX-WIDTH 15
+  DECIMALS 0
+  ORDER 10
+
+ADD FIELD "tstamp" OF "zen-log" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "tstamp"
+  POSITION 3
+  MAX-WIDTH 4
+  ORDER 20
+
+ADD FIELD "logdate" OF "zen-log" AS date 
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "On"
+  POSITION 4
+  MAX-WIDTH 4
+  ORDER 30
+
+ADD FIELD "LogTime" OF "zen-log" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "At"
+  POSITION 5
+  MAX-WIDTH 4
+  ORDER 40
+
+ADD FIELD "LogUser" OF "zen-log" AS character 
+  FORMAT "x(25)"
+  INITIAL ""
+  LABEL "By"
+  POSITION 6
+  MAX-WIDTH 50
+  ORDER 50
+
+ADD FIELD "LogMessage" OF "zen-log" AS character 
+  FORMAT "x(256)"
+  INITIAL ""
+  LABEL "Message"
+  POSITION 7
+  MAX-WIDTH 512
+  ORDER 60
+
+ADD FIELD "logtype" OF "zen-log" AS character 
+  FORMAT "x(25)"
+  INITIAL ""
+  LABEL "Type"
+  POSITION 8
+  MAX-WIDTH 50
+  ORDER 70
+
+ADD FIELD "Program" OF "zen-log" AS character 
+  FORMAT "x(50)"
+  INITIAL ""
+  LABEL "Program"
+  POSITION 9
+  MAX-WIDTH 100
+  ORDER 80
+
+ADD FIELD "Action" OF "zen-log" AS character 
+  FORMAT "x(20)"
+  INITIAL ""
+  LABEL "Action"
+  POSITION 10
+  MAX-WIDTH 40
+  ORDER 90
+
+ADD INDEX "tableid" ON "zen-log" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-logtableid" ASCENDING 
+
+ADD INDEX "attime" ON "zen-log" 
+  AREA "Schema Area"
+  INDEX-FIELD "LogTime" ASCENDING 
+
+ADD INDEX "byuser" ON "zen-log" 
+  AREA "Schema Area"
+  INDEX-FIELD "LogUser" ASCENDING 
+
+ADD INDEX "ondate" ON "zen-log" 
+  AREA "Schema Area"
+  INDEX-FIELD "logdate" ASCENDING 
+
+ADD INDEX "type" ON "zen-log" 
+  AREA "Schema Area"
+  INDEX-FIELD "logtype" ASCENDING 
+
+ADD TABLE "zen-lookupfld"
+  AREA "Schema Area"
+  DESCRIPTION "#"
+  DUMP-NAME "zen-look"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-lookupfldcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-lookupfldde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-lookupfldwr.p" CRC "?" 
+
+ADD FIELD "zen-lookupfldtableid" OF "zen-lookupfld" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 3
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 11
+
+ADD FIELD "fieldname" OF "zen-lookupfld" AS character 
+  FORMAT "x(50)"
+  INITIAL ""
+  LABEL "Field"
+  POSITION 4
+  MAX-WIDTH 100
+  ORDER 21
+
+ADD FIELD "FieldLabel" OF "zen-lookupfld" AS character 
+  FORMAT "x(50)"
+  INITIAL ""
+  LABEL "Label"
+  POSITION 5
+  MAX-WIDTH 100
+  ORDER 31
+
+ADD FIELD "FieldFormat" OF "zen-lookupfld" AS character 
+  FORMAT "x(50)"
+  INITIAL ""
+  LABEL "Format"
+  POSITION 6
+  MAX-WIDTH 100
+  ORDER 41
+
+ADD FIELD "KeyField" OF "zen-lookupfld" AS logical 
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Key Field"
+  POSITION 7
+  MAX-WIDTH 1
+  ORDER 51
+
+ADD FIELD "DescField" OF "zen-lookupfld" AS logical 
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Desc Field"
+  POSITION 8
+  MAX-WIDTH 1
+  ORDER 61
+
+ADD FIELD "SearchField" OF "zen-lookupfld" AS logical 
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Search Field"
+  POSITION 9
+  MAX-WIDTH 1
+  ORDER 71
+
+ADD FIELD "tstamp" OF "zen-lookupfld" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 10
+  MAX-WIDTH 4
+  ORDER 81
+
+ADD FIELD "LField" OF "zen-lookupfld" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Lookup"
+  POSITION 12
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  HELP "Used in lookups"
+  ORDER 91
+
+ADD FIELD "IField" OF "zen-lookupfld" AS logical 
+  FORMAT "yes/no"
+  INITIAL "y"
+  LABEL "Info"
+  POSITION 13
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  HELP "Used in Info"
+  ORDER 101
+
+ADD FIELD "order" OF "zen-lookupfld" AS decimal 
+  FORMAT ">9.99"
+  INITIAL "10"
+  LABEL "Order"
+  POSITION 14
+  MAX-WIDTH 17
+  DECIMALS 2
+  ORDER 111
+
+ADD FIELD "extentnum" OF "zen-lookupfld" AS integer 
+  FORMAT "99"
+  INITIAL "0"
+  LABEL "Extent Num"
+  POSITION 15
+  MAX-WIDTH 4
+  ORDER 121
+
+ADD FIELD "InfoFormat" OF "zen-lookupfld" AS character 
+  FORMAT "x(255)"
+  INITIAL ""
+  LABEL "Info Format"
+  POSITION 16
+  MAX-WIDTH 510
+  ORDER 131
+
+ADD FIELD "sysrecord" OF "zen-lookupfld" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 17
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 141
+
+ADD FIELD "lookupname" OF "zen-lookupfld" AS character 
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Lookup Name"
+  POSITION 18
+  MAX-WIDTH 50
+  ORDER 151
+
+ADD FIELD "zen-fldlooktableid" OF "zen-lookupfld" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 19
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 161
+
+ADD INDEX "tableid" ON "zen-lookupfld" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-lookupfldtableid" ASCENDING 
+
+ADD INDEX "ifeld" ON "zen-lookupfld" 
+  AREA "Schema Area"
+  INDEX-FIELD "IField" ASCENDING 
+
+ADD INDEX "lfield" ON "zen-lookupfld" 
+  AREA "Schema Area"
+  INDEX-FIELD "LField" ASCENDING 
+
+ADD INDEX "order" ON "zen-lookupfld" 
+  AREA "Schema Area"
+  INDEX-FIELD "lookupname" ASCENDING 
+  INDEX-FIELD "order" ASCENDING 
+
+ADD TABLE "zen-mesfil"
+  AREA "Schema Area"
+  DESCRIPTION "#Message file"
+  DUMP-NAME "mesfil"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-mesfilcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-mesfilde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-mesfilwr.p" CRC "?" 
+
+ADD FIELD "mesnum" OF "zen-mesfil" AS integer 
+  FORMAT "zzzzz9"
+  INITIAL "0"
+  LABEL "Message No"
+  POSITION 3
+  MAX-WIDTH 4
+  COLUMN-LABEL "Message No"
+  HELP "Enter message number"
+  ORDER 20
+
+ADD FIELD "mestxt" OF "zen-mesfil" AS character 
+  FORMAT "x(78)"
+  INITIAL ""
+  LABEL "Message Text"
+  POSITION 4
+  MAX-WIDTH 156
+  COLUMN-LABEL "Message Text"
+  HELP "Enter message text"
+  LENGTH 0
+  ORDER 30
+
+ADD FIELD "mestyp" OF "zen-mesfil" AS character 
+  FORMAT "!"
+  INITIAL ""
+  LABEL "Message Type"
+  POSITION 5
+  MAX-WIDTH 2
+  COLUMN-LABEL "Message Type"
+  HELP "(M)essage (W)arning (I)nformation (Q)uestion (E)rror"
+  LENGTH 0
+  ORDER 40
+
+ADD FIELD "lan_lanid" OF "zen-mesfil" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Language ID"
+  POSITION 8
+  MAX-WIDTH 4
+  COLUMN-LABEL "Language ID"
+  ORDER 70
+
+ADD FIELD "style" OF "zen-mesfil" AS integer 
+  DESCRIPTION "ala micrososft dll messages
+0=ok 1=ok,cancel 2=abort,retry,ignore 3=yes,no,cancel 4=yes,no 5= retry,cancel 8=cancel,help"
+  FORMAT "99"
+  INITIAL "0"
+  LABEL "Style"
+  POSITION 9
+  MAX-WIDTH 4
+  HELP "0,1,2,3,4,5,8 (DONOT USE 6,7,9)"
+  ORDER 80
+
+ADD FIELD "oktodisplay" OF "zen-mesfil" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Display"
+  POSITION 10
+  MAX-WIDTH 1
+  HELP "User Sees this message"
+  ORDER 90
+
+ADD FIELD "tstamp" OF "zen-mesfil" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 11
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "zen-mesfiltableid" OF "zen-mesfil" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD FIELD "sysrecord" OF "zen-mesfil" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 1000
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 100
+
+ADD INDEX "order" ON "zen-mesfil" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  DESCRIPTION "Each message within each language"
+  INDEX-FIELD "lan_lanid" ASCENDING 
+  INDEX-FIELD "mesnum" ASCENDING 
+
+ADD INDEX "key2" ON "zen-mesfil" 
+  AREA "Schema Area"
+  WORD
+  INDEX-FIELD "mestxt" ASCENDING 
+
+ADD INDEX "sysrecord" ON "zen-mesfil" 
+  AREA "Schema Area"
+  INDEX-FIELD "sysrecord" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-mesfil" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-mesfiltableid" ASCENDING 
+
+ADD TABLE "zen-ocx"
+  AREA "Schema Area"
+  LABEL "OCX's"
+  DESCRIPTION "Setup - OCX controls"
+  DUMP-NAME "zen-ocx"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-ocxcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-ocxde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-ocxwr.p" CRC "?" 
+
+ADD FIELD "ocx-name" OF "zen-ocx" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Internal Name"
+  POSITION 2
+  MAX-WIDTH 60
+  COLUMN-LABEL "Internal Name"
+  ORDER 10
+
+ADD FIELD "ocx-filename" OF "zen-ocx" AS character 
+  FORMAT "X(15)"
+  INITIAL ""
+  LABEL "File Name"
+  POSITION 3
+  MAX-WIDTH 30
+  COLUMN-LABEL "File Name"
+  ORDER 20
+
+ADD FIELD "description" OF "zen-ocx" AS character 
+  FORMAT "X(50)"
+  INITIAL ""
+  LABEL "Description"
+  POSITION 4
+  MAX-WIDTH 100
+  COLUMN-LABEL "Description"
+  ORDER 30
+
+ADD FIELD "install" OF "zen-ocx" AS logical 
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Install"
+  POSITION 5
+  MAX-WIDTH 1
+  COLUMN-LABEL "Install"
+  ORDER 40
+
+ADD FIELD "tstamp" OF "zen-ocx" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 6
+  MAX-WIDTH 4
+  ORDER 50
+
+ADD FIELD "surportingfiles" OF "zen-ocx" AS character 
+  DESCRIPTION "any required surporting files eg lic or a exe with dlls"
+  FORMAT "X(255)"
+  INITIAL ""
+  LABEL "Surporting Files"
+  POSITION 8
+  MAX-WIDTH 510
+  ORDER 60
+
+ADD FIELD "sysrecord" OF "zen-ocx" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 9
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 70
+
+ADD FIELD "zen-ocxtableid" OF "zen-ocx" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD INDEX "i-key" ON "zen-ocx" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "ocx-filename" ASCENDING 
+  INDEX-FIELD "ocx-name" ASCENDING 
+
+ADD INDEX "sysrecord" ON "zen-ocx" 
+  AREA "Schema Area"
+  INDEX-FIELD "sysrecord" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-ocx" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-ocxtableid" ASCENDING 
+
+ADD TABLE "zen-Printer"
+  AREA "Schema Area"
+  DESCRIPTION "Print Master records file"
+  DUMP-NAME "Printer"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-printercr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-printerde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-printerwr.p" CRC "?" 
+
+ADD FIELD "DeviceName" OF "zen-Printer" AS character 
+  DESCRIPTION "Master Logical Printer Name join to forms via logical name"
+  FORMAT "x(30)"
+  INITIAL ""
+  LABEL "Device Name"
+  POSITION 3
+  MAX-WIDTH 60
+  HELP "Logical Printer Name (Link to available Forms)"
+  LENGTH 0
+  ORDER 20
+
+ADD FIELD "RESETBEG" OF "zen-Printer" AS logical 
+  DESCRIPTION "Reset code to be sent before other function codes to printer"
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Begin Reset"
+  POSITION 5
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  HELP "Send a Reset code at the start"
+  ORDER 40
+
+ADD FIELD "RESETEND" OF "zen-Printer" AS logical 
+  DESCRIPTION "Send a reset code after the print has finished"
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "End Reset"
+  POSITION 6
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  HELP "Send a reset code at end of print"
+  ORDER 50
+
+ADD FIELD "os-queue" OF "zen-Printer" AS character 
+  DESCRIPTION "leave blank if printer is local "
+  FORMAT "x(60)"
+  INITIAL ""
+  LABEL "OS Queue"
+  POSITION 7
+  MAX-WIDTH 120
+  COLUMN-LABEL "OS!Queue"
+  HELP "Remote System Que Name blank if local printer"
+  LENGTH 0
+  ORDER 60
+
+ADD FIELD "op-sys" OF "zen-Printer" AS character 
+  DESCRIPTION "Only show associated forms when user is in this opsys"
+  FORMAT "X(8)"
+  INITIAL ?
+  LABEL "Op Sys"
+  POSITION 9
+  MAX-WIDTH 16
+  HELP "View only when Running under Opsys (MSDOS,UNIX,VMS,CTOS)"
+  LENGTH 0
+  ORDER 80
+
+ADD FIELD "zen-printertableid" OF "zen-Printer" AS decimal 
+  FORMAT ">>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 10
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 90
+
+ADD FIELD "tstamp" OF "zen-Printer" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 11
+  MAX-WIDTH 4
+  ORDER 100
+
+ADD FIELD "PhysicalType" OF "zen-Printer" AS character 
+  DESCRIPTION "Physical Type of printer eg HP laserjet4"
+  FORMAT "x(15)"
+  INITIAL ""
+  LABEL "Type"
+  POSITION 12
+  MAX-WIDTH 30
+  HELP "Physical Type of printer eg HP laserjet4"
+  ORDER 110
+
+ADD FIELD "ResetFunc" OF "zen-Printer" AS decimal 
+  FORMAT ">>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "resetTableId"
+  POSITION 13
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 120
+
+ADD FIELD "LocalPrinter" OF "zen-Printer" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Local"
+  POSITION 14
+  MAX-WIDTH 1
+  ORDER 130
+
+ADD FIELD "Description" OF "zen-Printer" AS character 
+  FORMAT "x(40)"
+  INITIAL ""
+  LABEL "Description"
+  POSITION 15
+  MAX-WIDTH 80
+  HELP "Form Description"
+  LENGTH 0
+  ORDER 140
+
+ADD INDEX "tableid" ON "zen-Printer" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-printertableid" ASCENDING 
+
+ADD INDEX "name" ON "zen-Printer" 
+  AREA "Schema Area"
+  INDEX-FIELD "DeviceName" ASCENDING 
+
+ADD INDEX "type" ON "zen-Printer" 
+  AREA "Schema Area"
+  INDEX-FIELD "PhysicalType" ASCENDING 
+
+ADD TABLE "zen-PrinterCode"
+  AREA "Schema Area"
+  DESCRIPTION "The Printer Function code groups"
+  DUMP-NAME "PrintCod"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-printercodecr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-printercodede.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-printercodewr.p" CRC "?" 
+
+ADD FIELD "CodeName" OF "zen-PrinterCode" AS character 
+  DESCRIPTION "Printer Function Description"
+  FORMAT "x(125)"
+  INITIAL ""
+  LABEL "Print Function"
+  POSITION 3
+  MAX-WIDTH 30
+  HELP "Printer Function"
+  LENGTH 0
+  ORDER 20
+
+ADD FIELD "tstamp" OF "zen-PrinterCode" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 5
+  MAX-WIDTH 4
+  ORDER 40
+
+ADD FIELD "zen-printercodetableid" OF "zen-PrinterCode" AS decimal 
+  FORMAT ">>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 6
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 50
+
+ADD FIELD "PhysicalType" OF "zen-PrinterCode" AS character 
+  DESCRIPTION "Physical Type of printer eg HP laserjet4"
+  FORMAT "x(125)"
+  INITIAL ""
+  LABEL "Type"
+  POSITION 8
+  MAX-WIDTH 30
+  HELP "Physical Type of printer eg HP laserjet4"
+  ORDER 70
+
+ADD INDEX "tableid" ON "zen-PrinterCode" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-printercodetableid" ASCENDING 
+
+ADD INDEX "name" ON "zen-PrinterCode" 
+  AREA "Schema Area"
+  INDEX-FIELD "CodeName" ASCENDING 
+
+ADD INDEX "type" ON "zen-PrinterCode" 
+  AREA "Schema Area"
+  INDEX-FIELD "PhysicalType" ASCENDING 
+
+ADD TABLE "zen-PrinterCodeDetail"
+  AREA "Schema Area"
+  DESCRIPTION "printer codes"
+  DUMP-NAME "zen-prcd"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-printercodedetailcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-printercodedetailde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-printercodedetailwr.p" CRC "?" 
+
+ADD FIELD "zen-printercodedetailtableid" OF "zen-PrinterCodeDetail" AS decimal 
+  FORMAT ">>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 2
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 10
+
+ADD FIELD "zen-printercodetableid" OF "zen-PrinterCodeDetail" AS decimal 
+  FORMAT ">>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 3
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 20
+
+ADD FIELD "code" OF "zen-PrinterCodeDetail" AS integer 
+  DESCRIPTION "Asci code"
+  FORMAT "999"
+  INITIAL "0"
+  POSITION 4
+  MAX-WIDTH 4
+  HELP "Ascii Code"
+  ORDER 30
+
+ADD INDEX "tableid" ON "zen-PrinterCodeDetail" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-printercodedetailtableid" ASCENDING 
+
+ADD INDEX "code" ON "zen-PrinterCodeDetail" 
+  AREA "Schema Area"
+  INDEX-FIELD "zen-printercodetableid" ASCENDING 
+
+ADD TABLE "zen-PrinterForm"
+  AREA "Schema Area"
+  DESCRIPTION "Printer Selection File"
+  DUMP-NAME "PrinterF"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-printerformcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-printerformde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-printerformwr.p" CRC "?" 
+
+ADD FIELD "FormName" OF "zen-PrinterForm" AS character 
+  FORMAT "x(30)"
+  INITIAL ""
+  LABEL "Form"
+  POSITION 2
+  MAX-WIDTH 60
+  COLUMN-LABEL "Form"
+  HELP "Form Name"
+  LENGTH 0
+  ORDER 50
+
+ADD FIELD "Description" OF "zen-PrinterForm" AS character 
+  FORMAT "x(40)"
+  INITIAL ""
+  LABEL "Description"
+  POSITION 3
+  MAX-WIDTH 80
+  HELP "Form Description"
+  LENGTH 0
+  ORDER 20
+
+ADD FIELD "page-length" OF "zen-PrinterForm" AS integer 
+  DESCRIPTION "Page length to use"
+  FORMAT ">>9"
+  INITIAL "0"
+  LABEL "Length"
+  POSITION 6
+  MAX-WIDTH 4
+  HELP "Form Page length 0 for continuos"
+  ORDER 60
+
+ADD FIELD "page-width" OF "zen-PrinterForm" AS integer 
+  DESCRIPTION "Page Width"
+  FORMAT "zz9"
+  INITIAL "80"
+  LABEL "Width"
+  POSITION 7
+  MAX-WIDTH 4
+  HELP "Page Width to be checked against program page width"
+  ORDER 70
+
+ADD FIELD "tstamp" OF "zen-PrinterForm" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 8
+  MAX-WIDTH 4
+  ORDER 80
+
+ADD FIELD "zen-printerformtableid" OF "zen-PrinterForm" AS decimal 
+  FORMAT ">>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 9
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 90
+
+ADD FIELD "zen-printertableid" OF "zen-PrinterForm" AS decimal 
+  FORMAT ">>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 10
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 100
+
+ADD INDEX "tableid" ON "zen-PrinterForm" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-printerformtableid" ASCENDING 
+
+ADD INDEX "printerid" ON "zen-PrinterForm" 
+  AREA "Schema Area"
+  INDEX-FIELD "zen-printertableid" ASCENDING 
+
+ADD TABLE "zen-PrinterFormDetail"
+  AREA "Schema Area"
+  DESCRIPTION "printer form codes"
+  DUMP-NAME "zen-prin"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-printerformdetailcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-printerformdetailde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-printerformdetailwr.p" CRC "?" 
+
+ADD FIELD "zen-printerformdetailtableid" OF "zen-PrinterFormDetail" AS decimal 
+  FORMAT ">>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 2
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 10
+
+ADD FIELD "zen-printerformtableid" OF "zen-PrinterFormDetail" AS decimal 
+  FORMAT ">>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 3
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 20
+
+ADD FIELD "zen-printercodetableid" OF "zen-PrinterFormDetail" AS decimal 
+  FORMAT ">>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 4
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 30
+
+ADD INDEX "tableid" ON "zen-PrinterFormDetail" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-printerformdetailtableid" ASCENDING 
+
+ADD INDEX "formname" ON "zen-PrinterFormDetail" 
+  AREA "Schema Area"
+  INDEX-FIELD "zen-printerformtableid" ASCENDING 
+
+ADD TABLE "zen-property"
+  AREA "Schema Area"
+  DESCRIPTION "#"
+  DUMP-NAME "zen-property"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-propertycr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-propertyde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-propertywr.p" CRC "?" 
+
+ADD FIELD "zen-propertytableid" OF "zen-property" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 2
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 10
+
+ADD FIELD "Parent" OF "zen-property" AS character 
+  FORMAT "x(80)"
+  INITIAL ""
+  LABEL "Parent"
+  POSITION 3
+  MAX-WIDTH 160
+  ORDER 20
+
+ADD FIELD "Type" OF "zen-property" AS character 
+  FORMAT "x(20)"
+  INITIAL ""
+  LABEL "Type"
+  POSITION 4
+  MAX-WIDTH 40
+  ORDER 30
+
+ADD FIELD "Name" OF "zen-property" AS character 
+  FORMAT "x(80)"
+  INITIAL ""
+  LABEL "Name"
+  POSITION 5
+  MAX-WIDTH 160
+  ORDER 40
+
+ADD FIELD "PropertyValue" OF "zen-property" AS character 
+  FORMAT "x(8)"
+  INITIAL ""
+  LABEL "Value"
+  POSITION 6
+  MAX-WIDTH 16
+  ORDER 50
+
+ADD INDEX "tableid" ON "zen-property" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-propertytableid" ASCENDING 
+
+ADD TABLE "zen-rule"
+  AREA "Schema Area"
+  DESCRIPTION "#"
+  DUMP-NAME "rule"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-rulecr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-rulede.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-rulewr.p" CRC "?" 
+
+ADD FIELD "RuleName" OF "zen-rule" AS character 
+  FORMAT "X(15)"
+  INITIAL ""
+  LABEL "Rule name"
+  POSITION 3
+  MAX-WIDTH 30
+  HELP "Rule name"
+  ORDER 20
+
+ADD FIELD "description" OF "zen-rule" AS character 
+  FORMAT "X(35)"
+  INITIAL ""
+  LABEL "Description"
+  POSITION 4
+  MAX-WIDTH 70
+  HELP "Description"
+  ORDER 30
+
+ADD FIELD "ExecuteOrder" OF "zen-rule" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "Execute Order"
+  POSITION 5
+  MAX-WIDTH 4
+  HELP "sort order"
+  ORDER 40
+
+ADD FIELD "program" OF "zen-rule" AS character 
+  FORMAT "X(35)"
+  INITIAL ""
+  LABEL "Rule Program Name"
+  POSITION 8
+  MAX-WIDTH 70
+  HELP "Rule program name"
+  ORDER 70
+
+ADD FIELD "Procedure" OF "zen-rule" AS character 
+  FORMAT "X(35)"
+  INITIAL ""
+  LABEL "Rule Program Procedure"
+  POSITION 9
+  MAX-WIDTH 70
+  HELP "Rule program procedure"
+  ORDER 80
+
+ADD FIELD "ContinueOnError" OF "zen-rule" AS logical 
+  FORMAT "yes/no"
+  INITIAL "NO"
+  LABEL "Continue"
+  POSITION 10
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  HELP "continue flag"
+  ORDER 90
+
+ADD FIELD "active" OF "zen-rule" AS logical 
+  FORMAT "yes/no"
+  INITIAL "NO"
+  LABEL "active flag"
+  POSITION 11
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  HELP "active flag"
+  ORDER 100
+
+ADD FIELD "zen-ruletableid" OF "zen-rule" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 12
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 110
+
+ADD FIELD "tstamp" OF "zen-rule" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 13
+  MAX-WIDTH 4
+  ORDER 120
+
+ADD FIELD "RuleType" OF "zen-rule" AS character 
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Type"
+  POSITION 14
+  MAX-WIDTH 50
+  ORDER 130
+
+ADD FIELD "RuleGroup" OF "zen-rule" AS character 
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Group"
+  POSITION 15
+  MAX-WIDTH 50
+  ORDER 140
+
+ADD FIELD "ExecuteMode" OF "zen-rule" AS character 
+  FORMAT "X(12)"
+  INITIAL ""
+  LABEL "Mode"
+  POSITION 16
+  MAX-WIDTH 24
+  ORDER 150
+
+ADD FIELD "sysrecord" OF "zen-rule" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 17
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 160
+
+ADD INDEX "tableid" ON "zen-rule" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-ruletableid" ASCENDING 
+
+ADD INDEX "Name" ON "zen-rule" 
+  AREA "Schema Area"
+  INDEX-FIELD "RuleName" ASCENDING 
+
+ADD INDEX "rgroup" ON "zen-rule" 
+  AREA "Schema Area"
+  INDEX-FIELD "RuleGroup" ASCENDING 
+
+ADD INDEX "sctive" ON "zen-rule" 
+  AREA "Schema Area"
+  INDEX-FIELD "active" ASCENDING 
+
+ADD INDEX "type" ON "zen-rule" 
+  AREA "Schema Area"
+  INDEX-FIELD "RuleType" ASCENDING 
+
+ADD TABLE "zen-sound"
+  AREA "Schema Area"
+  DESCRIPTION "#"
+  DUMP-NAME "zen-soun"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-soundcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-soundde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-soundwr.p" CRC "?" 
+
+ADD FIELD "eventname" OF "zen-sound" AS character 
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Event"
+  POSITION 2
+  MAX-WIDTH 50
+  ORDER 10
+
+ADD FIELD "soundfile" OF "zen-sound" AS character 
+  FORMAT "x(25)"
+  INITIAL ""
+  LABEL "File Name"
+  POSITION 3
+  MAX-WIDTH 18
+  COLUMN-LABEL ""
+  ORDER 20
+
+ADD FIELD "tstamp" OF "zen-sound" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 4
+  MAX-WIDTH 4
+  ORDER 30
+
+ADD FIELD "sysrecord" OF "zen-sound" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 6
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 40
+
+ADD FIELD "zen-soundtableid" OF "zen-sound" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD INDEX "order" ON "zen-sound" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "eventname" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-sound" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-soundtableid" ASCENDING 
+
+ADD TABLE "Zen-Spool"
+  AREA "Schema Area"
+  DESCRIPTION "#"
+  DUMP-NAME "zen-spool"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-spoolcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-spoolde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-spoolwr.p" CRC "?" 
+
+ADD FIELD "zen-spooltableid" OF "Zen-Spool" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 2
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 10
+
+ADD FIELD "spoolid" OF "Zen-Spool" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Task Id"
+  POSITION 3
+  MAX-WIDTH 4
+  COLUMN-LABEL "Task Id"
+  ORDER 20
+
+ADD FIELD "ReportTitle" OF "Zen-Spool" AS character 
+  FORMAT "X(35)"
+  INITIAL ""
+  LABEL "Report Title"
+  POSITION 4
+  MAX-WIDTH 70
+  ORDER 30
+
+ADD FIELD "PrinterName" OF "Zen-Spool" AS character 
+  FORMAT "x(50)"
+  INITIAL ""
+  LABEL "Printer"
+  POSITION 5
+  MAX-WIDTH 100
+  ORDER 40
+
+ADD FIELD "FileName" OF "Zen-Spool" AS character 
+  FORMAT "x(50)"
+  INITIAL ""
+  LABEL "File"
+  POSITION 6
+  MAX-WIDTH 100
+  ORDER 50
+
+ADD FIELD "CreatedBy" OF "Zen-Spool" AS character 
+  FORMAT "x(20)"
+  INITIAL ""
+  LABEL "Created By"
+  POSITION 7
+  MAX-WIDTH 40
+  ORDER 60
+
+ADD FIELD "CreatedOn" OF "Zen-Spool" AS date 
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "Created On"
+  POSITION 8
+  MAX-WIDTH 4
+  ORDER 70
+
+ADD FIELD "CreatedTime" OF "Zen-Spool" AS integer 
+  FORMAT "9999999999"
+  INITIAL "0"
+  LABEL "Time"
+  POSITION 9
+  MAX-WIDTH 4
+  ORDER 80
+
+ADD FIELD "Can-View" OF "Zen-Spool" AS character 
+  FORMAT "x(8)"
+  INITIAL "*"
+  LABEL "Can View"
+  POSITION 10
+  MAX-WIDTH 16
+  ORDER 90
+
+ADD FIELD "Not-View" OF "Zen-Spool" AS character 
+  FORMAT "x(8)"
+  INITIAL ""
+  LABEL "Not View"
+  POSITION 11
+  MAX-WIDTH 16
+  ORDER 100
+
+ADD FIELD "KeepUntil" OF "Zen-Spool" AS date 
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "Keep Until"
+  POSITION 12
+  MAX-WIDTH 4
+  ORDER 110
+
+ADD INDEX "tableid" ON "Zen-Spool" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-spooltableid" ASCENDING 
+
+ADD INDEX "createdby" ON "Zen-Spool" 
+  AREA "Schema Area"
+  INDEX-FIELD "CreatedBy" ASCENDING 
+
+ADD INDEX "createdon" ON "Zen-Spool" 
+  AREA "Schema Area"
+  INDEX-FIELD "CreatedOn" ASCENDING 
+
+ADD INDEX "keepuntil" ON "Zen-Spool" 
+  AREA "Schema Area"
+  INDEX-FIELD "KeepUntil" ASCENDING 
+
+ADD INDEX "spool" ON "Zen-Spool" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "spoolid" ASCENDING 
+
+ADD TABLE "zen-task"
+  AREA "Schema Area"
+  LABEL "Tasks"
+  DESCRIPTION "#"
+  DUMP-NAME "zen-task"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-taskcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-taskde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-taskwr.p" CRC "?" 
+
+ADD FIELD "zen-tasktableid" OF "zen-task" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "Table Id"
+  POSITION 2
+  MAX-WIDTH 17
+  COLUMN-LABEL "Table Id"
+  DECIMALS 0
+  ORDER 10
+
+ADD FIELD "tstamp" OF "zen-task" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 3
+  MAX-WIDTH 4
+  ORDER 20
+
+ADD FIELD "taskid" OF "zen-task" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Task Id"
+  POSITION 4
+  MAX-WIDTH 4
+  COLUMN-LABEL "Task Id"
+  ORDER 30
+
+ADD FIELD "tasktype" OF "zen-task" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Task Type"
+  POSITION 5
+  MAX-WIDTH 16
+  COLUMN-LABEL "Task Type"
+  ORDER 40
+
+ADD FIELD "taskserver" OF "zen-task" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Task Server"
+  POSITION 6
+  MAX-WIDTH 16
+  COLUMN-LABEL "Task Server"
+  ORDER 50
+
+ADD FIELD "rundate" OF "zen-task" AS date 
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "Run Date"
+  POSITION 7
+  MAX-WIDTH 4
+  COLUMN-LABEL "Run Date"
+  ORDER 60
+
+ADD FIELD "runtime" OF "zen-task" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Run Time"
+  POSITION 8
+  MAX-WIDTH 4
+  COLUMN-LABEL "Run Time"
+  ORDER 70
+
+ADD FIELD "schedule" OF "zen-task" AS character 
+  FORMAT "X(240)"
+  INITIAL ""
+  LABEL "Schedule"
+  POSITION 9
+  MAX-WIDTH 480
+  COLUMN-LABEL "Schedule"
+  ORDER 80
+
+ADD FIELD "submitdate" OF "zen-task" AS date 
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "Submitted"
+  POSITION 10
+  MAX-WIDTH 4
+  COLUMN-LABEL "Submitted"
+  ORDER 90
+
+ADD FIELD "parameters" OF "zen-task" AS character 
+  FORMAT "X(200)"
+  INITIAL ""
+  LABEL "Parameters"
+  POSITION 11
+  MAX-WIDTH 400
+  COLUMN-LABEL "Parameters"
+  ORDER 100
+
+ADD FIELD "submituser" OF "zen-task" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "By User"
+  POSITION 12
+  MAX-WIDTH 16
+  COLUMN-LABEL "By User"
+  ORDER 110
+
+ADD FIELD "submittime" OF "zen-task" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Submit Time"
+  POSITION 13
+  MAX-WIDTH 4
+  COLUMN-LABEL "Submit Time"
+  ORDER 120
+
+ADD FIELD "tstatus" OF "zen-task" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Status"
+  POSITION 14
+  MAX-WIDTH 16
+  COLUMN-LABEL "Status"
+  ORDER 130
+
+ADD FIELD "cycle" OF "zen-task" AS integer 
+  FORMAT "99999"
+  INITIAL "0"
+  LABEL "Cycle"
+  POSITION 15
+  MAX-WIDTH 4
+  COLUMN-LABEL "Cycle"
+  ORDER 140
+
+ADD FIELD "taskpgm" OF "zen-task" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Task PGM"
+  POSITION 16
+  MAX-WIDTH 60
+  COLUMN-LABEL "Task PGM"
+  ORDER 150
+
+ADD FIELD "dependancy-taskid" OF "zen-task" AS integer 
+  FORMAT "9999999"
+  INITIAL "0"
+  LABEL "Dependent"
+  POSITION 17
+  MAX-WIDTH 4
+  COLUMN-LABEL "Dependent"
+  ORDER 160
+
+ADD FIELD "tmessage" OF "zen-task" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Message"
+  POSITION 18
+  MAX-WIDTH 60
+  COLUMN-LABEL "Message"
+  ORDER 170
+
+ADD FIELD "taskproc" OF "zen-task" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Task Procedure"
+  POSITION 19
+  MAX-WIDTH 60
+  COLUMN-LABEL ""
+  ORDER 180
+
+ADD FIELD "pid" OF "zen-task" AS integer 
+  FORMAT ">>>>>>>9"
+  INITIAL "0"
+  LABEL "Pid"
+  POSITION 20
+  MAX-WIDTH 4
+  ORDER 190
+
+ADD FIELD "sysrecord" OF "zen-task" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 21
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 200
+
+ADD FIELD "returnvalues" OF "zen-task" AS character 
+  DESCRIPTION "field|value  etc"
+  FORMAT "x(255)"
+  INITIAL ""
+  LABEL "Return Values"
+  POSITION 22
+  MAX-WIDTH 510
+  ORDER 210
+
+ADD INDEX "serverrun" ON "zen-task" 
+  AREA "Schema Area"
+  PRIMARY
+  INDEX-FIELD "taskserver" ASCENDING 
+  INDEX-FIELD "rundate" ASCENDING 
+
+ADD INDEX "runinfo" ON "zen-task" 
+  AREA "Schema Area"
+  INDEX-FIELD "rundate" ASCENDING 
+  INDEX-FIELD "runtime" ASCENDING 
+
+ADD INDEX "serversubmit" ON "zen-task" 
+  AREA "Schema Area"
+  INDEX-FIELD "taskserver" ASCENDING 
+  INDEX-FIELD "submitdate" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-task" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-tasktableid" ASCENDING 
+
+ADD INDEX "taskid" ON "zen-task" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "taskid" ASCENDING 
+
+ADD TABLE "zen-taskhist"
+  AREA "Schema Area"
+  DESCRIPTION "#"
+  DUMP-NAME "zen-tskh"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-taskhistcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-taskhistde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-taskhistwr.p" CRC "?" 
+
+ADD FIELD "zen-taskhisttableid" OF "zen-taskhist" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "Table Id"
+  POSITION 2
+  MAX-WIDTH 17
+  COLUMN-LABEL "Table Id"
+  DECIMALS 0
+  ORDER 10
+
+ADD FIELD "tstamp" OF "zen-taskhist" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  POSITION 3
+  MAX-WIDTH 4
+  ORDER 20
+
+ADD FIELD "taskserver" OF "zen-taskhist" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Task Server"
+  POSITION 4
+  MAX-WIDTH 16
+  COLUMN-LABEL "Task Server"
+  ORDER 30
+
+ADD FIELD "taskid" OF "zen-taskhist" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Task Id"
+  POSITION 5
+  MAX-WIDTH 4
+  COLUMN-LABEL "Task Id"
+  ORDER 40
+
+ADD FIELD "rundate" OF "zen-taskhist" AS date 
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "Run Date"
+  POSITION 6
+  MAX-WIDTH 4
+  COLUMN-LABEL "Run Date"
+  ORDER 50
+
+ADD FIELD "runtime" OF "zen-taskhist" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Run Time"
+  POSITION 7
+  MAX-WIDTH 4
+  COLUMN-LABEL "Run Time"
+  ORDER 60
+
+ADD FIELD "enddate" OF "zen-taskhist" AS date 
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "Ended"
+  POSITION 8
+  MAX-WIDTH 4
+  COLUMN-LABEL "Ended"
+  ORDER 70
+
+ADD FIELD "endtime" OF "zen-taskhist" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "End Time"
+  POSITION 9
+  MAX-WIDTH 4
+  COLUMN-LABEL "End Time"
+  ORDER 80
+
+ADD FIELD "tstatus" OF "zen-taskhist" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "End Status"
+  POSITION 10
+  MAX-WIDTH 16
+  COLUMN-LABEL "End Status"
+  ORDER 90
+
+ADD FIELD "cycle" OF "zen-taskhist" AS integer 
+  FORMAT "99999"
+  INITIAL "0"
+  LABEL "Cycle"
+  POSITION 11
+  MAX-WIDTH 4
+  COLUMN-LABEL "Cycle"
+  ORDER 100
+
+ADD FIELD "tasktype" OF "zen-taskhist" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Task Type"
+  POSITION 12
+  MAX-WIDTH 16
+  COLUMN-LABEL "Task Type"
+  ORDER 110
+
+ADD FIELD "schedule" OF "zen-taskhist" AS character 
+  FORMAT "X(240)"
+  INITIAL ""
+  LABEL "Schedule"
+  POSITION 13
+  MAX-WIDTH 480
+  COLUMN-LABEL "Schedule"
+  ORDER 120
+
+ADD FIELD "submitdate" OF "zen-taskhist" AS date 
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "Submitted"
+  POSITION 14
+  MAX-WIDTH 4
+  COLUMN-LABEL "Submitted"
+  ORDER 130
+
+ADD FIELD "parameters" OF "zen-taskhist" AS character 
+  FORMAT "X(200)"
+  INITIAL ""
+  LABEL "Parameters"
+  POSITION 15
+  MAX-WIDTH 400
+  COLUMN-LABEL "Parameters"
+  ORDER 140
+
+ADD FIELD "submituser" OF "zen-taskhist" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "By User"
+  POSITION 16
+  MAX-WIDTH 16
+  COLUMN-LABEL "By User"
+  ORDER 150
+
+ADD FIELD "submittime" OF "zen-taskhist" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Submit Time"
+  POSITION 17
+  MAX-WIDTH 4
+  COLUMN-LABEL "Submit Time"
+  ORDER 160
+
+ADD FIELD "startdate" OF "zen-taskhist" AS date 
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "Start Date"
+  POSITION 18
+  MAX-WIDTH 4
+  COLUMN-LABEL "Start Date"
+  ORDER 170
+
+ADD FIELD "starttime" OF "zen-taskhist" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Start Time"
+  POSITION 19
+  MAX-WIDTH 4
+  COLUMN-LABEL "Start Time"
+  ORDER 180
+
+ADD FIELD "taskpgm" OF "zen-taskhist" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Task PGM"
+  POSITION 20
+  MAX-WIDTH 60
+  COLUMN-LABEL "Task PGM"
+  ORDER 190
+
+ADD FIELD "dependancy-taskid" OF "zen-taskhist" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Dependant Task"
+  POSITION 21
+  MAX-WIDTH 4
+  COLUMN-LABEL "Dependant Task"
+  ORDER 200
+
+ADD FIELD "tmessage" OF "zen-taskhist" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Message"
+  POSITION 22
+  MAX-WIDTH 60
+  COLUMN-LABEL "Message"
+  ORDER 210
+
+ADD FIELD "taskproc" OF "zen-taskhist" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Task Procedure"
+  POSITION 23
+  MAX-WIDTH 60
+  COLUMN-LABEL ""
+  ORDER 220
+
+ADD INDEX "taskserver" ON "zen-taskhist" 
+  AREA "Schema Area"
+  PRIMARY
+  INDEX-FIELD "taskserver" ASCENDING 
+  INDEX-FIELD "taskid" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-taskhist" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-taskhisttableid" ASCENDING 
+
+ADD INDEX "taskid" ON "zen-taskhist" 
+  AREA "Schema Area"
+  INDEX-FIELD "taskid" ASCENDING 
+  INDEX-FIELD "cycle" ASCENDING 
+
+ADD TABLE "zen-tserver"
+  AREA "Schema Area"
+  LABEL "TaskServer"
+  DESCRIPTION "#"
+  DUMP-NAME "zen-tser"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-tservercr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-tserverde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-tserverwr.p" CRC "?" 
+
+ADD FIELD "zen-tservertableid" OF "zen-tserver" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "Table Id"
+  POSITION 2
+  MAX-WIDTH 17
+  COLUMN-LABEL "Table Id"
+  DECIMALS 0
+  ORDER 10
+
+ADD FIELD "tstamp" OF "zen-tserver" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 3
+  MAX-WIDTH 4
+  ORDER 20
+
+ADD FIELD "taskserver" OF "zen-tserver" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Task Server"
+  POSITION 4
+  MAX-WIDTH 16
+  COLUMN-LABEL "Task Server"
+  ORDER 30
+
+ADD FIELD "startdate" OF "zen-tserver" AS date 
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "Started"
+  POSITION 5
+  MAX-WIDTH 4
+  COLUMN-LABEL "Started"
+  ORDER 40
+
+ADD FIELD "starttime" OF "zen-tserver" AS integer 
+  FORMAT "999999"
+  INITIAL "0"
+  LABEL "Start Time"
+  POSITION 6
+  MAX-WIDTH 4
+  COLUMN-LABEL "Start Time"
+  ORDER 50
+
+ADD FIELD "startuser" OF "zen-tserver" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Started By"
+  POSITION 7
+  MAX-WIDTH 16
+  COLUMN-LABEL "Started By"
+  ORDER 60
+
+ADD FIELD "tstatus" OF "zen-tserver" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  LABEL "Status"
+  POSITION 8
+  MAX-WIDTH 16
+  COLUMN-LABEL "Status"
+  ORDER 70
+
+ADD FIELD "started" OF "zen-tserver" AS logical 
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Started"
+  POSITION 9
+  MAX-WIDTH 1
+  COLUMN-LABEL "Started"
+  ORDER 80
+
+ADD FIELD "serverprog" OF "zen-tserver" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Server Program"
+  POSITION 14
+  MAX-WIDTH 60
+  COLUMN-LABEL "Server Program"
+  ORDER 130
+
+ADD FIELD "logfile" OF "zen-tserver" AS character 
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Log File"
+  POSITION 16
+  MAX-WIDTH 60
+  COLUMN-LABEL "Log File"
+  ORDER 150
+
+ADD FIELD "tdefault" OF "zen-tserver" AS logical 
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Default"
+  POSITION 17
+  MAX-WIDTH 1
+  COLUMN-LABEL "Default"
+  ORDER 160
+
+ADD FIELD "twait" OF "zen-tserver" AS integer 
+  FORMAT ">>>9"
+  INITIAL "0"
+  LABEL "Server Wait"
+  POSITION 18
+  MAX-WIDTH 4
+  COLUMN-LABEL "Server Wait"
+  ORDER 170
+
+ADD FIELD "catchup" OF "zen-tserver" AS logical 
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Catch Up"
+  POSITION 19
+  MAX-WIDTH 1
+  COLUMN-LABEL "Catch Up"
+  ORDER 180
+
+ADD FIELD "pid" OF "zen-tserver" AS integer 
+  FORMAT ">>>>>>>9"
+  INITIAL "0"
+  LABEL "Pid"
+  POSITION 20
+  MAX-WIDTH 4
+  ORDER 190
+
+ADD FIELD "sysrecord" OF "zen-tserver" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 21
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 200
+
+ADD FIELD "AutoStart" OF "zen-tserver" AS logical 
+  FORMAT "yes/no"
+  INITIAL "no"
+  LABEL "Autotart"
+  POSITION 22
+  MAX-WIDTH 1
+  ORDER 210
+
+ADD FIELD "DBParameters" OF "zen-tserver" AS character 
+  DESCRIPTION "DataBaseConnection Parameter-db -l -U etc"
+  FORMAT "x(256)"
+  INITIAL ""
+  LABEL "Db Parameters"
+  POSITION 23
+  MAX-WIDTH 512
+  HELP "Connection parameters"
+  ORDER 220
+
+ADD INDEX "server" ON "zen-tserver" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "taskserver" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-tserver" 
+  AREA "Schema Area"
+  INDEX-FIELD "zen-tservertableid" ASCENDING 
+
+ADD TABLE "zen-widgetproperty"
+  AREA "Schema Area"
+  DESCRIPTION "#Widget Properties"
+  DUMP-NAME "zen-widg"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-widgetpropertycr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-widgetpropertyde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-widgetpropertywr.p" CRC "?" 
+
+ADD FIELD "property" OF "zen-widgetproperty" AS character 
+  FORMAT "X(15)"
+  INITIAL ""
+  LABEL "Property"
+  POSITION 3
+  MAX-WIDTH 30
+  ORDER 11
+
+ADD FIELD "propertyvalue" OF "zen-widgetproperty" AS character 
+  FORMAT "X(20)"
+  INITIAL ""
+  LABEL "Value"
+  POSITION 4
+  MAX-WIDTH 40
+  ORDER 21
+
+ADD FIELD "tstamp" OF "zen-widgetproperty" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 5
+  MAX-WIDTH 4
+  ORDER 31
+
+ADD FIELD "zen-widgetpropertytableid" OF "zen-widgetproperty" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 6
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 41
+
+ADD FIELD "sysrecord" OF "zen-widgetproperty" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 7
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 51
+
+ADD FIELD "pgm" OF "zen-widgetproperty" AS character 
+  DESCRIPTION "PROGRAM ID"
+  FORMAT "x(30)"
+  INITIAL ?
+  LABEL "PROGRAM ID"
+  POSITION 8
+  MAX-WIDTH 60
+  HELP "Physical Program name"
+  LENGTH 0
+  ORDER 61
+
+ADD FIELD "wid-name" OF "zen-widgetproperty" AS character 
+  DESCRIPTION "Widget Name"
+  FORMAT "x(50)"
+  INITIAL ""
+  LABEL "Widget"
+  POSITION 9
+  MAX-WIDTH 100
+  COLUMN-LABEL "Widget"
+  HELP "Widget Name"
+  LENGTH 0
+  ORDER 71
+
+ADD FIELD "widframe" OF "zen-widgetproperty" AS character 
+  FORMAT "X(15)"
+  INITIAL "*"
+  LABEL "Frame"
+  POSITION 10
+  MAX-WIDTH 30
+  ORDER 81
+
+ADD FIELD "zen-dwidgettableid" OF "zen-widgetproperty" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 11
+  MAX-WIDTH 15
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 91
+
+ADD INDEX "tableid" ON "zen-widgetproperty" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "zen-widgetpropertytableid" ASCENDING 
+
+ADD INDEX "order" ON "zen-widgetproperty" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "pgm" ASCENDING 
+  INDEX-FIELD "widframe" ASCENDING 
+  INDEX-FIELD "wid-name" ASCENDING 
+
+ADD INDEX "property" ON "zen-widgetproperty" 
+  AREA "Schema Area"
+  INDEX-FIELD "property" ASCENDING 
+
+ADD TABLE "zen-widlook"
+  AREA "Schema Area"
+  DESCRIPTION "#Standing storage for program and field name for doing lookup functions"
+  DUMP-NAME "widlook"
+  TABLE-TRIGGER "create" OVERRIDE PROCEDURE "../zen/triggers/zen-widlookcr.p" CRC "?" 
+  TABLE-TRIGGER "delete" OVERRIDE PROCEDURE "../zen/triggers/zen-widlookde.p" CRC "?" 
+  TABLE-TRIGGER "write" OVERRIDE PROCEDURE "../zen/triggers/zen-widlookwr.p" CRC "?" 
+
+ADD FIELD "look-field" OF "zen-widlook" AS character 
+  FORMAT "x(50)"
+  INITIAL ""
+  LABEL "Look Up Field"
+  POSITION 2
+  MAX-WIDTH 100
+  COLUMN-LABEL ""
+  HELP "Field Name (either variable name or table.field)"
+  LENGTH 0
+  ORDER 10
+
+ADD FIELD "sysrecord" OF "zen-widlook" AS logical 
+  FORMAT "yes/no"
+  INITIAL "yes"
+  LABEL "Sys Record"
+  POSITION 8
+  MAX-WIDTH 1
+  VIEW-AS "VIEW-AS TOGGLE-BOX"
+  ORDER 260
+
+ADD FIELD "validationfunction" OF "zen-widlook" AS character 
+  DESCRIPTION "FunctionName to validate field"
+  FORMAT "X(55)"
+  INITIAL ""
+  LABEL "Validation Function"
+  POSITION 9
+  MAX-WIDTH 110
+  ORDER 270
+
+ADD FIELD "initialvaluefunction" OF "zen-widlook" AS character 
+  DESCRIPTION "FunctionName to give initial value for lookups"
+  FORMAT "X(55)"
+  INITIAL ""
+  LABEL "Initial Value Function"
+  POSITION 10
+  MAX-WIDTH 110
+  ORDER 280
+
+ADD FIELD "help-file" OF "zen-widlook" AS character 
+  DESCRIPTION "Help text file leave off extension
+place files in help dir use hlp pextension for gui and txt for tty"
+  FORMAT "X(30)"
+  INITIAL ""
+  LABEL "Help File"
+  POSITION 11
+  MAX-WIDTH 60
+  HELP "Help text file minus extension eg cust not cust.hlp or cust.txt"
+  LENGTH 0
+  ORDER 290
+
+ADD FIELD "help-ref" OF "zen-widlook" AS integer 
+  FORMAT ">>>>>>>>9"
+  INITIAL "0"
+  LABEL "Help Ref Num"
+  POSITION 12
+  MAX-WIDTH 4
+  ORDER 300
+
+ADD FIELD "in-program" OF "zen-widlook" AS character 
+  FORMAT "X(50)"
+  INITIAL "*"
+  LABEL "In Procedure"
+  POSITION 19
+  MAX-WIDTH 100
+  COLUMN-LABEL "In Procedure"
+  ORDER 180
+
+ADD FIELD "in-frame" OF "zen-widlook" AS character 
+  FORMAT "X(25)"
+  INITIAL "*"
+  LABEL "In Frame"
+  POSITION 20
+  MAX-WIDTH 50
+  COLUMN-LABEL "In Frame"
+  ORDER 190
+
+ADD FIELD "tstamp" OF "zen-widlook" AS integer 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 26
+  MAX-WIDTH 4
+  ORDER 5
+
+ADD FIELD "lookupname" OF "zen-widlook" AS character 
+  FORMAT "X(25)"
+  INITIAL ""
+  LABEL "Lookup Name"
+  POSITION 27
+  MAX-WIDTH 50
+  ORDER 250
+
+ADD FIELD "zen-widlooktableid" OF "zen-widlook" AS decimal 
+  FORMAT ">>>>>>>>>>>>>>>>>>>9"
+  INITIAL ?
+  LABEL "TableId"
+  POSITION 999
+  MAX-WIDTH 17
+  COLUMN-LABEL "TableId"
+  DECIMALS 0
+  ORDER 1
+
+ADD INDEX "fld" ON "zen-widlook" 
+  AREA "Schema Area"
+  PRIMARY
+  INDEX-FIELD "look-field" ASCENDING 
+
+ADD INDEX "frm" ON "zen-widlook" 
+  AREA "Schema Area"
+  INDEX-FIELD "in-frame" ASCENDING 
+
+ADD INDEX "pgm" ON "zen-widlook" 
+  AREA "Schema Area"
+  INDEX-FIELD "in-program" ASCENDING 
+
+ADD INDEX "tableid" ON "zen-widlook" 
+  AREA "Schema Area"
+  UNIQUE
+  INDEX-FIELD "zen-widlooktableid" ASCENDING 
+
+.
+PSC
+cpstream=ISO8859-1
+.
+0000152635
