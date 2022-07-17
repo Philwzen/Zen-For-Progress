@@ -1,0 +1,303 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Mozilla/4.5 [en]C-CCK-MCD   (WinNT; U) [Netscape]">
+<title>Zen Library 2001 Release Notes</title></head>
+<body bgcolor="#FFFFFF" link="#0000FF" vlink="#800080">
+<!-- ========== START OF NAVBAR ========== -->                <A NAME="navbar_top"><!-- --></A>                <TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">                <TR>                <TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">                <A NAME="navbar_top_firstrow"><!-- --></A>                <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3">                <TR ALIGN="center" VALIGN="top">                <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="index.html"><FONT ID="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>                                <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="apiindex.html"><FONT ID="NavBarFont1"><B>Api Index</B></FONT></A>&nbsp;</TD>                </TR>                </TABLE>                </TD>                <TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>Zen Demo System Dev System 04/11/03</EM>                </TD>                </TR>                <!-- =========== END OF NAVBAR =========== -->
+<h1><a NAME="Top"></a>Release Notes</h1>
+<b>These release notes contain information specific to Dev System 04/11/03 release
+(referred to in these notes as "this release")</b>
+<br><H2><FONT SIZE="-1">Dev System 04/11/03 Library Routine</FONT>
+<BR>zen-country.p </H2>
+<A NAME="Procedure Summary"><!-- --></A></font>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=5><FONT SIZE="+2">
+<B>Procedure Summary</B></FONT></TD> </TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= AltLanguage>AltLanguage</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-string CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= BuildCombo>BuildCombo</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-combo HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-table CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-field CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-where CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-by CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-none LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-wild LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= clear-table>clear-table</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= delete-record>delete-record</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-id DECIMAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Delete-Related-Tables>Delete-Related-Tables</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= delete-validation>delete-validation</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= Error-Create>Error-Create</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-code INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra1 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra2 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra3 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra4 CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= find-record>find-record</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-code CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT-OUTPUT TABLE t-zen-country
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= get-currency>get-currency</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT ip-country INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT op-currency CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= get-records>get-records</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-direction CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-id DECIMAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT TABLE t-zen-country
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetCtrl>GetCtrl</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-idx CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetStringEntry>GetStringEntry</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-item CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-properties CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-values CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-delim CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetSysVar>GetSysVar</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= HadErrors>HadErrors</A></B>() logical</FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= MaxDataGuess>MaxDataGuess</A></B>() integer</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-pgm CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= open-query>open-query</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT TABLE t-zen-country
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= pop-combo>pop-combo</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-codes CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-values CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= post-create>post-create</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= post-update>post-update</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Pre-Create>Pre-Create</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Pre-Save>Pre-Save</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-AltLanguage>Proc-AltLanguage</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT-OUTPUT pv-string CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-BuildCombo>Proc-BuildCombo</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-table CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-field CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-where CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-by CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-none LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-wild LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-codes CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-values CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-ErrorCreate>Proc-ErrorCreate</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-code INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra1 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra2 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra3 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra4 CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-GetCtrl>Proc-GetCtrl</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-idx CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-GetSysVar>Proc-GetSysVar</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-HadErrors>Proc-HadErrors</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-haderr LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-MaxDataGuess>Proc-MaxDataGuess</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-pgm CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-value INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-UserProperties>Proc-UserProperties</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-user CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-property CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= save-record>save-record</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-id DECIMAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT-OUTPUT TABLE t-zen-country
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SystemManager>SystemManager</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-user CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= UnixPath>UnixPath</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-string CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= UserLanguage>UserLanguage</A></B>() integer</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-user CHARACTER
+</TD></TR>

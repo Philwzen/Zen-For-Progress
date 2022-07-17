@@ -1,0 +1,11 @@
+[OfficeServer]
+MergeProgram="ensignia/srv/brokstat.p"
+MergeProcedure="MergeBkStat"
+SourceData="data\BKS2004070613570012E.txt"
+OfficeProgram="word"
+TemplateFile="templates\BkStatTemplate.doc"
+DestFile="output\BKS2004070613570012E.doc"
+Native="No"
+PrinterName="None"
+Notify="phil.white@ensign-group.com"
+Extra="0012E^610^data\BKS2004070613570012E610.txt|0012E^630^data\BKS2004070613570012E630.txt"

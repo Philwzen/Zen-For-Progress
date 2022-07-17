@@ -1,0 +1,6 @@
+# to allow access to dev appserver mode
+
+-p codeclient/login.w
+-Bt 5000
+-mc
+-param appserver^.\controlfiles\^zen^zen

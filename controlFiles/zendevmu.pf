@@ -1,0 +1,6 @@
+#thick client connection for development
+-pf controlfiles\hostdbs.pf
+-p _ab.r
+-Bt 5000
+-B 5000
+-s 2000

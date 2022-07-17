@@ -1,0 +1,7 @@
+-pf controlfiles\hostdbs.pf
+-yy 1980
+-p codeclient/login.w
+-Bt 5000
+-B 5000
+#-param = operation mode ^ inipath ^ ininame
+-param local^.\controlfiles\^zen^zen

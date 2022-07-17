@@ -1,0 +1,7 @@
+-Bt 5000
+-B 5000
+-p _ab.p 
+#-p ofsrv/officeserver.w
+-param local^.\^ensignia
+#-param appserver^.\^ensignia
+-pf devel.pf

@@ -1,0 +1,11 @@
+# to start appservers
+-pf controlfiles\alldbs.pf
+-q 
+-Bt 5000
+-B 5000
+-TM 32
+-TB 31
+-pinshm 
+-rereadnolock 
+-param local
+

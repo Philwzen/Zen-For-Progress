@@ -1,0 +1,931 @@
+&ANALYZE-SUSPEND _VERSION-NUMBER UIB_v9r12
+&ANALYZE-RESUME
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _CUSTOM _DEFINITIONS Procedure 
+/*------------------------------------------------------------------------
+    File        : 
+    Purpose     :
+
+    Syntax      :
+
+    Description :
+
+    Author(s)   :
+    Created     :
+    Notes       :
+  ----------------------------------------------------------------------*/
+/*          This .W file was created with the Progress AppBuilder.      */
+/*----------------------------------------------------------------------*/
+ create widget-pool.
+/* ***************************  Definitions  ************************** */
+this-procedure:private-data = "library-office".
+&glob library-office
+&glob library-program
+{app-paths.i}
+
+def var lv-wasup as log extent 4 no-undo init no.
+def var lv-applist as char no-undo init
+'Microsoft Word,Microsoft Excel,Outlook,OOo'.
+def stream ip.
+def stream op.
+
+&glob wdOpenFormatAuto 0
+def var lv-officesuite as char no-undo.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+
+&ANALYZE-SUSPEND _UIB-PREPROCESSOR-BLOCK 
+
+/* ********************  Preprocessor Definitions  ******************** */
+
+&Scoped-define PROCEDURE-TYPE Procedure
+&Scoped-define DB-AWARE no
+
+
+
+/* _UIB-PREPROCESSOR-BLOCK-END */
+&ANALYZE-RESUME
+
+
+/* ************************  Function Prototypes ********************** */
+
+&IF DEFINED(EXCLUDE-GetExcelColumnName) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD GetExcelColumnName Procedure 
+FUNCTION GetExcelColumnName RETURNS CHARACTER
+  ( lv-col as int )  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeApplicationName) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeApplicationName Procedure 
+FUNCTION OfficeApplicationName RETURNS CHARACTER
+  ( pv-applhandle as com-handle )  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeCloseApplication) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeCloseApplication Procedure 
+FUNCTION OfficeCloseApplication RETURNS LOGICAL
+  ( pv-applhandle as com-handle )  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeCloseDocument) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeCloseDocument Procedure 
+FUNCTION OfficeCloseDocument RETURNS LOGICAL
+  ( pv-document as com-handle)  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeGetDocHandle) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeGetDocHandle Procedure 
+FUNCTION OfficeGetDocHandle RETURNS COM-HANDLE
+( pv-applhandle as com-handle,
+  pv-document   as char)  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeGetSuite) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeGetSuite Procedure 
+FUNCTION OfficeGetSuite RETURNS CHARACTER
+  ( /* parameter-definitions */ )  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeMailMerge) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeMailMerge Procedure 
+FUNCTION OfficeMailMerge RETURNS CHARACTER(
+   pv-applhandle as com-handle,
+   pv-datafile as char, 
+   pv-destination as int,
+   output pv-numrecs as int)  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeNewWorkBook) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeNewWorkBook Procedure 
+FUNCTION OfficeNewWorkBook RETURNS COM-HANDLE
+  ( pv-application as com-handle )  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeNewWorkSheet) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeNewWorkSheet Procedure 
+FUNCTION OfficeNewWorkSheet RETURNS COM-HANDLE
+  ( pv-workbook as com-handle )  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeOpenDocument) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeOpenDocument Procedure 
+FUNCTION OfficeOpenDocument RETURNS com-handle
+  ( pv-applhandle as com-handle,
+    pv-Document as char,
+    pv-readonly as char)  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeOpenTemplate) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeOpenTemplate Procedure 
+FUNCTION OfficeOpenTemplate RETURNS LOGICAL
+  ( pv-applhandle as com-handle,
+    pv-Document as char)  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeSaveAs) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeSaveAs Procedure 
+FUNCTION OfficeSaveAs RETURNS LOGICAL
+  ( pv-applhandle as com-handle,
+    pv-name       as char,
+    pv-document   as char)  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeSendEmail) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeSendEmail Procedure 
+FUNCTION OfficeSendEmail RETURNS LOGICAL
+  ( pv-applhandle as com-handle,
+    pv-from as char,
+    pv-to   as char,
+    pv-subject as char,
+    pv-text as  char,
+    pv-attach as char,
+    pv-expires as char )  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeSetSuite) = 0 &THEN
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeSetSuite Procedure 
+FUNCTION OfficeSetSuite RETURNS CHARACTER
+  ( /* parameter-definitions */ )  FORWARD.
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+&ENDIF
+&IF DEFINED(EXCLUDE-OfficeStartApplication) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeStartApplication Procedure 
+FUNCTION OfficeStartApplication RETURNS COM-HANDLE
+  ( pv-appName as char,
+    pv-hidden as char )  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeToUrl) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeToUrl Procedure 
+FUNCTION OfficeToUrl RETURNS CHARACTER
+  ( pv-doc as char )  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeWorkSheetCellsAutoFit) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeWorkSheetCellsAutoFit Procedure 
+FUNCTION OfficeWorkSheetCellsAutoFit RETURNS CHARACTER
+   ( pv-worksheet as com-handle,
+    pv-startcol as int,
+    pv-endcol as int )  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeWriteCellData) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION-FORWARD OfficeWriteCellData Procedure 
+FUNCTION OfficeWriteCellData RETURNS CHARACTER
+  ( pv-worksheet as com-handle,
+    pv-col as int,
+    pv-row as int,
+    pv-data as char )  FORWARD.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+
+/* *********************** Procedure Settings ************************ */
+
+&ANALYZE-SUSPEND _PROCEDURE-SETTINGS
+/* Settings for THIS-PROCEDURE
+   Type: Procedure
+   Allow: 
+   Frames: 0
+   Add Fields to: Neither
+   Other Settings: CODE-ONLY COMPILE
+ */
+&ANALYZE-RESUME _END-PROCEDURE-SETTINGS
+
+/* *************************  Create Window  ************************** */
+
+&ANALYZE-SUSPEND _CREATE-WINDOW
+/* DESIGN Window definition (used by the UIB) 
+  CREATE WINDOW Procedure ASSIGN
+         HEIGHT             = 30.19
+         WIDTH              = 47.
+/* END WINDOW DEFINITION */
+                                                                        */
+&ANALYZE-RESUME
+
+ 
+
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _CUSTOM _MAIN-BLOCK Procedure 
+
+
+/* ***************************  Main Block  *************************** */
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+
+/* ************************  Function Implementations ***************** */
+
+&IF DEFINED(EXCLUDE-GetExcelColumnName) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION GetExcelColumnName Procedure 
+FUNCTION GetExcelColumnName RETURNS CHARACTER
+  ( lv-col as int ) :
+/*------------------------------------------------------------------------------
+  Purpose:  
+    Notes:  
+------------------------------------------------------------------------------*/
+def var lv-r as char no-undo.
+def var lv-letter as char no-undo init 'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z'.
+
+    lv-r = if lv-col < 27 then entry(lv-col,lv-letter) 
+                          else entry(int(truncate(lv-col / 27,0)),lv-letter) + 
+                               entry((lv-col mod 26) + 1,lv-letter) no-error.        
+
+   if error-status:error 
+   then message 'Column Name Failure for ' lv-col {&dbt}.
+
+  RETURN lv-r.
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeApplicationName) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeApplicationName Procedure 
+FUNCTION OfficeApplicationName RETURNS CHARACTER
+  ( pv-applhandle as com-handle ) :
+
+def var lv-appname as char no-undo init 'Invalid'.
+
+if valid-handle(pv-applhandle) 
+then 
+case lv-officesuite:
+    when 'microsoft'  then lv-appname = pv-applhandle:application:name.
+    when 'openoffice' then lv-appname = 'OOo'.
+    
+ otherwise lv-appname = 'Unknown'.
+end case.
+
+
+  RETURN lv-appname.   /* Function return value. */
+
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeCloseApplication) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeCloseApplication Procedure 
+FUNCTION OfficeCloseApplication RETURNS LOGICAL
+  ( pv-applhandle as com-handle ) :
+/*------------------------------------------------------------------------------
+  Purpose:  
+    Notes:  
+------------------------------------------------------------------------------*/
+if not valid-handle(pv-applhandle) then return true.
+def var x as int no-undo.
+x = lookup(OfficeApplicationName(pv-Applhandle),lv-applist).
+
+    if not lv-wasup[x]
+    then do:
+        case lv-officesuite:
+            when 'microsoft' then pv-applhandle:QUIT() no-error. 
+            when 'openoffice' then pv-applhandle:TERMINATE() no-error.
+            otherwise  return error.
+        end case.
+    
+        RELEASE OBJECT pv-applhandle no-error.
+        if error-status:error then return error.   
+    End.
+
+RETURN not error-status:error.   /* Function return value. */
+
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeCloseDocument) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeCloseDocument Procedure 
+FUNCTION OfficeCloseDocument RETURNS LOGICAL
+  ( pv-document as com-handle) :
+
+case lv-officesuite:
+    when 'microsoft' then pv-document:close({&wdDoNotSaveChanges}) no-error. 
+    when 'openoffice' then pv-document:Close(TRUE) no-error.
+    otherwise return error.
+end case.
+    
+    
+return not error-status:error.
+
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeGetDocHandle) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeGetDocHandle Procedure 
+FUNCTION OfficeGetDocHandle RETURNS COM-HANDLE
+( pv-applhandle as com-handle,
+  pv-document   as char) :
+
+def var x          as int no-undo.
+def var lv-name    as char no-undo init ?.
+
+pv-document = entry(num-entries(pv-document,'{&BackSlash}'),pv-document,'{&BackSlash}').
+
+case lv-officesuite:
+    when 'microsoft' then 
+    do x = 1 to 99:
+       lv-name =  pv-applhandle:documents:ITEM(x):name no-error.
+       if lv-name = ? then leave. 
+       if lv-name = pv-document 
+       then do:
+           pv-applhandle = pv-applhandle:documents:ITEM(x) no-error.
+           leave.
+       End.
+    End.
+    when 'openoffice' then pv-applhandle = pv-applhandle:Sheets:getByIndex(0).
+    otherwise pv-applhandle = ?.
+end case.
+if lv-name = ? or x > 99 then pv-applhandle = ?.
+
+return pv-applhandle.
+
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeGetSuite) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeGetSuite Procedure 
+FUNCTION OfficeGetSuite RETURNS CHARACTER
+  ( /* parameter-definitions */ ) :
+    if lv-officeSuite = '' 
+    then lv-officeSuite = OfficeSetSuite().
+    
+  RETURN lv-officeSuite.
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeMailMerge) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeMailMerge Procedure 
+FUNCTION OfficeMailMerge RETURNS CHARACTER(
+   pv-applhandle as com-handle,
+   pv-datafile as char, 
+   pv-destination as int,
+   output pv-numrecs as int) :
+
+   def var lv-ch as com-handle no-undo.
+
+case lv-officesuite:
+    when 'microsoft' then do:
+        lv-ch = pv-applhandle:activeDocument:mailmerge no-error.
+        if error-status:error then return '1:' + Error-Status:Get-Message(Error-Status:Num-Messages).
+     
+     /* OpenDataSource(Name, ConfirmConversions, ReadOnly, LinkToSource, 
+                       AddToRecentFiles, PasswordDocument, PasswordTemplate,
+                       Revert, WritePasswordDocument, WritePasswordTemplate, 
+                       Connection, SQLStatement, SQLStatement1) */
+     
+        lv-ch:opendatasource(pv-datafile,{&wdOpenFormatAuto},true,true,true,false) no-error.
+        if error-status:error then return '2:' + Error-Status:Get-Message(Error-Status:Num-Messages).
+        lv-ch:DataSource:FirstRecord = 2. /* set start rec to second record bodge for 2003 */
+        lv-ch:destination = pv-destination no-error.
+        if error-status:error then return '3:' + Error-Status:Get-Message(Error-Status:Num-Messages).
+        lv-ch:execute(true) no-error. /* disp dialog box if we have errors */
+        if error-status:error then return '4:' + Error-Status:Get-Message(Error-Status:Num-Messages).
+        lv-ch:datasource:activerecord = {&wdlastDataSourceRecord} no-error.
+        pv-numrecs = lv-ch:datasource:activerecord no-error.
+     
+        if not error-status:error 
+        then RETURN pv-applhandle:activeDocument:name.
+        else do:
+           message "5:" Error-Status:Get-Message(Error-Status:Num-Messages)
+              view-as alert-box info buttons OK.
+           pv-numrecs = 0.
+           return error.
+        End.
+    end.
+    when 'openoffice' then do:
+    end.
+    otherwise return error.
+end case.
+
+
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeNewWorkBook) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeNewWorkBook Procedure 
+FUNCTION OfficeNewWorkBook RETURNS COM-HANDLE
+  ( pv-application as com-handle ) :
+
+def var ch-workbook as com-handle no-undo.
+def var args as raw       no-undo.
+       
+case lv-officesuite:
+    when 'microsoft'  then ch-WorkBook  = pv-application:Workbooks:Add().
+    when 'openoffice' then ch-WorkBook  = pv-application:loadComponentFromURL("private:factory/scalc", "_blank", 0, args).
+end case.
+
+  RETURN ch-workbook.
+
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeNewWorkSheet) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeNewWorkSheet Procedure 
+FUNCTION OfficeNewWorkSheet RETURNS COM-HANDLE
+  ( pv-workbook as com-handle ) :
+
+def var ch-worksheet as com-handle no-undo.
+
+case lv-officesuite:
+    when 'microsoft'  then ch-WorkSheet = pv-WorkBook:Sheets:Item(1).
+    when 'openoffice' then ch-WorkSheet = pv-WorkBook:Sheets:getByIndex(0).
+end case.
+
+  RETURN ch-worksheet.   /* Function return value. */
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeOpenDocument) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeOpenDocument Procedure 
+FUNCTION OfficeOpenDocument RETURNS com-handle
+  ( pv-applhandle as com-handle,
+    pv-Document as char,
+    pv-readonly as char) :
+
+   def var ch-document as com-handle  no-undo.
+   /*
+   (FileName, 
+   ConfirmConversions, 
+   ReadOnly, 
+   AddToRecentFiles, 
+   PasswordDocument, 
+   PasswordTemplate, 
+   Revert, 
+   WritePasswordDocument, 
+   WritePasswordTemplate, 
+   Format, 
+   Encoding, 
+   Visible)
+   */
+   
+   def var lv-readonly as int no-undo.
+   lv-readonly = if pv-readonly = 'readonly' then 1 else 0.
+   
+   case OfficeApplicationName(pv-applhandle):
+      when 'Microsoft Excel' then ch-document = 
+         pv-applhandle:Workbooks:Open(pv-document,no,lv-readonly) no-error.
+      when 'Microsoft Word'  then ch-document =
+         pv-applhandle:documents:Open(pv-document,no,lv-readonly) no-error.
+      when 'OOo' then ch-document =
+        pv-applhandle:loadComponentFromURL(OfficeToUrl(pv-Document), "_blank", lv-readonly, '').
+
+   end case.
+
+   RETURN ch-document.
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeOpenTemplate) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeOpenTemplate Procedure 
+FUNCTION OfficeOpenTemplate RETURNS LOGICAL
+  ( pv-applhandle as com-handle,
+    pv-Document as char) :
+/*
+   DocumentName
+        ConfirmConversions,
+        ReadOnly,
+        AddToRecentFiles,
+        PasswordDocument,
+        PasswordTemplate,
+        Revert,
+        WritePasswordDocument,
+        WritePasswordTemplate,
+        Format,
+        Encoding,
+        Visible,
+        OpenAndRepair,
+        DocumentDirection,
+        NoEncodingDialog,
+        XMLTransform).
+        
+*/
+    case OfficeApplicationName(pv-applhandle):
+        when 'Microsoft Excel' 
+            then  pv-applhandle:Workbooks:Open(pv-document,,true) no-error.
+        when 'Microsoft Word' 
+            then  pv-applhandle:documents:OPEN(pv-document,,true,,,,) no-error.
+        when 'OOo'
+            then pv-applhandle:loadComponentFromURL(OfficeToUrl(pv-Document), "_blank", 1, '') no-error.
+
+    end case.
+    
+  RETURN  not error-status:error.   /* Function return value. */
+
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeSaveAs) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeSaveAs Procedure 
+FUNCTION OfficeSaveAs RETURNS LOGICAL
+  ( pv-applhandle as com-handle,
+    pv-name       as char,
+    pv-document   as char) :
+
+def var lv-store   as char no-undo.
+def var ch-doc as com-handle no-undo.
+
+assign pv-document = replace(pv-document,'{&BackSlash}','/')
+       lv-store = pv-name
+       pv-name = getfullpath(pv-name) no-error.
+       
+if pv-name = ? then pv-name = lv-store.
+
+
+case OfficeApplicationName(pv-applhandle):
+    when 'Microsoft Word' then do:
+        ch-doc = OfficeGetDocHandle(pv-applhandle,pv-document).
+        if valid-handle(ch-doc) 
+        then ch-doc:SAVEAS(pv-name).
+    End.
+    when 'Microsoft Excel' then do:
+        pv-applhandle:ActiveWorkbook:SaveAs(pv-name,,,,,,) no-error.
+    End.
+    when 'OOo' then do:
+        ch-doc = OfficeGetDocHandle(pv-applhandle,pv-document).
+        if valid-handle(ch-doc) 
+        then ch-doc:storeAsURL(OfficeToUrl(pv-name),'').
+    end.
+end case.
+
+  RETURN  not error-status:error.   /* Function return value. */
+
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeSendEmail) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeSendEmail Procedure 
+FUNCTION OfficeSendEmail RETURNS LOGICAL
+  ( pv-applhandle as com-handle,
+    pv-from as char,
+    pv-to   as char,
+    pv-subject as char,
+    pv-text as  char,
+    pv-attach as char,
+    pv-expires as char ) :
+
+DEF VAR lv-mail AS COM-HANDLE NO-UNDO.
+def var namespace as com-handle no-undo.
+
+        namespace = pv-applhandle:Getnamespace("MAPI").
+        namespace:logon(getsysvar('{&clv}user')).
+    
+        ASSIGN lv-mail         = pv-applhandle:createItem(0)
+               lv-mail:subject = pv-subject
+               lv-mail:body    = pv-text
+               lv-mail:TO      = pv-to
+               pv-attach       = getfullpath(pv-attach)
+               lv-mail:CC      = '' no-error. 
+    
+        if pv-expires ne '' then 
+            assign
+                lv-mail:ExpiryTime = pv-expires 
+                lv-mail:Permission = 2  no-error.
+        else do:
+            if not error-status:error then 
+                lv-mail:Attachments:Add(pv-attach) no-error.
+            if not error-status:error then 
+                lv-mail:Attachments(1):DisplayName = "pv-text" no-error.
+        end.
+    
+        if not error-status:error 
+        then lv-mail:SEND() no-error.
+        else message 'Email Error ' skip 
+                     Error-Status:Get-Message(Error-Status:Num-Messages) 
+             view-as alert-box error.
+         
+    release object lv-mail.
+    release object namespace.
+  RETURN not error-status:error.
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeSetSuite) = 0 &THEN
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeSetSuite Procedure 
+FUNCTION OfficeSetSuite RETURNS CHARACTER
+  ( /* parameter-definitions */ ) :
+    
+    
+    
+    lv-officeSuite = GetCtrl("officeSuite").
+  RETURN lv-officeSuite.   /* Function return value. */
+END FUNCTION.
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+&ENDIF
+&IF DEFINED(EXCLUDE-OfficeStartApplication) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeStartApplication Procedure 
+FUNCTION OfficeStartApplication RETURNS COM-HANDLE
+  ( pv-appName as char,
+    pv-hidden as char ) :
+/*------------------------------------------------------------------------------
+  Purpose:  
+    Notes:  
+------------------------------------------------------------------------------*/
+def var ch-applhandle as com-handle no-undo.
+lv-officesuite = OfficeSetSuite().
+
+def var x as int no-undo.
+def var lv-up as log no-undo.
+def var ch-OOoDesktop as com-handle no-undo.
+/*
+maybe need to use wapiisrunning('winword.exe') to 
+see if its already up and then connect or run
+*/
+pv-hidden = if session:remote then 'hidden'
+                              else pv-hidden.
+
+if pv-appname = 'email' then pv-appname = 'Outlook.application'.
+else 
+case lv-officesuite:
+    when 'microsoft' then do:
+        case pv-appname:
+            when 'wordprocessor' then pv-appname = 'Word.Application'.
+            when 'spreadsheet' then pv-appname = 'Excel.Application'.
+            when 'email' then pv-appname = 'Outlook.application'.
+            when 'db' then pv-appname = 'Access.application'.
+            when 'presentation' then pv-appname = 'powerpoint.application'. 
+        end case.
+    end.
+    when 'kingsoft' then do:
+        case pv-appname:
+            when 'wordprocessor' then pv-appname = 'Word.Application'.
+            when 'spreadsheet' then pv-appname = 'et.Application'.
+            when 'presentation' then pv-appname = 'powerpoint.application'. 
+        end case.
+    when 'openoffice' then pv-appname = "com.sun.star.ServiceManager".
+end case.
+
+  CREATE value(pv-appname) ch-Applhandle connect no-error.
+  if error-status:error 
+  then do:
+       CREATE value(pv-appname) ch-Applhandle no-error.
+       lv-up = false.
+  End.
+  else lv-up = true.
+  x = lookup(OfficeApplicationName(ch-Applhandle),lv-applist).
+  lv-wasup[x] = lv-up. 
+
+  if lv-officesuite = 'openoffice' then do:
+        ch-OOoDesktop = ch-Applhandle:createInstance("com.sun.star.frame.Desktop").
+        ch-Applhandle = ch-oooDesktop.
+  end.
+  ch-applhandle:visible = (pv-hidden = 'visible') no-error.  
+    
+  RETURN ch-applhandle.  
+
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeToUrl) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeToUrl Procedure 
+FUNCTION OfficeToUrl RETURNS CHARACTER
+  ( pv-doc as char ) :
+
+  RETURN if pv-doc begins "file:///" 
+    then pv-doc 
+    else "file:///" + replace(pv-doc,"\","/").
+  
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeWorkSheetCellsAutoFit) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeWorkSheetCellsAutoFit Procedure 
+FUNCTION OfficeWorkSheetCellsAutoFit RETURNS CHARACTER
+   ( pv-worksheet as com-handle,
+    pv-startcol as int,
+    pv-endcol as int ) :
+  
+  DEF VAR X AS INT NO-UNDO.
+  
+case lv-officesuite:
+    when 'microsoft'  then do:
+         pv-WorkSheet:Cells:Select.
+         pv-WorkSheet:Cells:EntireColumn:AutoFit.
+    end.
+    when 'openoffice' then do:
+        /* pv-WorkSheet:SetOptimalColumnWidth. */
+        
+        do x = pv-startcol to pv-endcol:
+            pv-WorkSheet:columns(x):OptimalWidth = TRUE. 
+        end.
+        
+    end.
+end case.
+ 
+  RETURN "".   /* Function return value. */
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+
+&IF DEFINED(EXCLUDE-OfficeWriteCellData) = 0 &THEN
+
+&ANALYZE-SUSPEND _UIB-CODE-BLOCK _FUNCTION OfficeWriteCellData Procedure 
+FUNCTION OfficeWriteCellData RETURNS CHARACTER
+  ( pv-worksheet as com-handle,
+    pv-col as int,
+    pv-row as int,
+    pv-data as char ) :
+    
+    def var lv-range as char no-undo.
+    def var ch-cell as com-handle no-undo.
+    
+case lv-officesuite:
+    when 'microsoft'  then do:
+        lv-range = getexcelcolumnname(pv-col) + string(pv-row).
+        pv-WorkSheet:Range(lv-range):Value = ' ' + pv-data.
+        if isnumeric(pv-data) and pv-data begins '0'
+        then pv-WorkSheet:Range(lv-range):NumberFormat = fill('0',length(trim(pv-data))).
+    end.
+    when 'openoffice' then do:
+        ch-Cell = pv-WorkSheet:GetCellByPosition(pv-col,pv-row).
+        if isnumeric(pv-data) and pv-data begins '0'
+        then do:
+            if IsInteger(pv-data) 
+            then ch-Cell:setValue(integer(pv-data)).
+            else do:
+                ch-Cell:setValue(decimal(pv-data)).
+                /* GOTTO BE A BETTER WAY !!!!
+                formatNumber = ch-Workbook:getNumberFormats:queryKey(formatToUse,ch-Workbook:charLocale,false).
+               /* if our desired format is not in the work book, then formatNumber will be
+                  set to "-1".  In that case, we will create our desired format. */
+               if formatNumber = -1 
+               then formatNumber = chWorkbook:getNumberFormats:addNew(formatToUse,ch-Workbook:charLocale).
+               /* set the cell's format to the correct format number */
+               ch-Cell:NumberFormat = formatNumber.
+               */
+            end.
+        end.
+        else ch-Cell:setString(pv-data).
+    end.
+end case.
+ 
+  RETURN "".   /* Function return value. */
+END FUNCTION.
+
+/* _UIB-CODE-BLOCK-END */
+&ANALYZE-RESUME
+
+&ENDIF
+

@@ -1,0 +1,1772 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Mozilla/4.5 [en]C-CCK-MCD   (WinNT; U) [Netscape]">
+<title>Zen Library 2001 Release Notes</title></head>
+<body bgcolor="#FFFFFF" link="#0000FF" vlink="#800080">
+<!-- ========== START OF NAVBAR ========== -->                <A NAME="navbar_top"><!-- --></A>                <TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">                <TR>                <TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">                <A NAME="navbar_top_firstrow"><!-- --></A>                <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3">                <TR ALIGN="center" VALIGN="top">                <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="index.html"><FONT ID="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>                                <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="apiindex.html"><FONT ID="NavBarFont1"><B>Api Index</B></FONT></A>&nbsp;</TD>                </TR>                </TABLE>                </TD>                <TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>Zen Demo System Dev System 04/11/03</EM>                </TD>                </TR>                <!-- =========== END OF NAVBAR =========== -->
+<h1><a NAME="Top"></a>Release Notes</h1>
+<b>These release notes contain information specific to Dev System 04/11/03 release
+(referred to in these notes as "this release")</b>
+<br><H2><FONT SIZE="-1">Dev System 04/11/03 Library Routine</FONT>
+<BR>zen-library.p </H2>
+<A NAME="Procedure Summary"><!-- --></A></font>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=5><FONT SIZE="+2">
+<B>Procedure Summary</B></FONT></TD> </TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ActivateButtons>ActivateButtons</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-menuframe HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= AltLanguage>AltLanguage</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-string CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= Any-Errors>Any-Errors</A></B>() logical</FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= AttachMenu>AttachMenu</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-window HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-procedure HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= BldMenuBar>BldMenuBar</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT PV-WINdowHANDLE HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT PV-FRAMEHANDLE HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT PV-GROUP CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-called-from HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Br-Label>Br-Label</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT br-hand HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lv-dateformat CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= BtnHelp>BtnHelp</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= BuildCombo>BuildCombo</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-combo HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-table CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-field CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-where CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-by CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-none LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-wild LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= BuildMenu>BuildMenu</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT v-id INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT h-menu HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT h-sub-menu HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-called-from HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= BuildMenuButtons>BuildMenuButtons</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-procedure HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= buildtemptable>buildtemptable</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ButtonDoIt>ButtonDoIt</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-called-from HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= CanRun>CanRun</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-proc-name CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= Center-Window>Center-Window</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-win-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= CharTime>CharTime</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-time INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-char-time CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ClassCodeDesc>ClassCodeDesc</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-class CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-code CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ClassCodes>ClassCodes</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-class CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-desc CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Con-DB>Con-DB</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-db CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-param CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-mess CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Connect-Appservers>Connect-Appservers</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= CreateAppserver>CreateAppserver</A></B>() handle</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-connectstring CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= CreateButs>CreateButs</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-butparams CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= CreateMenuButton>CreateMenuButton</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT PV-FRAMEHANDLE HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-called-from HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-menu-name CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-menu-action CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-id CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= CustomWidgets>CustomWidgets</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-mode CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= DateInWords>DateInWords</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT ip-date DATE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT ip-long-name LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= DateSep>DateSep</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-lanid INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= DayName>DayName</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT ip-date DATE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= DeleteAllSysVars>DeleteAllSysVars</A></B>() logical</FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= DeleteSysVar>DeleteSysVar</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= DosPath>DosPath</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-string CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= Error-Clear>Error-Clear</A></B>() logical</FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= Error-Create>Error-Create</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-code INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra1 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra2 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra3 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra4 CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= Execute>Execute</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-prog CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-dir CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-params CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-mode CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= FindWidgetInFrame>FindWidgetInFrame</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-widname CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-wid-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Fkey>Fkey</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT v-pgmhandle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= FrameChanged>FrameChanged</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-widlist CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= FreezeWindow>FreezeWindow</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-window HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-onoff INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Get-Hdr>Get-Hdr</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetApiDetail>GetApiDetail</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-apiname CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-properties CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-values CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetAppserverHandle>GetAppserverHandle</A></B>() handle</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-Appsrv-name CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-context CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetAppserverNames>GetAppserverNames</A></B>() character</FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetButPos>GetButPos</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetColour>GetColour</A></B>() integer</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT ip-colour-name CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetComboKey>GetComboKey</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetCtrl>GetCtrl</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-idx CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetCurrency>GetCurrency</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT ip-country INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetCurrentSeqValue>GetCurrentSeqValue</A></B>() integer</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-Seq CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetIniValue>GetIniValue</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-section CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetKeyNumber>GetKeyNumber</A></B>() integer</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-tablename CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= GetMessage>GetMessage</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-mesnum INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra1 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra2 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra3 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra4 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-mestxt CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetNextSeqValue>GetNextSeqValue</A></B>() integer</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-Seq CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= GetOSFile>GetOSFile</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT-OUTPUT v-filename CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetRegistry>GetRegistry</A></B>() character</FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetStringEntry>GetStringEntry</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-item CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-properties CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-values CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-delim CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;DLL-ENTRY</CODE></TD>
+<TD><CODE><a name= GetSysColor>GetSysColor</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT nIndex INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT dwRgbValue INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetSysVar>GetSysVar</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= HadErrors>HadErrors</A></B>() logical</FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= initialise>initialise</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= initialise-libraries>initialise-libraries</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= IntegerTime>IntegerTime</A></B>() integer</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-time CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= Is-Running>Is-Running</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT window-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= IsNull>IsNull</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= IsNumeric>IsNumeric</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-Value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Jumpto>Jumpto</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-widname CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= Lastday>Lastday</A></B>() integer</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lv-date DATE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= LoadDefBackground>LoadDefBackground</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-win HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;DLL-ENTRY</CODE></TD>
+<TD><CODE><a name= LockWindowUpdate>LockWindowUpdate</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT hWndLock INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT IsLocked INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= MakeButton>MakeButton</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-parentproc HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-name CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-sensitive LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-flat LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-label CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-width DECIMAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-height DECIMAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-row DECIMAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-col DECIMAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-help CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-visible LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= MaxDataGuess>MaxDataGuess</A></B>() integer</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-pgm CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Menu-Label>Menu-Label</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-hand HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= MenuButs>MenuButs</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-item CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT PV-FRAMEHANDLE HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-called-from HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= MenuDoIt>MenuDoIt</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-called-from HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;DLL-ENTRY</CODE></TD>
+<TD><CODE><a name= MessageBoxA>MessageBoxA</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT hwnd INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT mbtext CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT mbtitle CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT style INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT result INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= MonthName>MonthName</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT ip-date DATE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= MoveLabel>MoveLabel</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-widget HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-origx INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-origy INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= Msg>Msg</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-msgid INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra1 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra2 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra3 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra4 CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= NameFrames>NameFrames</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lv-wid-handle HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-name CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= NewMessage>NewMessage</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= PgmMenuGroup>PgmMenuGroup</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-pgm CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= PgmName>PgmName</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-pgmid DECIMAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= PgmRepInfo>PgmRepInfo</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-pgm CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;DLL-ENTRY</CODE></TD>
+<TD><CODE><a name= PlaySoundA>PlaySoundA</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pszSound INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT hmod INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT fdwSound INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT ReturnValue INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= PopulateTempTables>PopulateTempTables</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Printer-Control>Printer-Control</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-AltLanguage>Proc-AltLanguage</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT-OUTPUT pv-string CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-AnyErrors>Proc-AnyErrors</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-ok LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-AttachMenu>Proc-AttachMenu</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT PV-WINDOW HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT PV-frame HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT PV-procedure HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-BuildCombo>Proc-BuildCombo</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-table CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-field CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-where CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-by CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-none LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-wild LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-codes CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-values CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-CenterWindow>Proc-CenterWindow</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-win-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-ClassCodeDesc>Proc-ClassCodeDesc</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-class CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-code CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-desc CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-ClassCodes>Proc-ClassCodes</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-class CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-desc CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-keys CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-CreateAppserver>Proc-CreateAppserver</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-connectstring CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT h-appserver HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-CreateButs>Proc-CreateButs</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lv-butlist CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lv-commonlist CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-DateSep>Proc-DateSep</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-lanid INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-DeleteAllSysVars>Proc-DeleteAllSysVars</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-DeleteSysVar>Proc-DeleteSysVar</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-ErrorClear>Proc-ErrorClear</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-ErrorCreate>Proc-ErrorCreate</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-code INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra1 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra2 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra3 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra4 CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-FrameChanged>Proc-FrameChanged</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-widlist CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-changed LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-GetApiDetail>Proc-GetApiDetail</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-apiname CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-properties CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-values CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-GetColour>Proc-GetColour</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT ip-colour CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT op-colour INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-GetCtrl>Proc-GetCtrl</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-idx CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-GetCurrrency>Proc-GetCurrrency</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT ip-country INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT op-currency CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-GetIniValue>Proc-GetIniValue</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-section CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-GetSysVar>Proc-GetSysVar</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-Haderrors>Proc-Haderrors</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-haderr LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-is-running>Proc-is-running</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT window-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-PgmProperties>Proc-PgmProperties</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-pgm CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-property CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-RgbColour>Proc-RgbColour</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-name CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT o-rgb CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-SetCtrl>Proc-SetCtrl</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-idx CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-data CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-SetIniValue>Proc-SetIniValue</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-section CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-SetSessionLangFormats>Proc-SetSessionLangFormats</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-lanid INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-SetSysVar>Proc-SetSysVar</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-Sound>Proc-Sound</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-file CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-StringToDate>Proc-StringToDate</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-string CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-date DATE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-SysMsg>Proc-SysMsg</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-msg CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-UserProperties>Proc-UserProperties</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-user CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-property CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-ValidClassCode>Proc-ValidClassCode</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-ok LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-class CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-code CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-desc CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-ValidUser>Proc-ValidUser</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lv-user CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lv-pass CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-ok LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-WidgetExists>Proc-WidgetExists</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-framehandle HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-widname CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-ok LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Proc-WinMessage>Proc-WinMessage</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-mesnum INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra1 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra2 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra3 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra4 CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-ok LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ProgramButtons>ProgramButtons</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-pgm CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ProgramTitle>ProgramTitle</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-pgm CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ProperForm>ProperForm</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-hand HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;DLL-ENTRY</CODE></TD>
+<TD><CODE><a name= ProPrintFile>ProPrintFile</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT hControl INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT fPrintFlags INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT hWndParent INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT nFontNo INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lpszFile CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT nPages INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT Print_Result INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;DLL-ENTRY</CODE></TD>
+<TD><CODE><a name= ProPrintFile16>ProPrintFile16</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT hControl INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT fUseSetupDialog INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT hWndParent INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT nFontNo INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lpszFile CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT nPages INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT Print_Result INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= PubHandle>PubHandle</A></B>() handle</FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= PutRegistry>PutRegistry</A></B>() character</FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Re-Label>Re-Label</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-hand HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-type CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ReadHandler>ReadHandler</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT messageH HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT msgConsumerH HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT replyH HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= RefreshTempTables>RefreshTempTables</A></B>() logical</FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ReleaseKeyNumber>ReleaseKeyNumber</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT PV-keyNAME CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= RemoveAllMenuButtons>RemoveAllMenuButtons</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= RemoveBtnMenu>RemoveBtnMenu</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Report-Procs>Report-Procs</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= RgbColour>RgbColour</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-name CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ScreenChanged>ScreenChanged</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-widlist CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SendMessage>SendMessage</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-topic CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-message CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Set-Back-Color>Set-Back-Color</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-mode CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Set-Browse-Columns>Set-Browse-Columns</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-browse HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-enable LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Set-Focus>Set-Focus</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Set-Image>Set-Image</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-object CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-image CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Set-Init-Values>Set-Init-Values</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Set-Original-Values>Set-Original-Values</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT frame-handle HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT v-widnames CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Set-Position>Set-Position</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-win-handle HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-pgm CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Set-Sensitive>Set-Sensitive</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-enable LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-ix CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-exc-list CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SetComboValue>SetComboValue</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-combo HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= SetConnection>SetConnection</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-system CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-group CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-user CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SetCtrl>SetCtrl</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-idx CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-data CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;DLL-ENTRY</CODE></TD>
+<TD><CODE><a name= SetCurrentDirectoryA>SetCurrentDirectoryA</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lpPathName CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT ret-value INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SetCursor>SetCursor</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-handle HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-state CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SetIniValue>SetIniValue</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-section CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SetMessageConnections>SetMessageConnections</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-system CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-group CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-user CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= SetMovable>SetMovable</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-moveable LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SetNotModified>SetNotModified</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= SetSenOff>SetSenOff</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-onoff LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SetSensitive>SetSensitive</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-enable LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-ix CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-exc-list CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-frame-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SetSeqValue>SetSeqValue</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-Seq CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-Value INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SetSession>SetSession</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-state CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SetSessionLangFormats>SetSessionLangFormats</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-lanid INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;DLL-ENTRY</CODE></TD>
+<TD><CODE><a name= SetSysColors>SetSysColors</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT cDspElements INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lpnDspElements INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lpdwRgbValues INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SetSystem>SetSystem</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-system CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SetSysVar>SetSysVar</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-key CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SetWorkingDir>SetWorkingDir</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-dir CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;DLL-ENTRY</CODE></TD>
+<TD><CODE><a name= ShellExecuteA>ShellExecuteA</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT HWND INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lpOperation CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lpFile CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lpParameters CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lpDirectory CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT nShowCmd INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT hInstance INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ShowField>ShowField</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ShowFrame>ShowFrame</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-proc HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-num CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-editmode LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= SonicDisplay>SonicDisplay</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-extra CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-text CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= Sound>Sound</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-file CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= SpellCheck>SpellCheck</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= String2Dec>String2Dec</A></B>() decimal</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-string CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-sep CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-point CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= String2Int>String2Int</A></B>() integer</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-string CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-sep CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= String2Logi>String2Logi</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-String CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= StringToDate>StringToDate</A></B>() date</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lv-string CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SysMsg>SysMsg</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-msg CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= SystemManager>SystemManager</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-user CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Tab-Label>Tab-Label</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-hand COM-HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ToLower>ToLower</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ToolTip>ToolTip</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT frame-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ToUpper>ToUpper</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= UnixPath>UnixPath</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-string CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= UserCountry>UserCountry</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-user CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= UserGroup>UserGroup</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-user CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= UserLanguage>UserLanguage</A></B>() integer</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-user CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ValidApi>ValidApi</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-name CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ValidClassCode>ValidClassCode</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-class CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-code CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lv-desc CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ValidDate>ValidDate</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-date CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ValidScreenValue>ValidScreenValue</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pv-extras CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ValidUser>ValidUser</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lv-user CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT lv-pass CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= ValidUserSec>ValidUserSec</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-notusers CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-notgroups CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-runusers CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-rungroups CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-user CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-group CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= Wait>Wait</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT vi-milliseconds INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= WHelp>WHelp</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Widget-Help>Widget-Help</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-mode CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Widget-Security>Widget-Security</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT frame-handle HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-pgmid DECIMAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= WidgetExists>WidgetExists</A></B>() logical</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-framehandle HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-wid CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Win-Exec>Win-Exec</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT ProgramName CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT Presentation INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Win-State>Win-State</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-win-handle HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-state INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= WinErrorCodes>WinErrorCodes</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-code INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;DLL-ENTRY</CODE></TD>
+<TD><CODE><a name= WinExec>WinExec</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT ProgramName CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT Presentation INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Wlook>Wlook</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= WriteHandler>WriteHandler</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-topic CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pv-msg CHARACTER
+</TD></TR>

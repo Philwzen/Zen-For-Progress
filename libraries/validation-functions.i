@@ -1,0 +1,25 @@
+/* functions.i predeclare any functions */
+Function AsEntered            returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function FirstDayOfLastMonth  returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function FirstDayOfLastWeek   returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function FirstDayOfLastYear   returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function FirstDayOfNextMonth  returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function FirstDayOfNextWeek   returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function FirstDayOfNextYear   returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function FirstDayOfThisMonth  returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function FirstDayOfThisWeek   returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function FirstDayOfThisYear   returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function LastDayOfLastMonth   returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function LastDayOfLastWeek    returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function LastDayOfLastYear    returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function LastDayOfNextMonth   returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function LastDayOfNextWeek    returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function LastDayOfNextYear    returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function LastDayOfThisMonth   returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function LastDayOfThisWeek    returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function LastDayOfThisYear    returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function Manual               returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function NoDefault            returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function TDay                 returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function Tomorrow             returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.
+Function YesterDay            returns char  (pv-defvalue as char,pv-wid as handle,output pv-extra as char) in {&lhandle}.

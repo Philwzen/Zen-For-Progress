@@ -1,0 +1,10 @@
+# to connect client to appservers
+
+-H misspiggy
+-N tcp
+-S 5162
+-AppService Zen
+#-URL http://zennor.ath.cx/aia/Aia1?AppService=Zen
+-Bt 5000
+-B 5000
+-param appserver^c:\rex\controlfiles\^zen^zen

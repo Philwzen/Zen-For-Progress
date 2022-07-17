@@ -1,0 +1,3 @@
+# db conections
+-db data\schadm -1
+#-db rex -H 192.168.1.200 -N TCP -S 50001

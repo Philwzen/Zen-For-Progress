@@ -1,0 +1,7 @@
+ TabStrip */ system32/mscomctl.ocx
+Calendar */ program files/microsoft office/office/mscal.ocx
+ ActiveFormX */ ??
+WebBrowser */  system32/shdocvw.dll
+crviewer
+cmd22
+triapro

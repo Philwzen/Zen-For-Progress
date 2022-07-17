@@ -1,0 +1,4 @@
+-URL http://pandkwhite.ath.cx:8080/aia/Aia?AppService=Zen
+-Bt 5000
+-B 5000
+-param appserver^c:\rex\controlfiles\^zen^zen

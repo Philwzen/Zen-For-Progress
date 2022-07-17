@@ -1,0 +1,203 @@
+{\rtf1\ansi\deff0\deftab720{\fonttbl{\f0\fnil MS Sans Serif;}{\f1\fnil\fcharset2 Symbol;}{\f2\fswiss\fprq2 System;}{\f3\fnil Times New Roman;}{\f4\fswiss\fprq2 Arial;}{\f5\froman\fprq2 Times New Roman;}{\f6\fmodern\fprq1 Courier New;}}
+{\colortbl\red0\green0\blue0;}
+\deflang1033\pard\qc\plain\f4\fs28\b EZFTP OLE Control
+\par Copyright \'a9 1996 Rod Hewitt
+\par \pard\plain\f5\fs20 
+\par \plain\f5\fs20\b Introduction\plain\f5\fs20 
+\par 
+\par The EZFTP OLE Control encapsulates most of the functionality of an FTP client. By setting a few properties, FTP transfers can be easily done from within Visual Basic or any application that is an OCX container.
+\par 
+\par Although there are many other FTP OCXes available, I wrote EZFTP after reading through the Sweeper SDK documentation released by Microsoft. Microsoft encapsulated the FTP, HTTP and Gopher protocols into a DLL provided with the SDK and EZFTP uses this DLL rather than communicating directly with WinSock. In fact, there is no WinSock code at all in EZFTP!
+\par 
+\par This document reflects version 1.1 of EZFTP.OCX.
+\par 
+\par \plain\f5\fs20\b Distribution Details\plain\f5\fs20 
+\par 
+\par EZFTP.OCX is owned and copyrighted by COOL.STF. You may use EZFTP with any application without royalties or fees. Note that this free version of EZFTP only supports synchronous operation. This means that if you request a large file from a remote FTP server, control will be returned to your application only when the transfer has completed or has failed.
+\par 
+\par The Professional Edition of EZFTP.OCX is also available. It allows asynchronous operation, including the ability to abort a transfer and update a progress indicator by use of a progress event. The Professional Edition is not freeware and is only be distributed to licensed users. Licenses for the Professional Edition are $49.00 for the control and $99.00 for the control and source code. Send email to \plain\f6\fs20 coolstf@intr.net\plain\f5\fs20  if you are interested in the Professional Edition.
+\par 
+\par \plain\f5\fs20\b Installation\plain\f5\fs20 
+\par 
+\par There is currently no flashy installation program, but all you need to do is:
+\par 
+\par \pard\li360\fi-360\plain\f5\fs20 1.\tab Transfer EZFTP.OCX and WININET.DLL to your \\Windows\\System or \\Winnt\\System32 folder
+\par 2.\tab Make sure you overwrite any older version of WININET.DLL. Using versions prior to the 1/31/96 version provided in the ZIP will cause GPFs when the application ends.
+\par 3.\tab Make sure you have the MFC/OLE DLLs on your system
+\par 4.\tab Make sure MFC40.DLL is dated 10/6/95 or later
+\par 5.\tab Register EZFTP.OCX with the command:
+\par \pard\plain\f5\fs20 
+\par \tab \plain\f6\fs20 REGSVR32 EZFTP.OCX\plain\f5\fs20 
+\par 
+\par If you don't have the MFC/OLE DLLs or don't have the latest versions, they can be download from the COOL.STF homepage, \plain\f6\fs20 http://www.intr.net/coolstf\plain\f5\fs20 .
+\par 
+\par \plain\f5\fs20\b Properties\plain\f5\fs20 
+\par 
+\par \plain\f5\fs20\i ProfessionalEdition \plain\f5\fs20 - boolean
+\par 
+\par Signals which version of the control is installed.
+\par \plain\f5\fs20\i 
+\par UserName\plain\f5\fs20  - string
+\par 
+\par Set to the user name to log on with. For anonymous transfers, set to "anonymous".
+\par 
+\par \plain\f5\fs20\i Password\plain\f5\fs20  - string
+\par 
+\par Set to the password to log on with. For anonymous transfers, set to an email address, for example "myname@domain.com".
+\par 
+\par \plain\f5\fs20\i LocalFile\plain\f5\fs20  - string
+\par 
+\par Set to the name of the local file to be transferred to or from. For example, "c:\\windows\\desktop\\myfile.txt".
+\par 
+\par \plain\f5\fs20\i RemoteFile\plain\f5\fs20  - string
+\par 
+\par Set to the name of the remote file to be transferred to or from. For example, "/home/myacct/etc/stuff.txt".
+\par 
+\par \plain\f5\fs20\i Binary\plain\f5\fs20  - boolean
+\par 
+\par Set as appropriate for the file transfer mode. If transferring ASCII files, should be false to allow <lf> to <cr><lf> translations when moving files between the PC and a Unix machine. If transferring binary files, set true.
+\par 
+\par \plain\f5\fs20\i RemoteAddress\plain\f5\fs20  - string
+\par 
+\par Sets the address of the remote FTP server. Accepts either domain names, for example "ftp.domain.com" or IP addresses, for example "204.157.123.4".
+\par 
+\par \plain\f5\fs20\i RemoteDirectory\plain\f5\fs20  - string
+\par 
+\par Sets or returns the directory in use on the remote FTP server. For example:
+\par 
+\par \tab MsgBox EZFTP1.RemoteDirectory
+\par 
+\par might display "/usr/bin/rod". To change directory on the remote server, use:
+\par 
+\par \tab EZFTP1.RemoteDirectory = "/usr/barney/hate/hate/hate"
+\par 
+\par provided the directory exists on the remote system (doesn't every machine have a /usr/barney/hate/hate/hate directory!!).
+\par 
+\par \plain\f5\fs20\i AbortTransfer\plain\f5\fs20  - boolean - Professional Edition only
+\par 
+\par Write only. When set during the TransferProgress event, aborts the current GetFile or PutFile.
+\par 
+\par \plain\f5\fs20\b Methods
+\par \plain\f5\fs20 
+\par \plain\f5\fs20\i Connect\plain\f5\fs20 
+\par 
+\par Opens a connection to the remote FTP server specified in RemoteAddress.
+\par 
+\par \plain\f5\fs20\i Disconnect
+\par \plain\f5\fs20 
+\par Closes the connection with the remote FTP server previously opened with Connect. You must take care to issue a Disconnect after a successful Connect. Failure to do so will leave an open FTP connection on the server.
+\par 
+\par \plain\f5\fs20\i GetFile
+\par \plain\f5\fs20 
+\par Receives the remote file specified in RemoteFile and stores it locally in the file specified by LocalFile. Overwrites the local file if it already exists. For example:
+\par 
+\par \tab EZFTP1.RemoteFile = "/etc/termcap"
+\par \tab EZFTP1.LocalFile = "c:\\windows\\desktop\\termcap.txt"
+\par \tab On Error Resume Next
+\par \tab EZFTP1.GetFile
+\par \tab If Err  <> 0 Then
+\par \tab \tab MsgBox "Unable to get file. Error code : " & Format$(Err.Number)
+\par \tab End If
+\par 
+\par \plain\f5\fs20\i PutFile
+\par \plain\f5\fs20 
+\par Transfers the local file specified by LocalFile to the file specified by RemoteFile on the FTP server.
+\par 
+\par \plain\f5\fs20\i MkDir (Directory as string)
+\par \plain\f5\fs20 
+\par Creates a directory specified by the string Directory on the remote FTP server.
+\par 
+\par \plain\f5\fs20\i RmDir (Directory as string)\plain\f5\fs20 
+\par 
+\par Removes the directory specified by the string Directory on the remote FTP server.
+\par 
+\par \plain\f5\fs20\i RenameFile (OldName as string, NewFile as string)\plain\f5\fs20 
+\par 
+\par Renames the file specified in OldName to NewFile on the remote FTP server.
+\par 
+\par \plain\f5\fs20\i DeleteFile (FileName as string)
+\par \plain\f5\fs20 
+\par Deletes the file specified in FileName on the remote FTP server.
+\par 
+\par \plain\f5\fs20\i GetDirectory (FileName as string)\plain\f5\fs20 
+\par 
+\par Gets a directory listing for the remote system. Wildcards may be specified in the FileName string. Fires the NextDirectoryEvent for each file that is reported by the remote FTP server. For example:
+\par 
+\par \tab On Error Resume Next
+\par 
+\par 'Get the directory. Work actually done in the NextDirectoryEntry event
+\par \tab EZFTP1.GetDirectory "*.*"
+\par 
+\par 'Arrive here after all possible files have been returned
+\par \tab If Err <> 0 Then
+\par \tab \tab MsgBox "Unable to get directory. Error: " & format$(Err.Number)
+\par \tab End If
+\par 
+\par \plain\f5\fs20\b Events
+\par \plain\f5\fs20 
+\par \plain\f5\fs20\i NextDirectoryEntry (FileName As String, Attributes As Long, Length As Double)
+\par \plain\f5\fs20 
+\par Fires for each file that is returned by the remote FTP server after a GetDirectory method is used.
+\par 
+\par \plain\f5\fs20\i FileName
+\par \plain\f5\fs20 
+\par Contains the name of the file on the remote system
+\par 
+\par \plain\f5\fs20\i Attributes
+\par \plain\f5\fs20 
+\par Contains bit flags indicating the type of the file.
+\par 
+\par \plain\f5\fs20\i Length
+\par \plain\f5\fs20 
+\par Contains the length of the file in bytes.
+\par 
+\par \plain\f5\fs20\i TransferProgress (BytesTransferred as long, TotalBytes as long) \plain\f5\fs20 - Professional Edition only
+\par 
+\par Fires for every 1K or so of the file transferred with the GetFile or PutFile method.  Can be used to drive a progress indicator or to abort the transfer with the AbortTransfer property.
+\par 
+\par \plain\f5\fs20\b Error Handling\plain\f5\fs20 
+\par 
+\par The RemoteDirectory property when written to and all methods can generate runtime errors. For example, attempting to receive a file that doesn't exist with the GetFile method will generate a runtime error. Therefore, it is important to ensure that error handling routines are provided for the methods and the RemoteDirectory property.
+\par 
+\par If an error occurs, Err.Number can be set to one of the following values. The errors without an explanation should never be seen. If you do encounter one of these errors, be sure to let us know what you did to generate the error. Send email to \plain\f6\fs20 coolstf@intr.net\plain\f5\fs20 .
+\par 
+\par \pard\li990\fi-990\plain\f5\fs20 1000\tab General Error.
+\par 1001\tab Out of handles.
+\par 1002\tab Timeout. The operation was aborted because the remote system didn't respond.
+\par 1003\tab Extended error.
+\par 1004\tab Internal error. 
+\par 1005\tab Invalid URL.
+\par 1006\tab Unrecognized scheme.
+\par 1006\tab Name not resolved. The remote domain name couldn't be resolved.
+\par 1008\tab Protocol not found.
+\par 1009\tab Invalid option.
+\par 1010\tab Bad option length.
+\par 1011\tab Option not settable.
+\par 1012\tab Shutdown.\tab 
+\par 1013\tab Incorrect user name. The user name specified in the UserName property was not accepted by the remote system.
+\par 1014\tab Incorrect password. The password specified in the Password property was not accepted by the remote system.
+\par 1015\tab Login failure. The server didn't allow the user name / password combination.
+\par 1016\tab Invalid operation.
+\par 1017\tab Operation cancelled.
+\par 1018\tab Incorrect handle type.
+\par 1019\tab Not local handle.
+\par 1020\tab Not proxy request.
+\par 1021\tab Internet registry value not found.
+\par 1022\tab Bad registry parameter.
+\par 1023\tab No direct access.
+\par 1027\tab Transfer in progress.
+\par 1028\tab FTP connected.
+\par 1029\tab FTP disconnected. The remote system unexpectedly closed the connection.
+\par  
+\par \pard\plain\f5\fs20 Additionally, Err.Description contains an description of the error, plus any extra error information returned by the FTP interface, separated by a colon. For example:
+\par 
+\par \pard\li1440\fi-720\plain\f5\fs20 Unable to connect to FTP server: 220-Welcome to the Internet Interstate FTP server!
+\par 220-
+\par 220 sheldon FTP server (Version wu-2.4(1) Thu Aug 17 09:56:25 EDT 1995) ready.
+\par 331 Password required for xx.
+\par 530 Login incorrect.
+\par 221 Goodbye.
+\par \pard\plain\f5\fs20 
+\par 
+\par }
+ 

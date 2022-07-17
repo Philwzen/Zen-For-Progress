@@ -1,0 +1,992 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Mozilla/4.5 [en]C-CCK-MCD   (WinNT; U) [Netscape]">
+<title>Zen Library 2001 Release Notes</title></head>
+<body bgcolor="#FFFFFF" link="#0000FF" vlink="#800080">
+<!-- ========== START OF NAVBAR ========== -->                <A NAME="navbar_top"><!-- --></A>                <TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">                <TR>                <TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">                <A NAME="navbar_top_firstrow"><!-- --></A>                <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3">                <TR ALIGN="center" VALIGN="top">                <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="index.html"><FONT ID="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>                                <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="apiindex.html"><FONT ID="NavBarFont1"><B>Api Index</B></FONT></A>&nbsp;</TD>                </TR>                </TABLE>                </TD>                <TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>Zen Demo System Dev System 04/11/03</EM>                </TD>                </TR>                <!-- =========== END OF NAVBAR =========== -->
+<h1><a NAME="Top"></a>Release Notes</h1>
+<b>These release notes contain information specific to Dev System 04/11/03 release
+(referred to in these notes as "this release")</b>
+<br><H2><FONT SIZE="-1">Dev System 04/11/03 Library Routine</FONT>
+<BR>about.w </H2>
+<A NAME="Procedure Summary"><!-- --></A></font>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=5><FONT SIZE="+2">
+<B>Procedure Summary</B></FONT></TD> </TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= disable_UI>disable_UI</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= enable_UI>enable_UI</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= initialise>initialise</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= open-query>open-query</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= appServerConnect>appServerConnect</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT partition_name CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT security_prompt LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT app_server_info CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT conn-hdl HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= appServerDisconnect>appServerDisconnect</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT partition_name CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= definedPartitions>definedPartitions</A></B>() character</FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= getASConnectString>getASConnectString</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+BUFFER bAppSrvTT AppSrv-TT
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= getJMSPartitions>getJMSPartitions</A></B>() character</FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= getJMSPtnInfo>getJMSPtnInfo</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT cPartition CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= getPartitionsByType>getPartitionsByType</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT cType CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= loadPartitionInfo>loadPartitionInfo</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= savePartitionInfo>savePartitionInfo</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= security_prompt>security_prompt</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT lCancel LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Change_Name>Change_Name</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hMenuItem HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_OldName CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_NewName CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ChooseItem>ChooseItem</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hMenuItem HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hProc HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ChooseMoreWindows>ChooseMoreWindows</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hMoreWindows HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hProc HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_ItemName CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ClosePW>ClosePW</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= CreateMenuItem>CreateMenuItem</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hWinMenu HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Name CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Data CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Label CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hProc HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_hMenuItem HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= disable_UI>disable_UI</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= enable_UI>enable_UI</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= GetItemHandle>GetItemHandle</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hWinMenu HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_ItemName CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_hMenuItem HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= NewPW>NewPW</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= SetChecked>SetChecked</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hMenuItem HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= WinMenuAddItem>WinMenuAddItem</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hWinMenu HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_ItemLabel CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hProc HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= WinMenuChangeName>WinMenuChangeName</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hWinMenu HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_OldName CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_NewName CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= WinMenuChoose>WinMenuChoose</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_ItemName CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= WinMenuGetActive>WinMenuGetActive</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_ActiveWindows CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_ActiveItem CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= WinMenuRebuild>WinMenuRebuild</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hWinMenu HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_ActiveWindows CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_ActiveItem CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hProc HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= WinMenuSetActive>WinMenuSetActive</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hWinMenu HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_ItemName CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ApplyBackTab>ApplyBackTab</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Editor HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Return_Error LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ApplyTab>ApplyTab</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Editor HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Return_Error LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Apply_BackTab>Apply_BackTab</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_Applied LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Apply_Tab>Apply_Tab</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_Applied LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= AssignSEW>AssignSEW</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT se_section CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT se_recid RECID
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT se_event CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_U_recid RECID
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_TRG_recid RECID
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_hwin HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= build_event_list>build_event_list</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= build_func_list>build_func_list</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT phList HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= build_proc_list>build_proc_list</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT phList HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= build_widget_list>build_widget_list</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT init_value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ChangeSection>ChangeSection</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_new_section CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= change_trg>change_trg</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT new_section CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT new_recid RECID
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT new_event CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT use_new_event LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT store_code LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT change_ok LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= CheckSyntax>CheckSyntax</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= check_store_trg>check_store_trg</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT check_only LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT print_section LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT code_ok LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= check_UIB_current_window>check_UIB_current_window</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= CodeModified>CodeModified</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Modified LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= CommentBox>CommentBox</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pl_comment LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= CommentSelection>CommentSelection</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pl_comment LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Comment_Box>Comment_Box</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pl_comment LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_Applied LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Comment_Selection>Comment_Selection</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pl_comment LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_Applied LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= DeleteBlock>DeleteBlock</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= disable_UI>disable_UI</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= display_trg>display_trg</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= doInsertPreProcName>doInsertPreProcName</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pString CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= doInsertWidgetName>doInsertWidgetName</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pString CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= EditCopy>EditCopy</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= EditCut>EditCut</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= EditHelp>EditHelp</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Editor HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Tool_Name CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Context INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= EditingOptions>EditingOptions</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= EditPaste>EditPaste</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= EditUndo>EditUndo</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= EdPopupDrop>EdPopupDrop</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Editor HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= enable_UI>enable_UI</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= FieldSelector>FieldSelector</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= FindAgain>FindAgain</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Again_Find_Command INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Again_Find_Criteria INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= FindAssign>FindAssign</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_Find_Criteria INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= FindNext>FindNext</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Find_Criteria INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= FindPrev>FindPrev</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Find_Criteria INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= FindText>FindText</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= freeform_update>freeform_update</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_u-recid RECID
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= GetAttribute>GetAttribute</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Attribute CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_Value CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= getInsertWidgetNameList>getInsertWidgetNameList</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pList CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pItem CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= GetNextSearchSection>GetNextSearchSection</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT h_trg_win HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Sect-List CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT-OUTPUT p_Sect-Curr CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT-OUTPUT p_section CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT-OUTPUT p_recid RECID
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT-OUTPUT p_event CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_ok LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= getPreProcNameList>getPreProcNameList</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pList CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT pItem CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;FUNCTION</CODE></TD>
+<TD><CODE><a name= GetProcFuncSection>GetProcFuncSection</A></B>() character</FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_name CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= GetSearchAllList>GetSearchAllList</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT h_trg_win HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_section CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_recid RECID
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_event CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_Sect-List CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_Sect-Curr CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= GetWidgetListName>GetWidgetListName</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Name CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Label CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_List_Item CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= get_default_event>get_default_event</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT w_type CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT dflt CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Get_Proc_Lists>Get_Proc_Lists</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Incl_UserDef LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_All_List CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_Smart_List CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= GotoLine>GotoLine</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Has_Freeform>Has_Freeform</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_u-recid RECID
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_Has_Freeform LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Has_Trigger>Has_Trigger</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_sew_recid RECID
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_event CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_has_trigger LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= IndentSelection>IndentSelection</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pi_indent INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= Indent_Selection>Indent_Selection</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pi_indent INTEGER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_Applied LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= init-win>init-win</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= initial_adjustments>initial_adjustments</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= InsertDBFields>InsertDBFields</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= InsertEventName>InsertEventName</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= InsertFile>InsertFile</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= InsertPreProcName>InsertPreProcName</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= InsertProcName>InsertProcName</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= InsertQuery>InsertQuery</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= InsertWidgetName>InsertWidgetName</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= insert_file>insert_file</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Mode CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ListBlocks>ListBlocks</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= MakeQMark>MakeQMark</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT-OUTPUT p_String CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Large LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= MoveCursor>MoveCursor</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Cursor_Line INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= NewBlock>NewBlock</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= NextSearchBlock>NextSearchBlock</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Sect-List CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Sect-First CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT-OUTPUT p_Sect-Curr CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= NoProcs>NoProcs</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Type CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_oknew LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= paste_txt>paste_txt</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT str CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= PrintSection>PrintSection</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= RenameProc>RenameProc</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ReplaceAll>ReplaceAll</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ReplaceAssign>ReplaceAssign</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ReplaceConfirm>ReplaceConfirm</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= ReplaceText>ReplaceText</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= SecEdWindow>SecEdWindow</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pi_section CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pi_recid RECID
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT pi_event CHARACTER
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_command CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= SEClose>SEClose</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_command CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= SetEdBufType>SetEdBufType</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_File_Name CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= SetEdHelpFile>SetEdHelpFile</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= SetEditor>SetEditor</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Buffer HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= setToolTip>setToolTip</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= set_cursor>set_cursor</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= set_isection>set_isection</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= set_vars>set_vars</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= se_emdrp>se_emdrp</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= se_help>se_help</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_Help_Context INTEGER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= se_set_title>se_set_title</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_U_handle HANDLE
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= se_store>se_store</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_command CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= se_upd_disp>se_upd_disp</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT p_upd_disp LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= se_upd_widget_list>se_upd_widget_list</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= show_db_required>show_db_required</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_cur_section CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= show_private_block>show_private_block</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT p_cur_section CHARACTER
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= show_read_only>show_read_only</A></B>() </FONT></CODE>
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= store_trg>store_trg</A></B>() </FONT></CODE>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+INPUT explicit LOGICAL
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OUTPUT code_ok LOGICAL
+</TD></TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="+2">
+<B><CODE>&nbsp;PROCEDURE</CODE></TD>
+<TD><CODE><a name= UndoChange>UndoChange</A></B>() </FONT></CODE>
+</TD></TR>

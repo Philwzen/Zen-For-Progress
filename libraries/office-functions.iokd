@@ -1,0 +1,41 @@
+Function OfficeCloseApplication RETURNS LOGICAL     ( pv-applhandle as com-handle ) in {&lhandle}.
+Function OfficeCloseDocument    RETURNS LOGICAL     ( pv-document as com-handle)  in {&lhandle}.
+Function OfficeApplicationName  RETURNS CHARACTER   ( pv-applhandle as com-handle ) in {&lhandle}.
+Function OfficeGetDocHandle     RETURNS COM-HANDLE  ( pv-applhandle as com-handle,
+                                                      pv-document   as char) in {&lhandle}.
+Function OfficeGetSuite         returns char        () in {&lhandle}.
+function OfficeSetSuite         returns char        () in {&lhandle}.
+Function OfficeMailMerge        RETURNS CHARACTER   ( pv-applhandle as com-handle,
+                                                      pv-datafile as char, 
+                                                      pv-destination as int,
+                                                      output pv-numrecs as int) in {&lhandle}.
+
+Function OfficeNewWorkBook RETURNS COM-HANDLE  ( pv-application as com-handle )        in {&lhandle}.
+Function OfficeNewWorkSheet RETURNS COM-HANDLE ( pv-workbook as com-handle )  in {&lhandle}.
+Function OfficeWriteCellData RETURNS CHARACTER  ( pv-worksheet as com-handle,
+                                                pv-col as int,
+                                                pv-row as int,
+                                                pv-data as char )  in {&lhandle}.
+Function OfficeWorkSheetCellsAutoFit RETURNS CHARACTER ( pv-worksheet as com-handle,
+                                                        pv-startcol as int,
+                                                        pv-endcol as int )  in {&lhandle}.
+Function GetExcelColumnName RETURNS CHARACTER  ( lv-col as int )  in {&lhandle}.
+Function OfficeOpenDocument     RETURNS com-handle  ( pv-applhandle as com-handle,
+                                                      pv-Document as char,
+                                                      pv-readonly as char) in {&lhandle}.
+Function OfficeOpenTemplate     RETURNS LOGICAL     ( pv-applhandle as com-handle,
+                                                      pv-Document as char) in {&lhandle}.
+Function OfficeSaveAs           RETURNS LOGICAL     ( pv-applhandle as com-handle,
+                                                      pv-name       as char,
+                                                      pv-document   as char) in {&lhandle}.
+Function OfficeSendEmail        RETURNS LOGICAL     ( pv-applhandle as com-handle,
+                                                      pv-from as char,
+                                                      pv-to   as char,
+                                                      pv-subject as char,
+                                                      pv-text as  char,
+                                                      pv-attach as char,
+                                                      pv-expires as char ) in {&lhandle}.
+Function OfficeStartApplication RETURNS COM-HANDLE  ( pv-appName as char,
+                                                      pv-hidden as char ) in {&lhandle}.
+Function OfficeToUrl            RETURNS CHARACTER   ( pv-doc as char ) in {&lhandle}.
+
